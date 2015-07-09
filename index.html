@@ -284,91 +284,17 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/bonnie/">2015-04-24</a></time>
+        <time datetime="2015-06-24T00:35:18.000Z"><a href="/2015/06/24/IT经典图书-附免费下载地址/">2015-06-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/bonnie/">bonnie++</a></h1>
+    <h1 class="title"><a href="/2015/06/24/IT经典图书-附免费下载地址/">IT经典图书(附免费下载地址)</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="How_to_install_bonnie++">How to install bonnie++</h1><ol>
-<li><p>Download bonnie++ tarball from <a href="http://www.coker.com.au/bonnie++/" target="_blank" rel="external">http://www.coker.com.au/bonnie++/</a></p>
-</li>
-<li><p>Extract and install it:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvzf bonnie++-<span class="doctag">XXX.</span>tgz</span></span><br><span class="line"><span class="comment"># cd bonnie++-<span class="doctag">XXX</span></span></span><br><span class="line"><span class="comment"># make</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="Features_and_Functions">Features and Functions</h1><ul>
-<li>Easy to use, a simple tool used to test your hard drive and file system performance.</li>
-<li>Can test the following I/O operations:<ul>
-<li>Sequential Output<ul>
-<li>Per Chr</li>
-<li>Block</li>
-<li>Rewrite</li>
-</ul>
-</li>
-<li>Sequential Input<ul>
-<li>Per Chr</li>
-<li>Block</li>
-</ul>
-</li>
-<li>Random<ul>
-<li>Seeks</li>
-</ul>
-</li>
-<li>Sequential Create<ul>
-<li>Create</li>
-<li>Read</li>
-<li>Delete</li>
-</ul>
-</li>
-<li>Random Create<ul>
-<li>Create</li>
-<li>Read</li>
-<li>Delete</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Bonnie++ is a program to test hard drives and file systems for performance or the lack therof. There are a many different types of file system operations which different applications use to different degrees. Bonnie++ tests some of them and for each test gives a result of the amount of work done per second and the percentage of CPU time this took. For performance results higher numbers are better, for CPU usage lower are better (NB a configuration scoring a performance result of 2000 and a  CPU result of 90% is better in terms of CPU use than a configuration delivering performance of 1000 and CPU usage of 60%).</p>
-<p>There are two sections to the program’s operations. The first is to test the IO throughput in a fashion that is designed to simulate some types of database applications. The second is to test creation, reading, and deleting many small files in a fashion similar to the usage patterns of programs such as Squid or INN.</p>
-<h1 id="How_to_use_bonnie++">How to use bonnie++</h1><p>Just issue the following command, it should be ok for most situations:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bonnie++ -d /testdir/ -m testname -u root -s $((2*$RAM_SIZE))</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>Note:</strong><br>If you test want to test hard drive, you must mount it to the value of <strong>-d</strong> option. Also make sure that the hard drive size is double RAM, or you will have to specify <strong>-r</strong> option.</p>
-<p>If you want to reduce ‘++++’ you need to increase the test time either by increasing the value of <strong>-n</strong> or by increasing the value of <strong>-s</strong>.</p>
-<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bonnie++ -d ./ -m testname -u root -s 40M -r 10M</span></span><br><span class="line">Using uid:<span class="number">0</span>, gid:<span class="number">0</span>.</span><br><span class="line">Writing with putc()...done</span><br><span class="line">Writing intelligently...done</span><br><span class="line">Rewriting...done</span><br><span class="line">Reading with getc()...done</span><br><span class="line">Reading intelligently...done</span><br><span class="line">start <span class="string">'em...done...done...done...</span><br><span class="line">Create files in sequential order...done.</span><br><span class="line">Stat files in sequential order...done.</span><br><span class="line">Delete files in sequential order...done.</span><br><span class="line">Create files in random order...done.</span><br><span class="line">Stat files in random order...done.</span><br><span class="line">Delete files in random order...done.</span><br><span class="line">Version 1.03e       ------Sequential Output------ --Sequential Input- --Random-</span><br><span class="line">                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--</span><br><span class="line">Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP</span><br><span class="line">testname        40M 54715  99 +++++ +++ +++++ +++ 51914  99 +++++ +++ +++++ +++</span><br><span class="line">                    ------Sequential Create------ --------Random Create--------</span><br><span class="line">                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--</span><br><span class="line">              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP</span><br><span class="line">                 16 15104  99 +++++ +++ +++++ +++ 15480  99 +++++ +++ 31050  95</span><br><span class="line">testname,40M,54715,99,+++++,+++,+++++,+++,51914,99,+++++,+++,+++++,+++,16,15104,99,+++++,+++,+++++,+++,15480,99,+++++,+++,31050,95</span></span><br></pre></td></tr></table></figure>
-<p>The primary output is plain-text in 80 columns which is designed to fit well when pasted into email and which will work well with Braille displays.</p>
-<p>The second type of output is CSV (Comma Seperated Values). This can easily be imported into any spread-sheet or database program. Also it have included the programs bon_csv2html and bon_csv2txt to convert CSV data to HTML and plain-ascii respectively:</p>
-<ol>
-<li><p>Select the last comma seperated line.</p>
-</li>
-<li><p>Run the following command to generate the html file:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'testname,40M,54715,99,+++++,+++,+++++,+++,51914,99,+++++,+++,+++++,+++,16,15104,99,+++++,+++,+++++,+++,15480,99,+++++,+++,31050,95'</span> | perl bon_csv2html &gt; results.html</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>For every test two numbers are reported, the amount of work done (higher numbers are better) and the percentage of CPU time taken to perform the work (lower numbers are better). If a test  completes in less than 500ms then the output will be displayed as “++++”. This is because such a test result can’t be calculated accurately due to rounding errors and I would rather display no result than a wrong result.</p>
-<h1 id="The_main_parameters">The main parameters</h1><ul>
-<li><strong>-d</strong> - the directory to use for the tests.</li>
-<li><strong>-s</strong> - the size of the file(s) for IO performance measures in megabytes. If the size is greater than 1G then multiple files will be used to store the data, and each file will be up to 1G in size. This parameter may include the chunk size seperated from the size by a colon. The chunk-size is measured in bytes and must be a power of two from 256 to 1048576, the default is 8192. You can specify the size in giga-bytes or the chunk-size in kilo-bytes if you add g or k to the end of the number respectively.</li>
-<li><strong>-r</strong> - RAM size in megabytes. If you specify this the other parameters will be checked to ensure they make sense for a machine of that much RAM. You should not need to do this in general use as it should be able to discover the RAM size. NB If you specify a size of 0 then all checks will be disabled…</li>
-<li><strong>-b</strong> - no write buffering. fsync() after every write.</li>
-<li><strong>-D</strong> - use direct IO (O_DIRECT) for the bulk IO tests.</li>
-<li><strong>-n</strong> - the number of files for the file creation test. This is measured in multiples of 1024 files. This is because no-one will want to test less than 1024 files, and we need the extra space on braille displays.</li>
-<li><strong>-x</strong> - number of test runs. This is useful if you want to perform more than one test. It will dump output continuously in CSV format until either the number of tests have been completed, or it is killed.</li>
-<li><strong>-m</strong> - name of the machine - for display purposes only.</li>
-<li><strong>-f</strong> - fast mode, skips per-char IO tests</li>
-<li><strong>-u</strong> - user-id to use. When running as root specify the UID to use for the tests. It is not recommended to use root (since the occasion when a Bonnie++ bug wiped out someone’s system), so if you really want to run as root then use -u root. Also if you want to specify the group to run as then use the user:group format. If you specify a user by name but no group then the primary group of that user will be chosen. If you specify a user by number and no group then the group will be nogroup.</li>
-<li><strong>-g</strong> - group-id to use. Same as using:group for the -u parameter, just a different way to specify it for compatibility with other programs.</li>
-<li><strong>-q</strong> - quiet mode. If specified then some of the extra informational messages will be suppressed.</li>
-</ul>
-<h1 id="Reference">Reference</h1><ul>
-<li><a href="http://www.coker.com.au/bonnie++/" target="_blank" rel="external">Bonnie++</a></li>
-<li>man bonnie++</li>
-<li><a href="http://archive09.linux.com/feature/139742" target="_blank" rel="external">Using Bonnie++ for filesystem performance benchmarking</a></li>
-</ul>
+        <iframe src="https://www.slideshare.net/slideshow/embed_code/41360053" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
       
     </div>
@@ -404,11 +330,110 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/我的emacs配置文件/">2015-04-24</a></time>
+        <time datetime="2015-06-23T00:35:18.000Z"><a href="/2015/06/23/Linux下的经典软件-史上最全/">2015-06-23</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/我的emacs配置文件/">我的emacs配置文件</a></h1>
+    <h1 class="title"><a href="/2015/06/23/Linux下的经典软件-史上最全/">Linux下的经典软件(史上最全)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Linux下的经典软件(史上最全)</p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/06/23/Linux下的经典软件-史上最全/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-22T00:35:18.000Z"><a href="/2015/06/22/用Beamer做slides-模板/">2015-06-22</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/22/用Beamer做slides-模板/">用Beamer做slides(模板)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="介绍">介绍</h3><p>Lex菜鸟，之前做slides用过LibreOffice, PowerPoint, S5和reveal.js，S5和reveal.js都是结合org-mode来做的，非常方便，但做出来的slides只能通过浏览器来展示，而且定制性不是太好. LibreOffice, PowerPoint固然很强大，但是不合我口味，太easy, 好吧，我承认我是自虐狂。后来听说latex的beamer库也可以做slides而且效果还不错，故而google了2天，找各种模板，各种实验，那个烦啊…</p>
+<p>不过还好，两天之后终于找到自己比较满意的模板，这里跟大家分享下，另外再分享下其它的东东, 感谢 Yixf和X-Wei两位大神!</p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/06/22/用Beamer做slides-模板/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-21T00:35:18.000Z"><a href="/2015/06/21/我的emacs配置文件/">2015-06-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/21/我的emacs配置文件/">我的emacs配置文件</a></h1>
   
 
     </header>
@@ -421,7 +446,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       
         
           <div class="alignleft">
-            <a href="/2015/04/24/我的emacs配置文件/#more" class="more-link">阅读全文</a>
+            <a href="/2015/06/21/我的emacs配置文件/#more" class="more-link">阅读全文</a>
           </div>
         
         
@@ -453,24 +478,27 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/我是如何写博客的/">2015-04-24</a></time>
+        <time datetime="2015-06-20T00:35:18.000Z"><a href="/2015/06/20/Install-xen-on-Fedora20/">2015-06-20</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/我是如何写博客的/">我是如何写博客的</a></h1>
+    <h1 class="title"><a href="/2015/06/20/Install-xen-on-Fedora20/">Install xen on Fedora20</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>每个人都有自己写博客的方式， 我来分享下我是怎么写博客的。<br>
+        <h3 id="Installing_the_Packages">Installing the Packages</h3><p>To install the Xen Project software, just run:</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># yum install xen</span></span><br></pre></td></tr></table></figure>
+<p>as root. yum will, as usual, take care of downloading and installing anything that is needed. As a part of that, it also create a new GRUB2 boot menu entry. Once the installation is complete, just reboot and select “Xen 4.x.x” from the GRUB2 menu.</p>
+<p>If on Fedora 18 and 19, you will likely see something like “Xen 4.2.x”. If on Fedora 16 or 17, it will have “Xen 4.1.x” in it. It is also possible that you only see something like “Fedora, with Xen hypervisor”, and that is also ok.</p>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2015/04/24/我是如何写博客的/#more" class="more-link">阅读全文</a>
+            <a href="/2015/06/20/Install-xen-on-Fedora20/#more" class="more-link">阅读全文</a>
           </div>
         
         
@@ -502,40 +530,207 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/如何用GIMP修改图片尺寸/">2015-04-24</a></time>
+        <time datetime="2015-06-19T00:35:18.000Z"><a href="/2015/06/19/iozone/">2015-06-19</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/如何用GIMP修改图片尺寸/">如何用GIMP修改图片尺寸</a></h1>
+    <h1 class="title"><a href="/2015/06/19/iozone/">iozone</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <ol>
-<li><p>在 GIMP 中打开原始图片。</p>
+        <h1 id="How_to_install_iozone">How to install iozone</h1><ol>
+<li><p>Download iozone tarball from <a href="http://www.iozone.org/" target="_blank" rel="external">http://www.iozone.org/</a>.</p>
 </li>
-<li><p>点击 图像 菜单选择 缩放图像…</p>
+<li><p>Extract it:</p>
 </li>
-<li><p>确保宽/高比例是锁定的(链条连接)。</p>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvf iozone3XXX.tar</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><code># cd iozone3XXX/src/current/</code></p>
 </li>
-<li><p>修改宽度或高度，是两者都符合或小于需要的图片尺寸。</p>
+<li><p>Choose your platform(my platform is AMD64) and run <code># make AMD64</code></p>
 </li>
-<li><p>点击 缩放 按钮</p>
+</ol>
+<h1 id="Features_and_Functions">Features and Functions</h1><h2 id="Features">Features</h2><ul>
+<li>ANSII ‘C’ source.</li>
+<li>POSIX async I/O.</li>
+<li>Mmap() file I/O.</li>
+<li>Normal file I/O.</li>
+<li>Single stream measurement.</li>
+<li>Multiple stream measurement.</li>
+<li>POSIX pthreads.</li>
+<li>Multi-process measurement.</li>
+<li>Excel importable output for graph generation.</li>
+<li>I/O Latency data for plots.</li>
+<li>64-bit compatible source.</li>
+<li>Large file compatible.</li>
+<li>Stonewalling in throughput tests to eliminate straggler effects.</li>
+<li>Processor cache size configurable.</li>
+<li>Selectable measurements with fsync, O_SYNC.</li>
+<li>Options targeted for testing over NFS.</li>
+</ul>
+<h2 id="I/O_operations">I/O operations</h2><ul>
+<li><p><strong>Read</strong><br>This test measures the performance of reading an existing file.</p>
 </li>
-<li><p>选择整幅图片(Ctrl + A 或点击菜单 选择 &gt; 全部 )</p>
+<li><p><strong>Write</strong><br>This test measures the performance of writing a new file. When a new file is written not only does the data need to be stored but also the overhead information for keeping track of where the data is located on the storage media. This overhead is called the “metadata” It consists of the directory information, the space allocation and any other data associated with a file that is not part of the data contained in the file. It is normal for the initial write performance to be lower than the performance of re-writing a file due to this overhead information.</p>
 </li>
-<li><p>点击 文件 &gt; 新建，创建一个新的图片。</p>
+<li><p><strong>Re-Read</strong><br>This test measures the performance of reading a file that was recently read. It is normal for the performance to be higher as the operating system generally maintains a cache of the data for files that were recently read. This cache can be used to satisfy reads and improves the performance.</p>
 </li>
-<li><p>设置图像大小为需要的解析度</p>
+<li><p><strong>Re-Write</strong><br>This test measures the performance of writing a file that already exists. When a file is written that already exists the work required is less as the metadata already exists. It is normal for the rewrite performance to be higher than the performance of writing a new file.</p>
 </li>
-<li><p>选择高级选项并设置填充透明。</p>
+<li><p><strong>Read backwards</strong><br>This test measures the performance of reading a file backwards. This may seem like a strange way to read a file but in fact there are applications that do this. MSC Nastran is an example of an application that reads its files backwards. With MSC Nastran, these files are very large (Gbytes to Tbytes in size). Although many operating systems have special features that enable them to read a file forward more rapidly, there are very few operating systems that detect and enhance the performance of reading a file backwards.</p>
 </li>
-<li><p>点击 确定</p>
+<li><p><strong>Random Read</strong><br>This test measures the performance of reading a file with accesses being made to random locations within the file. The performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
 </li>
-<li><p>复制重设过大小的图片内容到新创建的图片</p>
+<li><p><strong>Random Write</strong><br>This test measures the performance of writing a file with accesses being made to random locations within the file. Again the performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
 </li>
-<li><p>保存新图片为 PNG 文件。</p>
+<li><p><strong>Random Mix</strong><br>This test measures the performance of reading and writing a file with accesses being made to random locations within the file. Again the performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others. This test is only available in throughput mode. Each thread/process runs either the read or the write test. The distribution of read/write is done on a round robin basis. More than one thread/process is required for proper operation.</p>
+</li>
+<li><p><strong>Backwards Read</strong><br>This test measures the performance of reading a file backwards. This may seem like a strange way to read a file but in fact there are applications that do this. MSC Nastran is an example of an application that reads its files backwards. With MSC Nastran, these files are very large (Gbytes to Tbytes in size). Although many operating systems have special features that enable them to read a file forward more rapidly, there are very few operating systems that detect and enhance the performance of reading a file backwards.</p>
+</li>
+<li><p><strong>Record Rewrite</strong><br>This test measures the performance of writing and re-writing a particular spot within a file. This hot spot can have very interesting behaviors. If the size of the spot is small enough to fit in the CPU data cache then the performance is very high. If the size of the spot is bigger than the CPU data cache but still fits in the TLB then one gets a different level of performance. If the size of the spot is larger than the CPU data cache and larger than the TLB but still fits in the operating system cache then one gets another level of performance, and if the size of the spot is bigger than the operating system cache then one gets yet another level of performance.</p>
+</li>
+<li><p><strong>Read Strided</strong><br>This test measures the performance of reading a file with a strided access behavior. An example would be: Read at offset zero for a length of 4 Kbytes, then seek 200 Kbytes, and then read for a length of 4 Kbytes, then seek 200 Kbytes and so on. Here the pattern is to read 4 Kbytes and then Seek 200 Kbytes and repeat the pattern. This again is a typical application behavior for applications that have data structures contained within a file and is accessing a particular region of the data structure. Most operating systems do not detect this behavior or implement any techniques to enhance the performance under this type of access behavior.</p>
+<p>This access behavior can also sometimes produce interesting performance anomalies. An example would be if the application’s stride causes a particular disk, in a striped file system, to become the bottleneck.</p>
+</li>
+<li><p><strong>Fread</strong><br>This test measures the performance of reading a file using the library function fread(). This is a library routine that performs buffered &amp; blocked read operations. The buffer is within the user’s address space. If an application were to read in very small size transfers then the buffered &amp; blocked I/O functionality of fread() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made.</p>
+</li>
+<li><p><strong>Freread</strong><br>This test is the same as fread above except that in this test the file that is being read was read in the recent past. This should result in higher performance as the operating system is likely to have the file data in cache.</p>
+</li>
+<li><p><strong>Fwrite</strong><br>This test measures the performance of writing a file using the library function fwrite(). This is a library routine that performs buffered write operations. The buffer is within the user’s address space. If an application were to write in very small size transfers then the buffered &amp; blocked I/O functionality of fwrite() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made. This test is writing a new file so again the overhead of the metadata is included in the measurement.</p>
+</li>
+<li><p><strong>Frewrite</strong><br>This test measures the performance of writing a file using the library function fwrite().</p>
+<p>This is a library routine that performs buffered &amp; blocked write operations. The buffer is within the user’s address space. If an application were to write in very small size transfers then the buffered &amp; blocked I/O functionality of fwrite() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made.</p>
+<p>This test is writing to an existing file so the performance should be higher as there are no metadata operations required.</p>
+</li>
+<li><p><strong>Random Read/Write</strong><br>This test measures the performance of reading/writing a file with accesses being made to random locations within the file. The performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
+</li>
+<li><p><strong>Async I/O</strong><br>Another mechanism that is supported by many operating systems for performing I/O is POSIX async I/O. The application uses the POSIX standard async I/O interfaces to accomplish this. Example: aio_write(), aio_read(), aio_error(). This test measures the performance of the POSIX async I/O mechanism.</p>
+</li>
+<li><p><strong>Mmap</strong><br>Many operating systems support the use of mmap() to map a file into a user’s address space. Once this mapping is in place then stores to this location in memory will result in the data being stored going to a file. This is handy if an application wishes to treat files as chunks of memory. An example would be to have an array in memory that is also being maintained as a file in the files system.</p>
+<p>The semantics of mmap files is somewhat different than normal files. If a store to the memory location is done then no actual file I/O may occur immediately. The use of the msyc() with the flags MS_SYNC, and MS_ASYNC control the coherency of the memory and the file. A call to msync() with MS_SYNC will force the contents of memory to the file and wait for it to be on storage before returning to the application. A call to msync() with the flag MS_ASYNC tells the operating system to flush the memory out to storage using an asynchronous mechanism so that the application may return into execution without waiting for the data to be written to storage.</p>
+<p>This test measures the performance of using the mmap() mechanism for performing I/O.</p>
+</li>
+</ul>
+<h1 id="How_to_use_iozone">How to use iozone</h1><p>For Xen disk performance testing, i choose the following command:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M result_file -f test_file</span></span><br></pre></td></tr></table></figure></p>
+<p>For each option meaings, see <strong>The main parameters</strong> section.</p>
+<p><strong>Note:</strong><br>If you wish to get accurate results for the entire range of performance for a platform you need to make sure that the maximum file size that will be tested is bigger than the buffer cache. If you don’t know how big the buffer cache is, or if it is a dynamic buffer cache then just set the maximum file size to be greater than the total physical memory that is in the platform.</p>
+<p>In general you should be able to see three or four plateaus.</p>
+<ul>
+<li>File size fits in processor cache.</li>
+<li>File size fits in buffer cache</li>
+<li>File size is bigger than buffer cache.</li>
+</ul>
+<p>You may see another plateau if the platform has a primary and secondary processor caches. If you don’t see at least 3 plateaus then you probably have the maximum file size set too small. Iozone will default to a maximum file size of 512 Mbytes. This is generally sufficient but for some very large systems you may need to use the –g option to increase the maximum file size. See the file Run_rules document in the distribution for further information.</p>
+<p><strong>Additional notes on how to make the graphs</strong></p>
+<p>Iozone sends Excel compatible output to standard out. This may be redirected to a file and then processed with Excel. The normal output for Iozone as well as the Excel portion are in the same output stream. So to get the graphs one needs to scroll down to the Excel portion of the file and graph the data in that section.</p>
+<p> There are several sets of graph data. “Writer report” is one example. When importing the file be sure to tell Excel to import with “delimited” and then click next, then click on the “space delimited” button. To graph the data just highlight the region containing the file size and record size and then click on the graph wizard.</p>
+<p> The type of graph used is “Surface”. When the next dialog box pops up you need to select “Columns”.<br>After that the rest should be straight forward.</p>
+<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M -b result_file.xls -f test_file</span></span><br><span class="line">	Iozone: Performance Test of File I/O</span><br><span class="line">	        Version <span class="variable">$Revision</span>: <span class="number">3.414</span> $</span><br><span class="line">		Compiled <span class="keyword">for</span> <span class="number">64</span> bit mode.</span><br><span class="line">		Build: linux</span><br><span class="line"></span><br><span class="line">	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins</span><br><span class="line">	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss</span><br><span class="line">	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,</span><br><span class="line">	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,</span><br><span class="line">	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,</span><br><span class="line">	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,</span><br><span class="line">	             Fabrice Bacchella, Zhenghua Xue, Q<span class="keyword">in</span> Li, Darren Sawyer,</span><br><span class="line">	             Vangel Bojaxhi, Ben England.</span><br><span class="line"></span><br><span class="line">	Run began: Mon Apr <span class="number">20</span> <span class="number">07</span>:<span class="number">36</span>:<span class="number">07</span> <span class="number">2015</span></span><br><span class="line"></span><br><span class="line">	Auto Mode</span><br><span class="line">	Cross over of record size disabled.</span><br><span class="line">	Excel chart generation enabled</span><br><span class="line">	Using minimum file size of <span class="number">1024</span> kilobytes.</span><br><span class="line">	Using maximum file size of <span class="number">10240</span> kilobytes.</span><br><span class="line">	Record Size <span class="number">64</span> KB</span><br><span class="line"></span><br><span class="line">	Machine = Linux dhcp-<span class="number">66</span>-<span class="number">73</span>-<span class="number">122</span>.englab.nay.redhat.com <span class="number">3.10</span>.<span class="number">0</span>-<span class="number">229</span>.el7.x86_64 <span class="comment">#1 SMP Thu Jan 29 18:37:38 EST 201</span></span><br><span class="line">	Command line used: iozone -azR -i <span class="number">0</span> -i <span class="number">1</span> -i <span class="number">2</span> -n <span class="number">1</span>M -g <span class="number">10</span>M -r <span class="number">64</span>K -M -b result_file.xls <span class="operator">-f</span> <span class="built_in">test</span>_file</span><br><span class="line">	Output is <span class="keyword">in</span> Kbytes/sec</span><br><span class="line">	Time Resolution = <span class="number">0.000001</span> seconds.</span><br><span class="line">	Processor cache size <span class="built_in">set</span> to <span class="number">1024</span> Kbytes.</span><br><span class="line">	Processor cache line size <span class="built_in">set</span> to <span class="number">32</span> bytes.</span><br><span class="line">	File stride size <span class="built_in">set</span> to <span class="number">17</span> * record size.</span><br><span class="line">                                                            random  random    bkwd   record   stride</span><br><span class="line">              KB  reclen   write rewrite    <span class="built_in">read</span>    reread    <span class="built_in">read</span>   write    <span class="built_in">read</span>  rewrite     <span class="built_in">read</span>   fwrite frewrite   fread  freread</span><br><span class="line">            <span class="number">1024</span>      <span class="number">64</span>  <span class="number">564176</span> <span class="number">1943594</span>  <span class="number">5813392</span>  <span class="number">5813392</span> <span class="number">4589593</span> <span class="number">2358827</span></span><br><span class="line">            <span class="number">2048</span>      <span class="number">64</span>  <span class="number">594302</span> <span class="number">2081497</span>  <span class="number">5986827</span>  <span class="number">3136379</span> <span class="number">4295384</span> <span class="number">2090107</span></span><br><span class="line">            <span class="number">4096</span>      <span class="number">64</span>  <span class="number">591658</span> <span class="number">2084478</span>  <span class="number">5926533</span>  <span class="number">6195843</span> <span class="number">5634950</span> <span class="number">2345757</span></span><br><span class="line">            <span class="number">8192</span>      <span class="number">64</span>  <span class="number">592850</span> <span class="number">1848808</span>  <span class="number">4917099</span>  <span class="number">5776876</span> <span class="number">5326425</span> <span class="number">1677328</span></span><br><span class="line"></span><br><span class="line">iozone <span class="built_in">test</span> complete.</span><br><span class="line">Excel output is below:</span><br><span class="line"></span><br><span class="line"><span class="string">"Writer report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">564176</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">594302</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">591658</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">592850</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Re-writer report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">1943594</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">2081497</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">2084478</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">1848808</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Reader report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">5813392</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">5986827</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">5926533</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">4917099</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Re-Reader report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">5813392</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">3136379</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">6195843</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">5776876</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Random read report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">4589593</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">4295384</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">5634950</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">5326425</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Random write report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">2358827</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">2090107</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">2345757</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">1677328</span></span><br></pre></td></tr></table></figure>
+<p>Use office tool to open the result_file.xls, you will find the results contain three part: file read/write method, records sizes, file sizes and the Throughput(Kbytes/sec).</p>
+<p>The <strong>Throughput</strong> is the disk performance indicator, the larger the better. On a final note, you can generate graphs using the Generate_Graphs and gengnuplot.sh located under iozone3XXX/src/current/, based on the iozone output.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd iozone3XXX/src/current/</span></span><br><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M -b result_file.xls -f test_file &gt; test_results.txt</span></span><br><span class="line"><span class="comment"># ./Generate_Graphs test_results.txt</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="The_main_parameters">The main parameters</h1><ul>
+<li><strong>-a</strong> - Used to select full automatic mode. Produces output that covers all tested file operations for record sizes of 4k to 16M for file sizes of 64k to 512M.</li>
+<li><strong>-R</strong> - Generate Excel report. Iozone will generate an Excel compatible report to standard out. This file may be imported with Microsoft Excel (space delimited) and used to create a graph of the filesystem performance. Note: The 3D graphs are column oriented. You will need to select this when graphing as the default in Excel is row oriented data.</li>
+<li><strong>-b Filename</strong> - Iozone will create a binary file format file in Excel compatible output of results.</li>
+<li><strong>-g #</strong> - Set maximum file size (in Kbytes) for auto mode (or #m or #g)</li>
+<li><strong>-n #</strong> - Set minimum file size (in Kbytes) for auto mode (or #m or #g)</li>
+<li><p><strong>-i #</strong> - Used to specify which tests to run. (0=write/rewrite, 1=read/re-read, 2=random-read/write 3=Read-backwards, 4=Re-write-record, 5=stride-read, 6=fwrite/re-fwrite, 7=fread/Re-fread, 8=random mix, 9=pwrite/Re-pwrite, 10=pread/Re-pread, 11=pwritev/Re-pwritev, 12=preadv/Re-preadv).</p>
+<p>One will always need to specify 0 so that any of the following tests will have a file to measure.</p>
+<p>-i # -i # -i # is also supported so that one may select more than one test.</p>
+</li>
+<li><strong>-s #</strong> - Used to specify the size, in Kbytes, of the file to test. One may also specify -s #k (size in Kbytes) or -s #m (size in Mbytes) or -s #g (size in Gbytes).</li>
+<li><strong>-z</strong> - Used in conjunction with -a to test all possible record sizes. Normally Iozone omits testing of small record sizes for very large files when used in full automatic mode. This option forces Iozone to include the small record sizes in the automatic tests also.</li>
+<li><strong>-B</strong> - Use mmap() files. This causes all of the temporary files being measured to be created and accessed with the mmap() interface. Some applications prefer to treat files as arrays of memory. These applications mmap() the file and then just access the array with loads and stores to perform file I/O.</li>
+<li><strong>-c</strong> - Include close() in the timing calculations. This is useful only if you suspect that close() is broken in the operating system currently under test. It can be useful for NFS Version 3 testing as well to help identify if the nfs3_commit is working well.</li>
+<li><strong>-D</strong> - Use msync(MS_ASYNC) on mmap files. This tells the operating system that all the data in the mmap space needs to be written to disk asynchronously.</li>
+<li><strong>-G</strong> - Use msync(MS_SYNC) on mmap files. This tells the operating system that all the data in the mmap space needs to be written to disk synchronously.</li>
+<li><strong>-o</strong> - Writes are synchronously written to disk. (O_SYNC). Iozone will open the files with the O_SYNC flag. This forces all writes to the file to go completely to disk before returning to the benchmark.</li>
+<li><strong>-H</strong> - Use POSIX async I/O with # async operations. Iozone will use POSIX async I/O with a bcopy from the async buffers back into the applications buffer. Some versions of MSC NASTRAN perform I/O this way. This technique is used by applications so that the async I/O may be performed in a library and requires no changes to the applications internal model.</li>
+<li><strong>-k #</strong> - Use POSIX async I/O (no bcopy) with # async operations. Iozone will use POSIX async I/O and will not perform any extra bcopys. The buffers used by Iozone will be handed to the async I/O system call directly.</li>
+<li><strong>-I</strong> - Use DIRECT I/O for all file operations. Tells the filesystem that all operations are to bypass the buffer cache and go directly to disk. This also will use VX_DIRECT on VxFS, and O_DIRECT on Linux, and directio() on Solaris.</li>
+<li><strong>-K</strong> - Generate some random accesses during the normal testing.</li>
+<li><strong>-l #</strong> - Set the lower limit on number of processes to run. When running throughput tests this option allows the user to specify the least number of processes or threads to start. This option should be used in conjunction with the -u option.</li>
+<li><strong>-L #</strong> - Set processor cache line size to value (in bytes). Tells Iozone the processor cache line size. This is used internally to help speed up the test.</li>
+<li><strong>-S #</strong> - Set processor cache size to value (in Kbytes). This tells Iozone the size of the processor cache. It is used internally for buffer alignment and for the purge functionality.</li>
+<li><strong>-M</strong> - Iozone will call uname() and will put the string in the output file.</li>
+<li><strong>-t #</strong> - Run Iozone in a throughput mode. This option allows the user to specify how many threads or processes to have active during the measurement.</li>
+<li><strong>-u #</strong> - Set the upper limit on number of processes to run. When running throughput tests this option allows the user to specify the greatest number of processes or threads to start. This option should be used in conjunction with the -l option.</li>
+<li><strong>-W</strong> - Lock files when reading or writing.</li>
+<li><strong>-y #</strong>  - Set minimum record size (in Kbytes) for auto mode. One may also specify -y #k (size in Kbytes) or -y #m (size in Mbytes) or -y #g (size in Gbytes). See –q for setting maximum record size.</li>
+<li><strong>-q #</strong> - Set maximum record size (in Kbytes) for auto mode. One may also specify -q #k (size in Kbytes) or -q #m (size in Mbytes) or -q #g (size in Gbytes). See –y for setting minimum record size.</li>
+<li><strong>-r #</strong> - Used to specify the record size, in Kbytes, to test. One may also specify -r #k (size in Kbytes) or -r #m (size in Mbytes) or -r #g (size in Gbytes).</li>
+<li><strong>-f filename</strong> - Used to specify the filename for the temporary file under test. This is useful when the unmount option is used. When testing with unmount between tests it is necessary for the temporary file under test to be in a directory that can be unmounted. It is not possible to unmount the current working directory as the process Iozone is running in this directory.</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="http://www.iozone.org/docs/IOzone_msword_98.pdf" target="_blank" rel="external">Iozone</a></li>
+<li><a href="http://en.wikipedia.org/wiki/IOzone" target="_blank" rel="external">IOzone - Wikipedia</a></li>
+<li><a href="http://www.cyberciti.biz/tips/linux-filesystem-benchmarking-with-iozone.html" target="_blank" rel="external">How To Measure Linux Filesystem I/O Performance With iozone</a></li>
+<li><a href="http://www.iozone.org/src/current/lab_graphs1.xls" target="_blank" rel="external">Linux Iozone graph example</a> - This is a sample *.xls file from iozone that shows the kind of excel output that can be generated from iozone.</li>
+<li><a href="http://www.thegeekstuff.com/2011/05/iozone-examples/" target="_blank" rel="external">10 iozone Examples for Disk I/O Performance Measurement on Linux</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-18T00:35:18.000Z"><a href="/2015/06/18/My-TODO-List/">2015-06-18</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/18/My-TODO-List/">My TODO List</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>我的TODO List, 时间2014-11-14 to 2015-05-01</p>
+<ol>
+<li><p>Learn OpenStack (Include RH OSP &amp; OpenStack on Feadora/Upstream), Finish RH OPS Certification</p>
+</li>
+<li><p>Learn KVM and prepare a presentation in S1</p>
+</li>
+<li><p>Learn AWS</p>
+</li>
+<li><p>Learn RHEV-H &amp; RHEV-M, try to Finish RHEV Certification. Try to run/get familiar with RHEV-H test cases</p>
+</li>
+<li><p>Try to get familiar with libvirt project (IEEE test plan)</p>
+</li>
+<li><p>Try to get familiar with Hyper-V project (IEEE test plan)</p>
+</li>
+<li><p>Of course RedHat way to test a product!</p>
 </li>
 </ol>
 
@@ -573,106 +768,11 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/wordpress-jekyll-octopress-hexo四博客引擎比较/">2015-04-24</a></time>
+        <time datetime="2015-06-17T00:35:18.000Z"><a href="/2015/06/17/netperf/">2015-06-17</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/wordpress-jekyll-octopress-hexo四博客引擎比较/">wordpress, jekyll, octopress, hexo四博客引擎比较</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>刚搭建起自己的博客，折腾了2天尝试过各种博客引擎， 最终选择了hexo. 这是我的第一篇博文，好吧， 就从博客说起吧 ：-）</p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/04/24/wordpress-jekyll-octopress-hexo四博客引擎比较/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/shell实现的windows回收站功能的脚本/">2015-04-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/04/24/shell实现的windows回收站功能的脚本/">shell实现的windows回收站功能的脚本</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <iframe src="https://www.slideshare.net/slideshow/embed_code/41359663" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/netperf/">2015-04-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/04/24/netperf/">netperf</a></h1>
+    <h1 class="title"><a href="/2015/06/17/netperf/">netperf</a></h1>
   
 
     </header>
@@ -905,108 +1005,31 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/nbench/">2015-04-24</a></time>
+        <time datetime="2015-06-16T00:35:18.000Z"><a href="/2015/06/16/Performance-and-Stress-testing/">2015-06-16</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/nbench/">nbench</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="How_to_install_nbench">How to install nbench</h1><ol>
-<li><p>Download nbench from: <a href="http://www.tux.org/~mayer/linux/nbench-byte-2.2.3.tar.gz" target="_blank" rel="external">http://www.tux.org/~mayer/linux/nbench-byte-2.2.3.tar.gz</a></p>
-</li>
-<li><p>Extract and install it:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvzf nbench-byte-XXXX.tar.gz</span></span><br><span class="line"><span class="comment"># cd nbench-byte-XXXX</span></span><br><span class="line"><span class="comment"># make</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>Note:</strong> You need to install glibc-static package on your guest.</p>
-<h1 id="Features_and_Functions">Features and Functions</h1><ul>
-<li>Numeric sort - Sorts an array of long integers.</li>
-<li>String sort - Sorts an array of strings of arbitrary length.</li>
-<li>Bitfield - Executes a variety of bit manipulation functions.</li>
-<li>Emulated floating-point - A small software floating-point package.</li>
-<li>Fourier coefficients - A numerical analysis routine for calculating series approximations of waveforms.</li>
-<li>Assignment algorithm - A well-known task allocation algorithm.</li>
-<li>Huffman compression - A well-known text and graphics compression algorithm.</li>
-<li>IDEA encryption - A relatively new block cipher algorithm.</li>
-<li>Neural Net - A small but functional back-propagation network simulator.</li>
-<li>LU Decomposition - A robust algorithm for solving linear equations.</li>
-</ul>
-<p>A run of the benchmark suite consists essentially of two phases for each of the tests. First, a calibration loop is run to determine the size of the problem the system can handle in a reasonable time, in order to adapt to the ever faster computer hardware available. Second, the actual test is run repeatedly several times to obtain a statistically meaningful result.</p>
-<p>Originally, NBench and BYTEmark produced two overall index figures: Integer index and Floating-point index. The Integer index is the geometric mean of those tests that involve only integer processing—numeric sort, string sort, bitfield, emulated floating-point, assignment, Huffman, and IDEA—while the Floating-point index is the geometric mean of those tests that require the floating-point coprocessor—Fourier, neural net, and LU decomposition. The index figures where relative scores to get a general feel for the performance of the machine under test as compared to a baseline system based on a 90 MHz Pentium Intel CPU.</p>
-<p>The Linux/Unix port has a second baseline machine, it is an AMD K6/233 with 32 MB RAM and 512 KB L2-cache running Linux 2.0.32 and using GNU gcc version 2.7.2.3 and libc-5.4.38. The original integer index was split into an integer-operation and a memory-operation index, as suggested by Andrew D. Balsa, reflecting the realization that memory management is important in CPU design. The original tests have been left alone, however, the geometric mean of the tests numeric sort, floating-point emulation, IDEA, and Huffman now constitutes the integer-arithmetic focused benchmark index, while the geometric mean of the tests string sort, bitfield, and assignment makes up the new memory index. The floating point index has been left alone, it is still the geometric mean of fourier, neural net, and LU decomposition.</p>
-<h1 id="How_to_use_nbench">How to use nbench</h1><p>nbench is very easy to run, just issue command <code>./nbench</code> and take a cup of coffee to wait the results.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd nbench-byte-XXXX</span></span><br><span class="line"><span class="comment"># ./nbench</span></span><br><span class="line"></span><br><span class="line">BYTEmark* Native Mode Benchmark ver. <span class="number">2</span> (<span class="number">10</span>/<span class="number">95</span>)</span><br><span class="line">Index-split by Andrew D. Balsa (<span class="number">11</span>/<span class="number">97</span>)</span><br><span class="line">Linux/Unix* port by Uwe F. Mayer (<span class="number">12</span>/<span class="number">96</span>,<span class="number">11</span>/<span class="number">97</span>)</span><br><span class="line"></span><br><span class="line">TEST                : Iterations/sec.  : Old Index   : New Index</span><br><span class="line">                    :                  : Pentium <span class="number">90</span>* : AMD K6/<span class="number">233</span>*</span><br><span class="line">--------------------:------------------:-------------:------------</span><br><span class="line">NUMERIC SORT        :          <span class="number">1274.9</span>  :      <span class="number">32.69</span>  :      <span class="number">10.74</span></span><br><span class="line">STRING SORT         :          <span class="number">545.29</span>  :     <span class="number">243.65</span>  :      <span class="number">37.71</span></span><br><span class="line">BITFIELD            :      <span class="number">3.9117</span>e+<span class="number">08</span>  :      <span class="number">67.10</span>  :      <span class="number">14.02</span></span><br><span class="line">FP EMULATION        :          <span class="number">195.95</span>  :      <span class="number">94.03</span>  :      <span class="number">21.70</span></span><br><span class="line">FOURIER             :           <span class="number">24257</span>  :      <span class="number">27.59</span>  :      <span class="number">15.49</span></span><br><span class="line">ASSIGNMENT          :          <span class="number">30.302</span>  :     <span class="number">115.30</span>  :      <span class="number">29.91</span></span><br><span class="line">IDEA                :          <span class="number">5556.7</span>  :      <span class="number">84.99</span>  :      <span class="number">25.23</span></span><br><span class="line">HUFFMAN             :          <span class="number">2032.3</span>  :      <span class="number">56.36</span>  :      <span class="number">18.00</span></span><br><span class="line">NEURAL NET          :           <span class="number">59.18</span>  :      <span class="number">95.07</span>  :      <span class="number">39.99</span></span><br><span class="line">LU DECOMPOSITION    :          <span class="number">1486.4</span>  :      <span class="number">77.00</span>  :      <span class="number">55.60</span></span><br><span class="line">==========================ORIGINAL BYTEMARK RESULTS==========================</span><br><span class="line">INTEGER INDEX       : <span class="number">83.268</span></span><br><span class="line">FLOATING-POINT INDEX: <span class="number">58.668</span></span><br><span class="line">Baseline (MSDOS*)   : Pentium* <span class="number">90</span>, <span class="number">256</span> KB L2-cache, Watcom* compiler <span class="number">10.0</span></span><br><span class="line">==============================LINUX DATA BELOW===============================</span><br><span class="line">CPU                 : <span class="number">4</span> CPU GenuineIntel Intel(R) Xeon(R) CPU           E5620  @ <span class="number">2.40</span>GHz <span class="number">2394</span>MHz</span><br><span class="line">L2 Cache            : <span class="number">12288</span> KB</span><br><span class="line">OS                  : Linux <span class="number">3.10</span>.<span class="number">0</span>-<span class="number">229</span>.el7.x86_64</span><br><span class="line">C compiler          : gcc version <span class="number">4.8</span>.<span class="number">3</span> <span class="number">20140911</span> (Red Hat <span class="number">4.8</span>.<span class="number">3</span>-<span class="number">9</span>) (GCC)</span><br><span class="line">libc                : libc-<span class="number">2.17</span>.so</span><br><span class="line">MEMORY INDEX        : <span class="number">25.097</span></span><br><span class="line">INTEGER INDEX       : <span class="number">18.035</span></span><br><span class="line">FLOATING-POINT INDEX: <span class="number">32.539</span></span><br><span class="line">Baseline (LINUX)    : AMD K6/<span class="number">233</span>*, <span class="number">512</span> KB L2-cache, gcc <span class="number">2.7</span>.<span class="number">2.3</span>, libc-<span class="number">5.4</span>.<span class="number">38</span></span><br><span class="line">* Trademarks are property of their respective holder.</span><br></pre></td></tr></table></figure>
-<h1 id="Results_analysis">Results analysis</h1><p>There are three performance indicators: <strong>MEMORY INDEX</strong>, <strong>INTEGER INDEX</strong>, <strong>FLOATING-POINT INDEX</strong>, for these indicators the larger the better.</p>
-<p><strong>MEMORY INDEX</strong> - The performance of front-side bus (FSB) and cpu cache size.<br><strong>INTEGER INDEX</strong> - Integer processing performance.<br><strong>FLOATING-POINT INDEX</strong> - Double-precision floating-point processing performance.</p>
-<p><strong>Note:</strong> There is a <em>RESULTS</em> file under nbench-byte-XXXX, you can compare your results with the results in the <em>RESULTS</em> file.</p>
-<h1 id="The_main_parameters">The main parameters</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ./nbench -h</span></span><br><span class="line">Usage: ./nbench [-v] [-c&lt;FILE&gt;]</span><br><span class="line"> -v = verbose</span><br><span class="line"> -c = input parameters thru <span class="built_in">command</span> file &lt;FILE&gt;</span><br></pre></td></tr></table></figure>
-<p>You see, nbench is very easy to use.</p>
-<h1 id="Shortcomings">Shortcomings</h1><ul>
-<li>These benchmarks are meant to expose the theoretical upper limit of the CPU, FPU, and memory architecture of a system. They cannot measure video, disk, or network throughput (those are the domains of a different set of benchmarks).</li>
-<li>NBench is single-threaded. Currently, each benchmark test uses only a single execution thread. However, most modern operating systems have some multitasking component. How a system “scales” as more tasks are run simultaneously is an effect that NBench does not explore.</li>
-</ul>
-<h1 id="Reference">Reference</h1><ul>
-<li><a href="http://www.tux.org/~mayer/linux/bmark.html" target="_blank" rel="external">Linux/Unix NBench</a></li>
-<li><a href="http://www.tux.org/~mayer/linux/byte/bdoc.pdf" target="_blank" rel="external">Original NBench documentation (archived snapshot)</a></li>
-<li><a href="http://www.tux.org/~mayer/linux/results2.html" target="_blank" rel="external">NBench Results</a></li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/markdown-语法简记/">2015-04-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/04/24/markdown-语法简记/">markdown 语法简记</a></h1>
+    <h1 class="title"><a href="/2015/06/16/Performance-and-Stress-testing/">Performance Testing</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>很简介的markdown语法说明，适合快速入门markdown<br>
+        <h1 id="What_is_performance_testing?">What is performance testing?</h1><ul>
+<li>It is  a type of non-functional testing.</li>
+<li>Performance testing is testing that is performed, to determine how fast some aspect of a system performs under a particular workload. Performance testing measures the quality attributes of the system, such as scalability, reliability and resource usage.</li>
+<li>The goal of performance testing is not to find bugs but to eliminate performance bottlenecks.</li>
+<li>It can serve different purposes like it can demonstrate that the system meets performance criteria.</li>
+<li>It can compare two systems to find which performs better. Or it can measure what part of the system or workload causes the system to perform badly.</li>
+<li>This process can involve quantitative tests done in a lab, such as measuring the response time or the number of MIPS (millions of instructions per second) at which a system functions.</li>
+</ul>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2015/04/24/markdown-语法简记/#more" class="more-link">阅读全文</a>
+            <a href="/2015/06/16/Performance-and-Stress-testing/#more" class="more-link">阅读全文</a>
           </div>
         
         

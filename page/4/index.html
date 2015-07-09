@@ -382,17 +382,91 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/Beamer-guide-By-KiJoo-Kim/">2015-04-24</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/bonnie/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/Beamer-guide-By-KiJoo-Kim/">Beamer guide By Ki Joo Kim</a></h1>
+    <h1 class="title"><a href="/2015/04/24/bonnie/">bonnie++</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p><iframe src="https://www.slideshare.net/slideshow/embed_code/12902033" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mustainmtn/beamer-guide-by-kijoo-kim-aka-daisyweb" title="Beamer guide By KiJoo Kim (a.k.a. Daisyweb)" target="_blank">Beamer guide By KiJoo Kim (a.k.a. Daisyweb)</a> </strong> from <strong><a href="//www.slideshare.net/mustainmtn" target="_blank">mustainmtn</a></strong> </div></p>
+        <h1 id="How_to_install_bonnie++">How to install bonnie++</h1><ol>
+<li><p>Download bonnie++ tarball from <a href="http://www.coker.com.au/bonnie++/" target="_blank" rel="external">http://www.coker.com.au/bonnie++/</a></p>
+</li>
+<li><p>Extract and install it:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvzf bonnie++-<span class="doctag">XXX.</span>tgz</span></span><br><span class="line"><span class="comment"># cd bonnie++-<span class="doctag">XXX</span></span></span><br><span class="line"><span class="comment"># make</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Features_and_Functions">Features and Functions</h1><ul>
+<li>Easy to use, a simple tool used to test your hard drive and file system performance.</li>
+<li>Can test the following I/O operations:<ul>
+<li>Sequential Output<ul>
+<li>Per Chr</li>
+<li>Block</li>
+<li>Rewrite</li>
+</ul>
+</li>
+<li>Sequential Input<ul>
+<li>Per Chr</li>
+<li>Block</li>
+</ul>
+</li>
+<li>Random<ul>
+<li>Seeks</li>
+</ul>
+</li>
+<li>Sequential Create<ul>
+<li>Create</li>
+<li>Read</li>
+<li>Delete</li>
+</ul>
+</li>
+<li>Random Create<ul>
+<li>Create</li>
+<li>Read</li>
+<li>Delete</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Bonnie++ is a program to test hard drives and file systems for performance or the lack therof. There are a many different types of file system operations which different applications use to different degrees. Bonnie++ tests some of them and for each test gives a result of the amount of work done per second and the percentage of CPU time this took. For performance results higher numbers are better, for CPU usage lower are better (NB a configuration scoring a performance result of 2000 and a  CPU result of 90% is better in terms of CPU use than a configuration delivering performance of 1000 and CPU usage of 60%).</p>
+<p>There are two sections to the program’s operations. The first is to test the IO throughput in a fashion that is designed to simulate some types of database applications. The second is to test creation, reading, and deleting many small files in a fashion similar to the usage patterns of programs such as Squid or INN.</p>
+<h1 id="How_to_use_bonnie++">How to use bonnie++</h1><p>Just issue the following command, it should be ok for most situations:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bonnie++ -d /testdir/ -m testname -u root -s $((2*$RAM_SIZE))</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong><br>If you test want to test hard drive, you must mount it to the value of <strong>-d</strong> option. Also make sure that the hard drive size is double RAM, or you will have to specify <strong>-r</strong> option.</p>
+<p>If you want to reduce ‘++++’ you need to increase the test time either by increasing the value of <strong>-n</strong> or by increasing the value of <strong>-s</strong>.</p>
+<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bonnie++ -d ./ -m testname -u root -s 40M -r 10M</span></span><br><span class="line">Using uid:<span class="number">0</span>, gid:<span class="number">0</span>.</span><br><span class="line">Writing with putc()...done</span><br><span class="line">Writing intelligently...done</span><br><span class="line">Rewriting...done</span><br><span class="line">Reading with getc()...done</span><br><span class="line">Reading intelligently...done</span><br><span class="line">start <span class="string">'em...done...done...done...</span><br><span class="line">Create files in sequential order...done.</span><br><span class="line">Stat files in sequential order...done.</span><br><span class="line">Delete files in sequential order...done.</span><br><span class="line">Create files in random order...done.</span><br><span class="line">Stat files in random order...done.</span><br><span class="line">Delete files in random order...done.</span><br><span class="line">Version 1.03e       ------Sequential Output------ --Sequential Input- --Random-</span><br><span class="line">                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--</span><br><span class="line">Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP</span><br><span class="line">testname        40M 54715  99 +++++ +++ +++++ +++ 51914  99 +++++ +++ +++++ +++</span><br><span class="line">                    ------Sequential Create------ --------Random Create--------</span><br><span class="line">                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--</span><br><span class="line">              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP</span><br><span class="line">                 16 15104  99 +++++ +++ +++++ +++ 15480  99 +++++ +++ 31050  95</span><br><span class="line">testname,40M,54715,99,+++++,+++,+++++,+++,51914,99,+++++,+++,+++++,+++,16,15104,99,+++++,+++,+++++,+++,15480,99,+++++,+++,31050,95</span></span><br></pre></td></tr></table></figure>
+<p>The primary output is plain-text in 80 columns which is designed to fit well when pasted into email and which will work well with Braille displays.</p>
+<p>The second type of output is CSV (Comma Seperated Values). This can easily be imported into any spread-sheet or database program. Also it have included the programs bon_csv2html and bon_csv2txt to convert CSV data to HTML and plain-ascii respectively:</p>
+<ol>
+<li><p>Select the last comma seperated line.</p>
+</li>
+<li><p>Run the following command to generate the html file:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'testname,40M,54715,99,+++++,+++,+++++,+++,51914,99,+++++,+++,+++++,+++,16,15104,99,+++++,+++,+++++,+++,15480,99,+++++,+++,31050,95'</span> | perl bon_csv2html &gt; results.html</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>For every test two numbers are reported, the amount of work done (higher numbers are better) and the percentage of CPU time taken to perform the work (lower numbers are better). If a test  completes in less than 500ms then the output will be displayed as “++++”. This is because such a test result can’t be calculated accurately due to rounding errors and I would rather display no result than a wrong result.</p>
+<h1 id="The_main_parameters">The main parameters</h1><ul>
+<li><strong>-d</strong> - the directory to use for the tests.</li>
+<li><strong>-s</strong> - the size of the file(s) for IO performance measures in megabytes. If the size is greater than 1G then multiple files will be used to store the data, and each file will be up to 1G in size. This parameter may include the chunk size seperated from the size by a colon. The chunk-size is measured in bytes and must be a power of two from 256 to 1048576, the default is 8192. You can specify the size in giga-bytes or the chunk-size in kilo-bytes if you add g or k to the end of the number respectively.</li>
+<li><strong>-r</strong> - RAM size in megabytes. If you specify this the other parameters will be checked to ensure they make sense for a machine of that much RAM. You should not need to do this in general use as it should be able to discover the RAM size. NB If you specify a size of 0 then all checks will be disabled…</li>
+<li><strong>-b</strong> - no write buffering. fsync() after every write.</li>
+<li><strong>-D</strong> - use direct IO (O_DIRECT) for the bulk IO tests.</li>
+<li><strong>-n</strong> - the number of files for the file creation test. This is measured in multiples of 1024 files. This is because no-one will want to test less than 1024 files, and we need the extra space on braille displays.</li>
+<li><strong>-x</strong> - number of test runs. This is useful if you want to perform more than one test. It will dump output continuously in CSV format until either the number of tests have been completed, or it is killed.</li>
+<li><strong>-m</strong> - name of the machine - for display purposes only.</li>
+<li><strong>-f</strong> - fast mode, skips per-char IO tests</li>
+<li><strong>-u</strong> - user-id to use. When running as root specify the UID to use for the tests. It is not recommended to use root (since the occasion when a Bonnie++ bug wiped out someone’s system), so if you really want to run as root then use -u root. Also if you want to specify the group to run as then use the user:group format. If you specify a user by name but no group then the primary group of that user will be chosen. If you specify a user by number and no group then the group will be nogroup.</li>
+<li><strong>-g</strong> - group-id to use. Same as using:group for the -u parameter, just a different way to specify it for compatibility with other programs.</li>
+<li><strong>-q</strong> - quiet mode. If specified then some of the extra informational messages will be suppressed.</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="http://www.coker.com.au/bonnie++/" target="_blank" rel="external">Bonnie++</a></li>
+<li>man bonnie++</li>
+<li><a href="http://archive09.linux.com/feature/139742" target="_blank" rel="external">Using Bonnie++ for filesystem performance benchmarking</a></li>
+</ul>
 
       
     </div>
