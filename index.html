@@ -541,7 +541,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <div class="entry">
       
         <h1 id="How_to_install_iozone">How to install iozone</h1><ol>
-<li><p>Download iozone tarball from <a href="http://www.iozone.org/" target="_blank" rel="external">http://www.iozone.org/</a>.</p>
+<li><p>Download iozone tarball from <a href="http://www.iozone.org/">http://www.iozone.org/</a>.</p>
 </li>
 <li><p>Extract it:</p>
 </li>
@@ -553,129 +553,15 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 <li><p>Choose your platform(my platform is AMD64) and run <code># make AMD64</code></p>
 </li>
 </ol>
-<h1 id="Features_and_Functions">Features and Functions</h1><h2 id="Features">Features</h2><ul>
-<li>ANSII ‘C’ source.</li>
-<li>POSIX async I/O.</li>
-<li>Mmap() file I/O.</li>
-<li>Normal file I/O.</li>
-<li>Single stream measurement.</li>
-<li>Multiple stream measurement.</li>
-<li>POSIX pthreads.</li>
-<li>Multi-process measurement.</li>
-<li>Excel importable output for graph generation.</li>
-<li>I/O Latency data for plots.</li>
-<li>64-bit compatible source.</li>
-<li>Large file compatible.</li>
-<li>Stonewalling in throughput tests to eliminate straggler effects.</li>
-<li>Processor cache size configurable.</li>
-<li>Selectable measurements with fsync, O_SYNC.</li>
-<li>Options targeted for testing over NFS.</li>
-</ul>
-<h2 id="I/O_operations">I/O operations</h2><ul>
-<li><p><strong>Read</strong><br>This test measures the performance of reading an existing file.</p>
-</li>
-<li><p><strong>Write</strong><br>This test measures the performance of writing a new file. When a new file is written not only does the data need to be stored but also the overhead information for keeping track of where the data is located on the storage media. This overhead is called the “metadata” It consists of the directory information, the space allocation and any other data associated with a file that is not part of the data contained in the file. It is normal for the initial write performance to be lower than the performance of re-writing a file due to this overhead information.</p>
-</li>
-<li><p><strong>Re-Read</strong><br>This test measures the performance of reading a file that was recently read. It is normal for the performance to be higher as the operating system generally maintains a cache of the data for files that were recently read. This cache can be used to satisfy reads and improves the performance.</p>
-</li>
-<li><p><strong>Re-Write</strong><br>This test measures the performance of writing a file that already exists. When a file is written that already exists the work required is less as the metadata already exists. It is normal for the rewrite performance to be higher than the performance of writing a new file.</p>
-</li>
-<li><p><strong>Read backwards</strong><br>This test measures the performance of reading a file backwards. This may seem like a strange way to read a file but in fact there are applications that do this. MSC Nastran is an example of an application that reads its files backwards. With MSC Nastran, these files are very large (Gbytes to Tbytes in size). Although many operating systems have special features that enable them to read a file forward more rapidly, there are very few operating systems that detect and enhance the performance of reading a file backwards.</p>
-</li>
-<li><p><strong>Random Read</strong><br>This test measures the performance of reading a file with accesses being made to random locations within the file. The performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
-</li>
-<li><p><strong>Random Write</strong><br>This test measures the performance of writing a file with accesses being made to random locations within the file. Again the performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
-</li>
-<li><p><strong>Random Mix</strong><br>This test measures the performance of reading and writing a file with accesses being made to random locations within the file. Again the performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others. This test is only available in throughput mode. Each thread/process runs either the read or the write test. The distribution of read/write is done on a round robin basis. More than one thread/process is required for proper operation.</p>
-</li>
-<li><p><strong>Backwards Read</strong><br>This test measures the performance of reading a file backwards. This may seem like a strange way to read a file but in fact there are applications that do this. MSC Nastran is an example of an application that reads its files backwards. With MSC Nastran, these files are very large (Gbytes to Tbytes in size). Although many operating systems have special features that enable them to read a file forward more rapidly, there are very few operating systems that detect and enhance the performance of reading a file backwards.</p>
-</li>
-<li><p><strong>Record Rewrite</strong><br>This test measures the performance of writing and re-writing a particular spot within a file. This hot spot can have very interesting behaviors. If the size of the spot is small enough to fit in the CPU data cache then the performance is very high. If the size of the spot is bigger than the CPU data cache but still fits in the TLB then one gets a different level of performance. If the size of the spot is larger than the CPU data cache and larger than the TLB but still fits in the operating system cache then one gets another level of performance, and if the size of the spot is bigger than the operating system cache then one gets yet another level of performance.</p>
-</li>
-<li><p><strong>Read Strided</strong><br>This test measures the performance of reading a file with a strided access behavior. An example would be: Read at offset zero for a length of 4 Kbytes, then seek 200 Kbytes, and then read for a length of 4 Kbytes, then seek 200 Kbytes and so on. Here the pattern is to read 4 Kbytes and then Seek 200 Kbytes and repeat the pattern. This again is a typical application behavior for applications that have data structures contained within a file and is accessing a particular region of the data structure. Most operating systems do not detect this behavior or implement any techniques to enhance the performance under this type of access behavior.</p>
-<p>This access behavior can also sometimes produce interesting performance anomalies. An example would be if the application’s stride causes a particular disk, in a striped file system, to become the bottleneck.</p>
-</li>
-<li><p><strong>Fread</strong><br>This test measures the performance of reading a file using the library function fread(). This is a library routine that performs buffered &amp; blocked read operations. The buffer is within the user’s address space. If an application were to read in very small size transfers then the buffered &amp; blocked I/O functionality of fread() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made.</p>
-</li>
-<li><p><strong>Freread</strong><br>This test is the same as fread above except that in this test the file that is being read was read in the recent past. This should result in higher performance as the operating system is likely to have the file data in cache.</p>
-</li>
-<li><p><strong>Fwrite</strong><br>This test measures the performance of writing a file using the library function fwrite(). This is a library routine that performs buffered write operations. The buffer is within the user’s address space. If an application were to write in very small size transfers then the buffered &amp; blocked I/O functionality of fwrite() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made. This test is writing a new file so again the overhead of the metadata is included in the measurement.</p>
-</li>
-<li><p><strong>Frewrite</strong><br>This test measures the performance of writing a file using the library function fwrite().</p>
-<p>This is a library routine that performs buffered &amp; blocked write operations. The buffer is within the user’s address space. If an application were to write in very small size transfers then the buffered &amp; blocked I/O functionality of fwrite() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made.</p>
-<p>This test is writing to an existing file so the performance should be higher as there are no metadata operations required.</p>
-</li>
-<li><p><strong>Random Read/Write</strong><br>This test measures the performance of reading/writing a file with accesses being made to random locations within the file. The performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
-</li>
-<li><p><strong>Async I/O</strong><br>Another mechanism that is supported by many operating systems for performing I/O is POSIX async I/O. The application uses the POSIX standard async I/O interfaces to accomplish this. Example: aio_write(), aio_read(), aio_error(). This test measures the performance of the POSIX async I/O mechanism.</p>
-</li>
-<li><p><strong>Mmap</strong><br>Many operating systems support the use of mmap() to map a file into a user’s address space. Once this mapping is in place then stores to this location in memory will result in the data being stored going to a file. This is handy if an application wishes to treat files as chunks of memory. An example would be to have an array in memory that is also being maintained as a file in the files system.</p>
-<p>The semantics of mmap files is somewhat different than normal files. If a store to the memory location is done then no actual file I/O may occur immediately. The use of the msyc() with the flags MS_SYNC, and MS_ASYNC control the coherency of the memory and the file. A call to msync() with MS_SYNC will force the contents of memory to the file and wait for it to be on storage before returning to the application. A call to msync() with the flag MS_ASYNC tells the operating system to flush the memory out to storage using an asynchronous mechanism so that the application may return into execution without waiting for the data to be written to storage.</p>
-<p>This test measures the performance of using the mmap() mechanism for performing I/O.</p>
-</li>
-</ul>
-<h1 id="How_to_use_iozone">How to use iozone</h1><p>For Xen disk performance testing, i choose the following command:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M result_file -f test_file</span></span><br></pre></td></tr></table></figure></p>
-<p>For each option meaings, see <strong>The main parameters</strong> section.</p>
-<p><strong>Note:</strong><br>If you wish to get accurate results for the entire range of performance for a platform you need to make sure that the maximum file size that will be tested is bigger than the buffer cache. If you don’t know how big the buffer cache is, or if it is a dynamic buffer cache then just set the maximum file size to be greater than the total physical memory that is in the platform.</p>
-<p>In general you should be able to see three or four plateaus.</p>
-<ul>
-<li>File size fits in processor cache.</li>
-<li>File size fits in buffer cache</li>
-<li>File size is bigger than buffer cache.</li>
-</ul>
-<p>You may see another plateau if the platform has a primary and secondary processor caches. If you don’t see at least 3 plateaus then you probably have the maximum file size set too small. Iozone will default to a maximum file size of 512 Mbytes. This is generally sufficient but for some very large systems you may need to use the –g option to increase the maximum file size. See the file Run_rules document in the distribution for further information.</p>
-<p><strong>Additional notes on how to make the graphs</strong></p>
-<p>Iozone sends Excel compatible output to standard out. This may be redirected to a file and then processed with Excel. The normal output for Iozone as well as the Excel portion are in the same output stream. So to get the graphs one needs to scroll down to the Excel portion of the file and graph the data in that section.</p>
-<p> There are several sets of graph data. “Writer report” is one example. When importing the file be sure to tell Excel to import with “delimited” and then click next, then click on the “space delimited” button. To graph the data just highlight the region containing the file size and record size and then click on the graph wizard.</p>
-<p> The type of graph used is “Surface”. When the next dialog box pops up you need to select “Columns”.<br>After that the rest should be straight forward.</p>
-<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M -b result_file.xls -f test_file</span></span><br><span class="line">	Iozone: Performance Test of File I/O</span><br><span class="line">	        Version <span class="variable">$Revision</span>: <span class="number">3.414</span> $</span><br><span class="line">		Compiled <span class="keyword">for</span> <span class="number">64</span> bit mode.</span><br><span class="line">		Build: linux</span><br><span class="line"></span><br><span class="line">	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins</span><br><span class="line">	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss</span><br><span class="line">	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,</span><br><span class="line">	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,</span><br><span class="line">	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,</span><br><span class="line">	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,</span><br><span class="line">	             Fabrice Bacchella, Zhenghua Xue, Q<span class="keyword">in</span> Li, Darren Sawyer,</span><br><span class="line">	             Vangel Bojaxhi, Ben England.</span><br><span class="line"></span><br><span class="line">	Run began: Mon Apr <span class="number">20</span> <span class="number">07</span>:<span class="number">36</span>:<span class="number">07</span> <span class="number">2015</span></span><br><span class="line"></span><br><span class="line">	Auto Mode</span><br><span class="line">	Cross over of record size disabled.</span><br><span class="line">	Excel chart generation enabled</span><br><span class="line">	Using minimum file size of <span class="number">1024</span> kilobytes.</span><br><span class="line">	Using maximum file size of <span class="number">10240</span> kilobytes.</span><br><span class="line">	Record Size <span class="number">64</span> KB</span><br><span class="line"></span><br><span class="line">	Machine = Linux dhcp-<span class="number">66</span>-<span class="number">73</span>-<span class="number">122</span>.englab.nay.redhat.com <span class="number">3.10</span>.<span class="number">0</span>-<span class="number">229</span>.el7.x86_64 <span class="comment">#1 SMP Thu Jan 29 18:37:38 EST 201</span></span><br><span class="line">	Command line used: iozone -azR -i <span class="number">0</span> -i <span class="number">1</span> -i <span class="number">2</span> -n <span class="number">1</span>M -g <span class="number">10</span>M -r <span class="number">64</span>K -M -b result_file.xls <span class="operator">-f</span> <span class="built_in">test</span>_file</span><br><span class="line">	Output is <span class="keyword">in</span> Kbytes/sec</span><br><span class="line">	Time Resolution = <span class="number">0.000001</span> seconds.</span><br><span class="line">	Processor cache size <span class="built_in">set</span> to <span class="number">1024</span> Kbytes.</span><br><span class="line">	Processor cache line size <span class="built_in">set</span> to <span class="number">32</span> bytes.</span><br><span class="line">	File stride size <span class="built_in">set</span> to <span class="number">17</span> * record size.</span><br><span class="line">                                                            random  random    bkwd   record   stride</span><br><span class="line">              KB  reclen   write rewrite    <span class="built_in">read</span>    reread    <span class="built_in">read</span>   write    <span class="built_in">read</span>  rewrite     <span class="built_in">read</span>   fwrite frewrite   fread  freread</span><br><span class="line">            <span class="number">1024</span>      <span class="number">64</span>  <span class="number">564176</span> <span class="number">1943594</span>  <span class="number">5813392</span>  <span class="number">5813392</span> <span class="number">4589593</span> <span class="number">2358827</span></span><br><span class="line">            <span class="number">2048</span>      <span class="number">64</span>  <span class="number">594302</span> <span class="number">2081497</span>  <span class="number">5986827</span>  <span class="number">3136379</span> <span class="number">4295384</span> <span class="number">2090107</span></span><br><span class="line">            <span class="number">4096</span>      <span class="number">64</span>  <span class="number">591658</span> <span class="number">2084478</span>  <span class="number">5926533</span>  <span class="number">6195843</span> <span class="number">5634950</span> <span class="number">2345757</span></span><br><span class="line">            <span class="number">8192</span>      <span class="number">64</span>  <span class="number">592850</span> <span class="number">1848808</span>  <span class="number">4917099</span>  <span class="number">5776876</span> <span class="number">5326425</span> <span class="number">1677328</span></span><br><span class="line"></span><br><span class="line">iozone <span class="built_in">test</span> complete.</span><br><span class="line">Excel output is below:</span><br><span class="line"></span><br><span class="line"><span class="string">"Writer report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">564176</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">594302</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">591658</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">592850</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Re-writer report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">1943594</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">2081497</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">2084478</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">1848808</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Reader report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">5813392</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">5986827</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">5926533</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">4917099</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Re-Reader report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">5813392</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">3136379</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">6195843</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">5776876</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Random read report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">4589593</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">4295384</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">5634950</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">5326425</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Random write report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">2358827</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">2090107</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">2345757</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">1677328</span></span><br></pre></td></tr></table></figure>
-<p>Use office tool to open the result_file.xls, you will find the results contain three part: file read/write method, records sizes, file sizes and the Throughput(Kbytes/sec).</p>
-<p>The <strong>Throughput</strong> is the disk performance indicator, the larger the better. On a final note, you can generate graphs using the Generate_Graphs and gengnuplot.sh located under iozone3XXX/src/current/, based on the iozone output.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd iozone3XXX/src/current/</span></span><br><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M -b result_file.xls -f test_file &gt; test_results.txt</span></span><br><span class="line"><span class="comment"># ./Generate_Graphs test_results.txt</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="The_main_parameters">The main parameters</h1><ul>
-<li><strong>-a</strong> - Used to select full automatic mode. Produces output that covers all tested file operations for record sizes of 4k to 16M for file sizes of 64k to 512M.</li>
-<li><strong>-R</strong> - Generate Excel report. Iozone will generate an Excel compatible report to standard out. This file may be imported with Microsoft Excel (space delimited) and used to create a graph of the filesystem performance. Note: The 3D graphs are column oriented. You will need to select this when graphing as the default in Excel is row oriented data.</li>
-<li><strong>-b Filename</strong> - Iozone will create a binary file format file in Excel compatible output of results.</li>
-<li><strong>-g #</strong> - Set maximum file size (in Kbytes) for auto mode (or #m or #g)</li>
-<li><strong>-n #</strong> - Set minimum file size (in Kbytes) for auto mode (or #m or #g)</li>
-<li><p><strong>-i #</strong> - Used to specify which tests to run. (0=write/rewrite, 1=read/re-read, 2=random-read/write 3=Read-backwards, 4=Re-write-record, 5=stride-read, 6=fwrite/re-fwrite, 7=fread/Re-fread, 8=random mix, 9=pwrite/Re-pwrite, 10=pread/Re-pread, 11=pwritev/Re-pwritev, 12=preadv/Re-preadv).</p>
-<p>One will always need to specify 0 so that any of the following tests will have a file to measure.</p>
-<p>-i # -i # -i # is also supported so that one may select more than one test.</p>
-</li>
-<li><strong>-s #</strong> - Used to specify the size, in Kbytes, of the file to test. One may also specify -s #k (size in Kbytes) or -s #m (size in Mbytes) or -s #g (size in Gbytes).</li>
-<li><strong>-z</strong> - Used in conjunction with -a to test all possible record sizes. Normally Iozone omits testing of small record sizes for very large files when used in full automatic mode. This option forces Iozone to include the small record sizes in the automatic tests also.</li>
-<li><strong>-B</strong> - Use mmap() files. This causes all of the temporary files being measured to be created and accessed with the mmap() interface. Some applications prefer to treat files as arrays of memory. These applications mmap() the file and then just access the array with loads and stores to perform file I/O.</li>
-<li><strong>-c</strong> - Include close() in the timing calculations. This is useful only if you suspect that close() is broken in the operating system currently under test. It can be useful for NFS Version 3 testing as well to help identify if the nfs3_commit is working well.</li>
-<li><strong>-D</strong> - Use msync(MS_ASYNC) on mmap files. This tells the operating system that all the data in the mmap space needs to be written to disk asynchronously.</li>
-<li><strong>-G</strong> - Use msync(MS_SYNC) on mmap files. This tells the operating system that all the data in the mmap space needs to be written to disk synchronously.</li>
-<li><strong>-o</strong> - Writes are synchronously written to disk. (O_SYNC). Iozone will open the files with the O_SYNC flag. This forces all writes to the file to go completely to disk before returning to the benchmark.</li>
-<li><strong>-H</strong> - Use POSIX async I/O with # async operations. Iozone will use POSIX async I/O with a bcopy from the async buffers back into the applications buffer. Some versions of MSC NASTRAN perform I/O this way. This technique is used by applications so that the async I/O may be performed in a library and requires no changes to the applications internal model.</li>
-<li><strong>-k #</strong> - Use POSIX async I/O (no bcopy) with # async operations. Iozone will use POSIX async I/O and will not perform any extra bcopys. The buffers used by Iozone will be handed to the async I/O system call directly.</li>
-<li><strong>-I</strong> - Use DIRECT I/O for all file operations. Tells the filesystem that all operations are to bypass the buffer cache and go directly to disk. This also will use VX_DIRECT on VxFS, and O_DIRECT on Linux, and directio() on Solaris.</li>
-<li><strong>-K</strong> - Generate some random accesses during the normal testing.</li>
-<li><strong>-l #</strong> - Set the lower limit on number of processes to run. When running throughput tests this option allows the user to specify the least number of processes or threads to start. This option should be used in conjunction with the -u option.</li>
-<li><strong>-L #</strong> - Set processor cache line size to value (in bytes). Tells Iozone the processor cache line size. This is used internally to help speed up the test.</li>
-<li><strong>-S #</strong> - Set processor cache size to value (in Kbytes). This tells Iozone the size of the processor cache. It is used internally for buffer alignment and for the purge functionality.</li>
-<li><strong>-M</strong> - Iozone will call uname() and will put the string in the output file.</li>
-<li><strong>-t #</strong> - Run Iozone in a throughput mode. This option allows the user to specify how many threads or processes to have active during the measurement.</li>
-<li><strong>-u #</strong> - Set the upper limit on number of processes to run. When running throughput tests this option allows the user to specify the greatest number of processes or threads to start. This option should be used in conjunction with the -l option.</li>
-<li><strong>-W</strong> - Lock files when reading or writing.</li>
-<li><strong>-y #</strong>  - Set minimum record size (in Kbytes) for auto mode. One may also specify -y #k (size in Kbytes) or -y #m (size in Mbytes) or -y #g (size in Gbytes). See –q for setting maximum record size.</li>
-<li><strong>-q #</strong> - Set maximum record size (in Kbytes) for auto mode. One may also specify -q #k (size in Kbytes) or -q #m (size in Mbytes) or -q #g (size in Gbytes). See –y for setting minimum record size.</li>
-<li><strong>-r #</strong> - Used to specify the record size, in Kbytes, to test. One may also specify -r #k (size in Kbytes) or -r #m (size in Mbytes) or -r #g (size in Gbytes).</li>
-<li><strong>-f filename</strong> - Used to specify the filename for the temporary file under test. This is useful when the unmount option is used. When testing with unmount between tests it is necessary for the temporary file under test to be in a directory that can be unmounted. It is not possible to unmount the current working directory as the process Iozone is running in this directory.</li>
-</ul>
-<h1 id="Reference">Reference</h1><ul>
-<li><a href="http://www.iozone.org/docs/IOzone_msword_98.pdf" target="_blank" rel="external">Iozone</a></li>
-<li><a href="http://en.wikipedia.org/wiki/IOzone" target="_blank" rel="external">IOzone - Wikipedia</a></li>
-<li><a href="http://www.cyberciti.biz/tips/linux-filesystem-benchmarking-with-iozone.html" target="_blank" rel="external">How To Measure Linux Filesystem I/O Performance With iozone</a></li>
-<li><a href="http://www.iozone.org/src/current/lab_graphs1.xls" target="_blank" rel="external">Linux Iozone graph example</a> - This is a sample *.xls file from iozone that shows the kind of excel output that can be generated from iozone.</li>
-<li><a href="http://www.thegeekstuff.com/2011/05/iozone-examples/" target="_blank" rel="external">10 iozone Examples for Disk I/O Performance Measurement on Linux</a></li>
-</ul>
-
+<h1 id="Features_and_Functions">Features and Functions</h1>
       
     </div>
     <footer>
       
+        
+          <div class="alignleft">
+            <a href="/2015/06/19/iozone/#more" class="more-link">阅读全文</a>
+          </div>
         
         
       
@@ -785,196 +671,14 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </li>
 </ol>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvzf netperf-xxxxx</span></span><br><span class="line"><span class="comment"># cd netperf-xxxxx</span></span><br><span class="line"><span class="comment"># ./configure --enable-burst</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"><span class="comment"># make install</span></span><br></pre></td></tr></table></figure>
-<h1 id="Features_and_Functions">Features and Functions</h1><p>Netperf is designed around a basic client-server model. There are two executables - netperf and netserver. Generally you will only execute the netperf program, with the netserver program being invoked by the remote system’s inetd or having been previously started as its own standalone daemon.</p>
-<p>When you execute netperf it will establish a “control connection” to the remote system. This connection will be used to pass test configuration information and results to and from the remote system. Regardless of the type of test to be run, the control connection will be a TCP connection using BSD sockets. The control connection can use either IPv4 or IPv6.</p>
-<p>Once the control connection is up and the configuration information has been passed, a separate “data” connection will be opened for the measurement itself using the API’s and protocols appropriate for the specified test. When the test is completed, the data connection will be torn-down and results from the netserver will be passed-back via the control connection and combined with netperf’s result for display to the user.</p>
-<p>Netperf places no traffic on the control connection while a test is in progress. Certain TCP options, such as SO_KEEPALIVE, if set as your systems’ default, may put packets out on the control connection while a test is in progress. Generally speaking this will have no effect on the results.</p>
-<h1 id="How_to_use_netperf">How to use netperf</h1><p>For xen performance testing, we only test the following type of test:</p>
-<ul>
-<li><strong>TCP_STREAM</strong> - is the default test in netperf. It is quite simple, transferring some quantity of data from the system running netperf to the system running netserver.</li>
-<li><strong>TCP_RR</strong> - A TCP_RR test can be thought-of as a user-space to user-space ping with no think time - it is by default a synchronous, one transaction at a time, request/response test.</li>
-<li><strong>TCP_CRR</strong> - A TCP_CRR test is like a merger of a TCP_RR and TCP_CC test which measures the performance of establishing a connection, exchanging a single request/response transaction, and tearing-down that connection.</li>
-<li><strong>UDP_STREAM</strong> - A UDP_STREAM test is similar to a TCP_STREAM test except UDP is used as the transport rather than TCP.</li>
-<li><strong>UDP_RR</strong> - It is very much the same as a TCP_RR test except UDP is used rather than TCP.</li>
-</ul>
-<h2 id="Multiple_instances_of_TCP_STREAM">Multiple instances of TCP_STREAM</h2><h3 id="Test_scenarios">Test scenarios</h3><ol>
-<li>Host -&gt;External Host</li>
-<li>Host -&gt; Guest</li>
-<li>Guest -&gt; Host</li>
-<li>Guest -&gt; Guest</li>
-<li>External Host -&gt; Guest</li>
-<li>Guest -&gt; External Host</li>
-</ol>
-<p><strong>Note:</strong><br>A straight attachment link two machine<br>For secnario 5 &amp; 6 better in 10Gbit</p>
-<h3 id="Command">Command</h3><ol>
-<li><p>Run <code>netserver</code> on remote host</p>
-</li>
-<li><p>On local host, run:</p>
-</li>
-</ol>
-<p>e.g instances = 4</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> <span class="number">32</span> <span class="number">64</span> <span class="number">128</span> <span class="number">256</span> <span class="number">512</span> <span class="number">1024</span> <span class="number">1460</span> <span class="number">2048</span> <span class="number">4096</span> <span class="number">8192</span>  <span class="number">9000</span> <span class="number">16384</span> <span class="number">32768</span>  <span class="number">65495</span> <span class="number">65507</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        netperf -t TCP_STREAM <span class="operator">-f</span> m -H <span class="variable">$remote_server_ip</span> -P <span class="number">0</span> <span class="operator">-l</span> <span class="number">10</span> -- -m <span class="variable">$a</span> &amp;</span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="Multiple_instances_of_UDP_STREAM">Multiple instances of UDP_STREAM</h2><h3 id="Test_scenarios-1">Test scenarios</h3><ol>
-<li>Host -&gt;External Host</li>
-<li>Host -&gt; Guest</li>
-<li>Guest -&gt; Host</li>
-<li>Guest -&gt; Guest</li>
-<li>External Host -&gt; Guest</li>
-<li>Guest -&gt; External Host</li>
-</ol>
-<p><strong>Note:</strong><br>A straight attachment link two machine<br>For secnario 5 &amp; 6 better in 10Gbit</p>
-<h3 id="Command-1">Command</h3><ol>
-<li><p>Run <code>netserver</code> on remote host</p>
-</li>
-<li><p>On local host, run:</p>
-</li>
-</ol>
-<p>e.g instances = 4</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> <span class="number">32</span> <span class="number">64</span> <span class="number">128</span> <span class="number">256</span> <span class="number">512</span> <span class="number">1024</span> <span class="number">1460</span> <span class="number">2048</span> <span class="number">4096</span> <span class="number">8192</span>  <span class="number">9000</span> <span class="number">16384</span> <span class="number">32768</span>  <span class="number">65495</span> <span class="number">65507</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        netperf -t UDP_STREAM <span class="operator">-f</span> m -H <span class="variable">$remote_server_ip</span> -P <span class="number">0</span> <span class="operator">-l</span> <span class="number">10</span> -- -m <span class="variable">$a</span> &amp;</span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="Multiple_instances_of_TCP_RR">Multiple instances of TCP_RR</h2><h3 id="Test_scenarios-2">Test scenarios</h3><ol>
-<li>Host -&gt;External Host</li>
-<li>Host -&gt; Guest</li>
-<li>Guest -&gt; Host</li>
-<li>Guest -&gt; Guest</li>
-<li>External Host -&gt; Guest</li>
-<li>Guest -&gt; External Host</li>
-</ol>
-<p><strong>Note:</strong><br>A straight attachment link two machine<br>For secnario 5 &amp; 6 better in 10Gbit</p>
-<h3 id="Command-2">Command</h3><ol>
-<li><p>Run <code>netserver</code> on remote host</p>
-</li>
-<li><p>On local host, run:</p>
-</li>
-</ol>
-<p>e.g instances = 1/25/50/100</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> <span class="number">1</span> <span class="number">25</span> <span class="number">50</span> <span class="number">100</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    netperf -v <span class="number">0</span> -P <span class="number">0</span> -t TCP_RR -B <span class="string">": VM1 -b <span class="variable">$b</span> -r 256,256"</span> -H <span class="variable">$remote_server_ip</span> -- -r <span class="number">256</span>,<span class="number">256</span> -b <span class="variable">$b</span> -D</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="Multiple_instances_of_UDP_RR">Multiple instances of UDP_RR</h2><h3 id="Test_scenarios-3">Test scenarios</h3><ol>
-<li>Host -&gt;External Host</li>
-<li>Host -&gt; Guest</li>
-<li>Guest -&gt; Host</li>
-<li>Guest -&gt; Guest</li>
-<li>External Host -&gt; Guest</li>
-<li>Guest -&gt; External Host</li>
-</ol>
-<p><strong>Note:</strong><br>A straight attachment link two machine<br>For secnario 5 &amp; 6 better in 10Gbit</p>
-<h3 id="Command-3">Command</h3><ol>
-<li><p>Run <code>netserver</code> on remote host</p>
-</li>
-<li><p>On local host, run:</p>
-</li>
-</ol>
-<p>e.g instances = 1/25/50/100</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> <span class="number">1</span> <span class="number">25</span> <span class="number">50</span> <span class="number">100</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    netperf -v <span class="number">0</span> -P <span class="number">0</span> -t UDP_RR -B <span class="string">": VM1 -b <span class="variable">$b</span> -r 256,256"</span> -H <span class="variable">$remote_server_ip</span> -- -r <span class="number">256</span>,<span class="number">256</span> -b <span class="variable">$b</span> -D</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="Multiple_instances_of_TCP_CRR">Multiple instances of TCP_CRR</h2><h3 id="Test_scenarios-4">Test scenarios</h3><ol>
-<li>Host -&gt;External Host</li>
-<li>Host -&gt; Guest</li>
-<li>Guest -&gt; Host</li>
-<li>Guest -&gt; Guest</li>
-<li>External Host -&gt; Guest</li>
-<li>Guest -&gt; External Host</li>
-</ol>
-<p><strong>Note:</strong><br>A straight attachment link two machine<br>For secnario 5 &amp; 6 better in 10Gbit</p>
-<h3 id="Command-4">Command</h3><ol>
-<li><p>Run <code>netserver</code> on remote host</p>
-</li>
-<li><p>On local host, run:</p>
-</li>
-</ol>
-<p>e.g instances = 1/25/50/100</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> <span class="number">1</span> <span class="number">25</span> <span class="number">50</span> <span class="number">100</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    netperf -v <span class="number">0</span> -P <span class="number">0</span> -t TCP_CRR  -H <span class="variable">$remote_server_ip</span> -- -r <span class="number">256</span>,<span class="number">256</span> -b <span class="number">1</span> -D</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong> There also some example scripts used to test TCP_STREAM, TCP_RR, UDP_STREAM, UDP_RR under netperf-xxxxx/doc/examples/, you can modify it as necessary.</p>
-<h1 id="Results_analysis">Results analysis</h1><h2 id="For_TCP_STREAM_test">For TCP_STREAM test</h2><p>The results will be in the following format:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">87380</span>  <span class="number">16384</span>     <span class="number">64</span>    <span class="number">10.00</span>     <span class="number">688.1</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>the first field</strong> - remote (netserver) send and/or receive socket buffer sizes for the data connection.</li>
-<li><strong>the second field</strong> - local (netperf) send and receive socket buffer sizes for the data connection.</li>
-<li><strong>the third field</strong> - the size of the buffer passed-in to the “send” calls of a _STREAM test.</li>
-<li><strong>the fourth field</strong> - the  length  of  the  test (default 10 seconds).</li>
-<li><strong>the fifth field</strong> - Throughput</li>
-</ul>
-<p>We should focus on the <strong>Throughput</strong>, the larger the better.</p>
-<h2 id="For_UDP_STREAM_test">For UDP_STREAM test</h2><p>The results will be in the following format:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">212992</span>      <span class="number">64</span>   <span class="number">10.00</span>      <span class="number">659319</span>      <span class="number">0</span>      <span class="number">33.76</span></span><br><span class="line"><span class="number">212992</span>           <span class="number">10.00</span>      <span class="number">610884</span>             <span class="number">31.28</span></span><br></pre></td></tr></table></figure>
-<p>The first line is the results of local host.<br>The second is the results of remote server.</p>
-<ul>
-<li><strong>the first field</strong> - remote (netserver) send and/or receive socket buffer sizes for the data connection.</li>
-<li><strong>the second field</strong> - local (netperf) send and receive socket buffer sizes for the data connection.</li>
-<li><strong>the third field</strong> - the size of the buffer passed-in to the “send” calls of a _STREAM test.</li>
-<li><strong>the fourth field</strong> - the  length  of  the  test (default 10 seconds).</li>
-<li><strong>the fifth field</strong> - Throughput</li>
-</ul>
-<p>We should focus on the <strong>Throughput</strong>, the larger the better.</p>
-<h2 id="For_TCP_RR_test">For TCP_RR test</h2><p>The results will be in the following format:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">31464.49</span> : VM1 -<span class="number">25</span>  -r <span class="number">256</span>,<span class="number">256</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>the first field</strong> - Transaction rate</li>
-</ul>
-<p>We should focus on the <strong>Transaction rate</strong>, the larger the better.</p>
-<h2 id="For_TCP_CRR">For TCP_CRR</h2><p>The results will be in the following format:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">151.40</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>the first field</strong> - Transaction rate</li>
-</ul>
-<p>We should focus on the <strong>Transaction rate</strong>, the larger the better.</p>
-<h2 id="For_UDP_RR">For UDP_RR</h2><p>The results will be in the following format:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">33748.49</span> : VM1 -b  -r <span class="number">256</span>,<span class="number">256</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>the first field</strong> - Transaction rate</li>
-</ul>
-<p>We should focus on the <strong>Transaction rate</strong>, the larger the better.</p>
-<h1 id="The_main_parameters">The main parameters</h1><p>Netperf command format:</p>
-<ol>
-<li><p>sets both global and test-specific options:<br><code>netperf &lt;global&gt; -- &lt;test-specific&gt;</code></p>
-</li>
-<li><p>sets just global options and:<br><code>netperf &lt;global&gt;</code></p>
-</li>
-<li><p>sets just global options and:<br><code>netperf -- &lt;test-specific&gt;</code></p>
-</li>
-</ol>
-<h2 id="Global_Options">Global Options</h2><ul>
-<li><strong>-B <string></string></strong> - This option will cause <string> to be appended to the brief (see -P) output of netperf.</string></li>
-<li><strong>-H name|ip</strong> - Set the hostname (or IP address) and address family to use to establish the control connection to the remote system.</li>
-<li><strong>-b <size></size></strong> - This option is only present when netperf has been configure with –enable-intervals=yes prior to compilation. It sets the size of the burst of send calls in a _STREAM test. When used in conjunction with the -w option it can cause the rate at which data is sent to be “paced.”</li>
-<li><strong>-i <sizespec></sizespec></strong> - This option enables the calculation of confidence intervals and sets the minimum and maximum number of iterations to run in attempting to achieve the desired confidence interval.</li>
-<li><strong>-t testname</strong> - Specify the test to perform. As of this writing, valid values for testname include:<ul>
-<li><strong>TCP_STREAM</strong>, TCP_MAERTS, TCP_SENDFILE, <strong>TCP_RR</strong>, <strong>TCP_CRR</strong>, TCP_CC</li>
-<li><strong>UDP_STREAM</strong>, <strong>UDP_RR</strong></li>
-<li>XTI_TCP_STREAM, XTI_TCP_RR, XTI_TCP_CRR, XTI_TCP_CC</li>
-<li>XTI_UDP_STREAM, XTI_UDP_RR</li>
-<li>SCTP_STREAM, SCTP_RR</li>
-<li>DLCO_STREAM, DLCO_RR, DLCL_STREAM, DLCL_RR</li>
-<li>LOC_CPU, REM_CPU</li>
-<li>OMNI</li>
-</ul>
-</li>
-<li><strong>-l testlen</strong> - Specify  the  length  of  the  test (default 10 seconds).</li>
-<li><strong>-4</strong> - Use AF_INET (aka IPv4) addressing for the control and possibly data connections.</li>
-<li><strong>-6</strong> - Use AF_INET6 (aka IPv6) addressing for the control and possibly data connections.</li>
-<li><strong>-v verbosity</strong> - This option controls how verbose netperf will be in its output, and is often used in conjunction with the -P option.</li>
-<li><strong>-P 0|1</strong> - A value of “1” for the -P option will enable display of the test banner. A value of “0” will disable display of the test banner.</li>
-</ul>
-<h2 id="Test_Specific_Options(TCP_STREAM,_UDP_STREAM)">Test Specific Options(TCP_STREAM, UDP_STREAM)</h2><ul>
-<li><strong>-s <sizespec></sizespec></strong> - This option sets the local (netperf) send and receive socket buffer sizes for the data connection to the value(s) specified. Often, this will affect the advertised and/or effective TCP or other window, but on some platforms it may not. By default the units are bytes, but suffix of “G,” “M,” or “K” will specify the units to be 2^30 (GB), 2^20 (MB) or 2^10 (KB) respectively. A suffix of “g,” “m” or “k” will specify units of 10^9, 10^6 or 10^3 bytes respectively.</li>
-<li><strong>-S <sizespec></sizespec></strong> - This option sets the remote (netserver) send and/or receive socket buffer sizes for the data connection to the value(s) specified. Often, this will affect the advertised and/or effective TCP or other window, but on some platforms it may not. By default the units are bytes, but suffix of “G,” “M,” or “K” will specify the units to be 2^30 (GB), 2^20 (MB) or 2^10 (KB) respectively. A suffix of “g,” “m” or “k” will specify units of 10^9, 10^6 or 10^3 bytes respectively.</li>
-<li><strong>-m bytes</strong> - Set the size of the buffer passed-in to the “send” calls of a <em>STREAM test. Note that this may have only an indirect effect on the size of the packets sent over the network, and certain Layer 4 protocols do _not</em> preserve or enforce message boundaries, so setting -m for the send size does not necessarily mean the receiver will receive that many bytes at any one time. By default the units are bytes, but suffix of “G,” “M,” or “K” will specify the units to be 2^30 (GB), 2^20 (MB) or 2^10 (KB) respectively. A suffix of “g,” “m” or “k” will specify units of 10^9, 10^6 or 10^3 bytes respectively.</li>
-<li><strong>-M bytes</strong> - Set the size of the buffer passed-in to the “recv” calls of a _STREAM test. This will be an upper bound on the number of bytes received per receive call. By default the units are bytes, but suffix of “G,” “M,” or “K” will specify the units to be 2^30 (GB), 2^20 (MB) or 2^10 (KB) respectively. A suffix of “g,” “m” or “k” will specify units of 10^9, 10^6 or 10^3 bytes respectively.</li>
-<li><strong>-D</strong> - This option will set TCP_NODELAY on the data connection on those systems where TCP_NODELAY is defined. This disables something known as the Nagle Algorithm, which is intended to make the segments TCP sends as large as reasonably possible.</li>
-</ul>
-<h2 id="Test_Specific_Options(TCP_RR,_TCP_CRR,_UDP_RR)">Test Specific Options(TCP_RR, TCP_CRR, UDP_RR)</h2><ul>
-<li><strong>-r <sizespec></sizespec></strong> - This option sets the request (first value) and/or response (second value) sizes for an _RR test. By default the units are bytes, but a suffix of “G,” “M,” or “K” will specify the units to be 2^30 (GB), 2^20 (MB) or 2^10 (KB) respectively. A suffix of “g,” “m” or “k” will specify units of 10^9, 10^6 or 10^3 bytes respectively.</li>
-<li><strong>-s <sizespec></sizespec></strong> - This option sets the local (netperf) send and receive socket buffer sizes for the data connection to the value(s) specified. Often, this will affect the advertised and/or effective TCP or other window, but on some platforms it may not. By default the units are bytes, but a suffix of “G,” “M,” or “K” will specify the units to be 2^30 (GB), 2^20 (MB) or 2^10 (KB) respectively. A suffix of “g,” “m” or “k” will specify units of 10^9, 10^6 or 10^3 bytes respectively.</li>
-<li><strong>-S <sizespec></sizespec></strong> - This option sets the remote (netserver) send and/or receive socket buffer sizes for the data connection to the value(s) specified. Often, this will affect the advertised and/or effective TCP or other window, but on some platforms it may not. By default the units are bytes, but a suffix of “G,” “M,” or “K” will specify the units to be 2^30 (GB), 2^20 (MB) or 2^10 (KB) respectively. A suffix of “g,” “m” or “k” will specify units of 10^9, 10^6 or 10^3 bytes respectively.</li>
-<li><strong>-D</strong> - This option will set TCP_NODELAY on the data connection on those systems where TCP_NODELAY is defined. This disables something known as the Nagle Algorithm, which is intended to make the segments TCP sends as large as reasonably possible.</li>
-</ul>
-<h1 id="Reference">Reference</h1><ul>
-<li><a href="http://www.netperf.org/svn/netperf2/tags/netperf-2.6.0/doc/netperf.html" target="_blank" rel="external">netperf manual</a></li>
-<li><a href="http://www.netperf.org/netperf/" target="_blank" rel="external">Welcome to the Netperf Homepage</a></li>
-</ul>
-
       
     </div>
     <footer>
       
+        
+          <div class="alignleft">
+            <a href="/2015/06/17/netperf/#more" class="more-link">阅读全文</a>
+          </div>
         
         
       
