@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>dbench | Lingfei&#39;s Blog</title>
+  <meta name="author" content="Lingfei Kong">
+  
+  <meta name="description" content="读书笔记，资料整理">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="dbench"/>
+  <meta property="og:site_name" content="Lingfei&#39;s Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="http://kongll.github.io/atom.xml" title="Lingfei&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffe3814b5f53cc394a493cbeb2368f2af' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">Lingfei&#39;s Blog</a></h1>
+  <h2><a href="/">我要扼住命运的咽喉，决不能让命运使我屈服</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/categories/Technology">技术</a></li>
+    
+      <li><a href="/categories/essay">随笔</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-21T00:22:05.000Z"><a href="/2015/04/21/dbench/">2015-04-21</a></time>
+      
+      
+  
+    <h1 class="title">dbench</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="How_to_install_dbench">How to install dbench</h1><ol>
+<li><p>Clone dbench from its git repo</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git clone git://git.samba.org/sahlberg/dbench.git dbench</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Compiling</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd dbench</span></span><br><span class="line"><span class="comment"># ./autogen.sh</span></span><br><span class="line"><span class="comment"># ./configure</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"><span class="comment"># make install</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>And that should be it. You should now have dbench installed on your system.</p>
+<h1 id="Features_and_Functions">Features and Functions</h1><ul>
+<li>Reading SMBTORTURE BENCH-NBENCH loadfiles and emulating this workload as posix calls to a local filesystem</li>
+<li>NFS style loadfiles which allows DBENCH to mimic the i/o pattern of a real application doing real i/o to a real server.</li>
+<li>iSCSI support and iSCSI style loadfiles.</li>
+</ul>
+<p>DBENCH is a tool to generate I/O workloads to either a filesystem or to a networked CIFS or NFS server. It can even talk to an iSCSI target. DBENCH can be used to stress a filesystem or a server to see which workload it becomes saturated and can also be used for preditcion analysis to determine “How many concurrent clients/applications performing this workload can my server handle before response starts to lag?”</p>
+<p>DBENCH provides a similar benchmarking and client emulation that is implemented in SMBTORTURE using the BENCH-NBENCH test for CIFS, but DBENCH can play these loadfiles onto a local filesystem instead of to a CIFS server. Using a different type of loadfiles DBENCH can also generate and measure latency for NFS.</p>
+<h1 id="Load_files">Load files</h1><p> At the heart of DBENCH is the concept of a “loadfile”. A loadfile is a sequence of operations to be performed once statement at a time. This could be operations such as “Open file XYZ”, “Read 5 bytes from offset ABC”, “Close the file”, etc etc.</p>
+<p>By carefully crafting a loadfile it is possible to describe an I/O pattern that almost exactly matches what a particular application performs. While cumbersome to produce, such a loadfile it does allow you to describe exactly how/what an application performs and “replay” this sequence of operations any time you want.</p>
+<p>Each line in the DBENCH loadfile contain a timestamp for the operation. This is used by DBENCH to try to keep the same rate of operations as the original application. This is very useful since this allows to perform accurate scalability predictions based on the exact application we are interested in. and not an artificial benchmark which may or may not be relevant to our particular applications workload pattern.</p>
+<p>At <a href="https://dbench.samba.org/web/index.html" target="_blank" rel="external">https://dbench.samba.org/web/index.html</a> you can find three loadfile template to use:</p>
+<ul>
+<li>pNFS-Loadfiles - used to stress the NFS server.</li>
+<li>SMB-Loadfiles - used to stress the SMB server.</li>
+<li>iSCSI-Loadfiles - used to stress the iSCSI server.</li>
+</ul>
+<h1 id="How_to_use_dbench">How to use dbench</h1><p>The following command should be OK for most of the testing situations(run dbench for 10 hours):<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dbench -c /usr/share/dbench/client.txt -D ./ -t 36000 10</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong><br>This command stress the local filesystem, if you want to stress a NFS/SMB/iSCSI server, please learn more about dbench.</p>
+<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dbench -c /usr/share/dbench/client.txt -D ./ -t 10 100</span></span><br><span class="line">dbench version <span class="number">4.00</span> - Copyright Andrew Tridgell <span class="number">1999</span>-<span class="number">2004</span></span><br><span class="line"></span><br><span class="line">Running <span class="keyword">for</span> <span class="number">10</span> seconds with load <span class="string">'/usr/share/dbench/client.txt'</span> and minimum warmup <span class="number">2</span> secs</span><br><span class="line"><span class="number">98</span> of <span class="number">100</span> processes prepared <span class="keyword">for</span> launch   <span class="number">0</span> sec</span><br><span class="line"><span class="number">100</span> of <span class="number">100</span> processes prepared <span class="keyword">for</span> launch   <span class="number">0</span> sec</span><br><span class="line">releasing clients</span><br><span class="line"> <span class="number">100</span>       <span class="number">459</span>  <span class="number">1293.98</span> MB/sec  warmup   <span class="number">1</span> sec  latency <span class="number">527.022</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">495</span>    <span class="number">38.88</span> MB/sec  execute   <span class="number">1</span> sec  latency <span class="number">1261.032</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">509</span>    <span class="number">36.37</span> MB/sec  execute   <span class="number">2</span> sec  latency <span class="number">750.145</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">521</span>    <span class="number">33.32</span> MB/sec  execute   <span class="number">3</span> sec  latency <span class="number">496.452</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">545</span>    <span class="number">35.34</span> MB/sec  execute   <span class="number">4</span> sec  latency <span class="number">604.592</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">660</span>    <span class="number">43.13</span> MB/sec  execute   <span class="number">5</span> sec  latency <span class="number">402.810</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">744</span>    <span class="number">43.04</span> MB/sec  execute   <span class="number">6</span> sec  latency <span class="number">407.184</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">764</span>    <span class="number">40.13</span> MB/sec  execute   <span class="number">7</span> sec  latency <span class="number">1061.093</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">797</span>    <span class="number">38.65</span> MB/sec  execute   <span class="number">8</span> sec  latency <span class="number">2061.173</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">820</span>    <span class="number">36.10</span> MB/sec  execute   <span class="number">9</span> sec  latency <span class="number">2152.252</span> ms</span><br><span class="line"> <span class="number">100</span>  cleanup  <span class="number">10</span> sec</span><br><span class="line">  <span class="number">26</span>  cleanup  <span class="number">11</span> sec</span><br><span class="line">  <span class="number">20</span>  cleanup  <span class="number">12</span> sec</span><br><span class="line">  <span class="number">18</span>  cleanup  <span class="number">13</span> sec</span><br><span class="line">  <span class="number">11</span>  cleanup  <span class="number">14</span> sec</span><br><span class="line">   <span class="number">0</span>  cleanup  <span class="number">15</span> sec</span><br><span class="line"></span><br><span class="line"> Operation                Count    AvgLat    MaxLat</span><br><span class="line"> --------------------------------------------------</span><br><span class="line"> Flush                      <span class="number">710</span>   <span class="number">219.169</span>  <span class="number">2152.244</span></span><br><span class="line"> Close                     <span class="number">5848</span>     <span class="number">0.003</span>     <span class="number">2.262</span></span><br><span class="line"> LockX                        <span class="number">4</span>     <span class="number">0.004</span>     <span class="number">0.009</span></span><br><span class="line"> Rename                     <span class="number">284</span>     <span class="number">0.048</span>     <span class="number">3.412</span></span><br><span class="line"> ReadX                     <span class="number">7792</span>     <span class="number">0.106</span>   <span class="number">178.973</span></span><br><span class="line"> WriteX                    <span class="number">7966</span>   <span class="number">106.556</span>   <span class="number">783.949</span></span><br><span class="line"> Unlink                     <span class="number">671</span>     <span class="number">1.879</span>   <span class="number">129.409</span></span><br><span class="line"> UnlockX                      <span class="number">4</span>     <span class="number">0.002</span>     <span class="number">0.003</span></span><br><span class="line"> FIND_FIRST                <span class="number">1991</span>     <span class="number">0.026</span>     <span class="number">4.002</span></span><br><span class="line"> SET_FILE_INFORMATION       <span class="number">869</span>     <span class="number">8.582</span>   <span class="number">481.309</span></span><br><span class="line"> QUERY_FILE_INFORMATION    <span class="number">2099</span>     <span class="number">0.002</span>     <span class="number">0.089</span></span><br><span class="line"> QUERY_PATH_INFORMATION    <span class="number">5677</span>     <span class="number">0.021</span>    <span class="number">69.872</span></span><br><span class="line"> QUERY_FS_INFORMATION       <span class="number">835</span>     <span class="number">0.003</span>     <span class="number">0.020</span></span><br><span class="line"> NTCreateX                 <span class="number">6822</span>     <span class="number">1.191</span>   <span class="number">200.957</span></span><br><span class="line"></span><br><span class="line">Throughput <span class="number">36.0963</span> MB/sec  <span class="number">100</span> clients  <span class="number">100</span> procs  max_latency=<span class="number">2152.252</span> ms</span><br></pre></td></tr></table></figure>
+<p>It gives out four numbers like this (this is from a 100 client run on fedora22 host):<br><code>`sh
+Throughput 36.0963 MB/sec  100 clients  100 procs  max_latency=2152.252 ms</code></p>
+<p>The first is the true throughput as seen by dbench, the larger the batter. The last is the I/O latency, the smaller the better.</p>
+<p><strong>Note:</strong><br>One question some people may ask is whether the above represents a realistic load on a fileserver. It doesn’t. Nearly 90% of the read/write IO operations in netbench are writes whereas in a “normal” office load reads dominate. Also, the load is <strong>much</strong> higher than a normal office PC would put on a server. There aren’t many office PCs that write over a hundred megabytes of data to a server in a few minutes, unless maybe they are copying a CD.</p>
+<p>That doesn’t mean the benchmark is useless, it just means you shouldn’t use this for purchasing decisions unless you really understand the results and how they relate to your environment.</p>
+<h1 id="The_main_parameters">The main parameters</h1><ul>
+<li><strong>-c</strong> - Use this as the full path name of the client.txt file (the default is /usr/share/dbench/client.txt).</li>
+<li><strong>-s</strong> - Use synchronous file IO on all file operations(O_SYNC).</li>
+<li><strong>-t TIME</strong> - set the runtime of the benchmark in seconds (default 600).</li>
+<li><strong>-D DIR</strong> - set the base directory to run the filesystem operations in.</li>
+<li><strong>-S</strong> -  Use synchronous IO for all directory operations (unlink, rmdir, mkdir and rename).</li>
+<li><strong>-F</strong> - fsync on write</li>
+<li><strong>-B BACKEND</strong> - dbench backend (fileio, sockio, nfs, scsi, iscsi, smb)</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="https://dbench.samba.org/doc/dbench.1.html" target="_blank" rel="external">Dbench man page</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Technology/">Technology</a>
+  </div>
+
+        
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<nav id="pagination" >
+    
+    <a href="/2015/04/21/netperf/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/04/20/bonnie/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"孔令飞"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:konglf.github.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Technology/Emacs/">Emacs</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Keys/">Keys</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Lex/">Lex</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Python/">Python</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Shell/">Shell</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/">Technology</a><small>30</small></li>
+  
+    <li><a href="/categories/Technology/Xen/Virtualization/">Virtualization</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Xen/">Xen</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/">essay</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>中文名：孔令飞</li>
+<li>英文名：Alex</li>
+<li>现状：Lenovo从事存储性能调优</li>
+<li>QQ号：466701708</li>
+<li>想要交友的朋友请<a href="http://konglf.github.io/about">联系我</a>！</li>
+<li><a href="http://chenghongjie1.sinaapp.com/">I Love You!</a></li>
+</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=3768665395&verifier=bc944b64&dpc=1"></iframe>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Lingfei Kong
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
+
+
+<a href="https://github.com/alex8866" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>

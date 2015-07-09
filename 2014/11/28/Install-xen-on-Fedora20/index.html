@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Install xen on Fedora20 | Lingfei&#39;s Blog</title>
+  <meta name="author" content="Lingfei Kong">
+  
+  <meta name="description" content="读书笔记，资料整理">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Install xen on Fedora20"/>
+  <meta property="og:site_name" content="Lingfei&#39;s Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="http://kongll.github.io/atom.xml" title="Lingfei&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffe3814b5f53cc394a493cbeb2368f2af' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">Lingfei&#39;s Blog</a></h1>
+  <h2><a href="/">我要扼住命运的咽喉，决不能让命运使我屈服</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/categories/Technology">技术</a></li>
+    
+      <li><a href="/categories/essay">随笔</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-11-28T09:33:54.000Z"><a href="/2014/11/28/Install-xen-on-Fedora20/">2014-11-28</a></time>
+      
+      
+  
+    <h1 class="title">Install xen on Fedora20</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="Installing_the_Packages">Installing the Packages</h3><p>To install the Xen Project software, just run:</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># yum install xen</span></span><br></pre></td></tr></table></figure>
+<p>as root. yum will, as usual, take care of downloading and installing anything that is needed. As a part of that, it also create a new GRUB2 boot menu entry. Once the installation is complete, just reboot and select “Xen 4.x.x” from the GRUB2 menu.</p>
+<p>If on Fedora 18 and 19, you will likely see something like “Xen 4.2.x”. If on Fedora 16 or 17, it will have “Xen 4.1.x” in it. It is also possible that you only see something like “Fedora, with Xen hypervisor”, and that is also ok.</p>
+<a id="more"></a>
+<p>Networking deserves some special attention. In fact, it is something that gave a lot of trouble in the past (Xen 3/4.0). That is why, from Xen Project 4.1 on, the default behavior is to let the dom0’s network scripts (i.e., the ones that came with the distribution, not the ones that come with Xen Project) handle setting up a network bridge, and let the toolstack just attach the domU’s network interface to the it. More on this matter down in the page.</p>
+<h3 id="Booting_the_Xen_Project_hypervisor_by_Default">Booting the Xen Project hypervisor by Default</h3><p>Although a Xen Project GRUB2 menu entry will be automatically created, it will likely not be the default one. To make it so, ensure to you have a line like this in /etc/default/grub:</p>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">GRUB_DEFAULT</span>=<span class="string">saved</span></span><br></pre></td></tr></table></figure>
+<p>and then do</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># grub2-mkconfig -o /boot/grub2/grub.cfg</span></span><br><span class="line"><span class="preprocessor"># grep ^menuentry /boot/grub2/grub.cfg | cut -d "'" -f2</span></span><br><span class="line"><span class="preprocessor"># grub2-set-default &lt;menu entry title you want&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Typically, it would be something like this:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># grep ^menuentry /boot/grub2/grub.cfg | cut -d <span class="string">"'"</span> -f2</span><br><span class="line"> Fedora, <span class="keyword">with</span> Linux <span class="number">3.11</span>.3-<span class="number">201.</span>fc19.x86_64</span><br><span class="line"> Fedora, <span class="keyword">with</span> Xen hypervisor</span><br><span class="line"># sudo grub2-<span class="keyword">set</span>-<span class="keyword">default</span> <span class="string">"Fedora, with Xen hypervisor"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Disabling_Network_Manager">Disabling Network Manager</h3><p>In case of any networking issues, or if you want to manually manage the network configuration, disabling NetworkManager is necessary (e.g., because NetworkManager does not support bridges), and that requires manually editing a couple of config files. This is particularly true if you do not plan to install and use the typical Fedora virtualization tools, like libvirt, etc. In fact, libvirt automatically creates a bridge and sets up the VMs created via its interface(s) to use it by default. On the other hand, if not using libvirt, the bridge has to be created by hand.</p>
+<p>For Red Hat-based distros, the networking configuration is stored in /etc/sysconfig/network-scripts/.</p>
+<p>Also, make sure that the network service is kicked off automatically on subsequent restarts by running:</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># chkconfig network on</span></span><br></pre></td></tr></table></figure>
+<p>Next, create the configuration file for the bridge. The most common bridge name is br0, so let’s stick to that (although other Xen Project documentation suggests using xenbr0 to make it obvious that the bridge is for the hypervisor):</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># touch <span class="regexp">/etc/</span>sysconfig<span class="regexp">/network-scripts/i</span>fcfg-xenbr0</span><br></pre></td></tr></table></figure>
+<p>open the file in a text editor and put the following lines in it:</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">DEVICE=<span class="value">xenbr0</span></span></span><br><span class="line"><span class="setting">TYPE=<span class="value">Bridge</span></span></span><br><span class="line"><span class="setting">BOOTPROTO=<span class="value">dhcp</span></span></span><br><span class="line"><span class="setting">ONBOOT=<span class="value"><span class="keyword">yes</span></span></span></span><br><span class="line"><span class="setting">DELAY=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">NM_CONTROLLED=<span class="value"><span class="keyword">no</span></span></span></span><br></pre></td></tr></table></figure>
+<p>Next, you need to find the configuration file for your existing network adaptor. It’s most likely named ifcfg-eth0 or ifcfg-em0 (the part after the dash can and does change depending on the actual hardware). Once you know what config file you’re using, open it, find the line</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">NM_CONTROLLED=<span class="value"><span class="keyword">yes</span></span></span></span><br></pre></td></tr></table></figure>
+<p>and change it to</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">NM_CONTROLLED=<span class="value"><span class="keyword">no</span></span></span></span><br></pre></td></tr></table></figure>
+<p>Also, do not forget to add the line</p>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">BRIDGE</span>=<span class="string">xenbr0</span></span><br></pre></td></tr></table></figure>
+<p>(or whatever you named your bridge) to that file.</p>
+<p>Finally, run this:</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># systemctl restart network.service</span></span><br></pre></td></tr></table></figure>
+<p>and the bridge should look like this:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig xenbr0</span><br><span class="line"><span class="string">xenbr0:</span> flags=<span class="number">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="number">1500</span></span><br><span class="line">        inet <span class="number">10.66</span>.8.134  netmask <span class="number">255.255</span>.252.0  broadcast <span class="number">10.66</span>.11.255</span><br><span class="line">        inet6 <span class="string">fe80:</span>:<span class="number">26</span><span class="string">be:</span><span class="number">5</span><span class="string">ff:</span><span class="string">fe09:</span><span class="number">7</span>bf9  prefixlen <span class="number">64</span>  scopeid <span class="number">0x20</span>&lt;link&gt;</span><br><span class="line">        ether <span class="number">24</span>:<span class="string">be:</span><span class="number">05</span>:<span class="number">09</span>:<span class="number">7</span><span class="string">b:</span>f9  txqueuelen <span class="number">0</span>  (Ethernet)</span><br><span class="line">        RX packets <span class="number">8051</span>  bytes <span class="number">692327</span> (<span class="number">676.1</span> KiB)</span><br><span class="line">        RX errors <span class="number">0</span>  dropped <span class="number">0</span>  overruns <span class="number">0</span>  frame <span class="number">0</span></span><br><span class="line">        TX packets <span class="number">304</span>  bytes <span class="number">34893</span> (<span class="number">34.0</span> KiB)</span><br><span class="line">        TX errors <span class="number">0</span>  dropped <span class="number">0</span> overruns <span class="number">0</span>  carrier <span class="number">0</span>  collisions <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>Note that in earlier versions of Fedora (prior to 21), libvirt with xen would always assume that the default bridge was ‘xenbr0’. And even if you did change the option (using the libvirt overrides) it would ignore it. Fedora 21 libvirt has that fixed.</p>
+<h3 id="Rebooting_and_“Running”_the_Xen_Project_hypervisor">Rebooting and “Running” the Xen Project hypervisor</h3><p>Now that the software is installed, (re)boot in the proper option, as explained above, and check it’s working, e.g., by running xl info from the command line, which should then tell something like this:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># xl info</span><br><span class="line"> <span class="string">host                   :</span> localhost.localdomain</span><br><span class="line"> <span class="string">release                :</span> <span class="number">3.7</span>.6-<span class="number">201.</span>fc18.x86_64</span><br><span class="line"> <span class="string">version                :</span> #<span class="number">1</span> SMP Mon Feb <span class="number">4</span> <span class="number">15</span>:<span class="number">54</span>:<span class="number">08</span> UTC <span class="number">2013</span></span><br><span class="line"> <span class="string">machine                :</span> x86_64</span><br><span class="line"> <span class="string">nr_cpus                :</span> <span class="number">16</span></span><br><span class="line"> <span class="string">max_cpu_id             :</span> <span class="number">63</span></span><br><span class="line"> <span class="string">nr_nodes               :</span> <span class="number">2</span></span><br><span class="line"> <span class="string">cores_per_socket       :</span> <span class="number">4</span></span><br><span class="line"> <span class="string">threads_per_core       :</span> <span class="number">2</span></span><br><span class="line"> <span class="string">cpu_mhz                :</span> <span class="number">2394</span></span><br><span class="line"> <span class="string">hw_caps                :</span> <span class="string">bfebfbff:</span><span class="number">2</span><span class="string">c100800:</span><span class="number">00000000</span>:<span class="number">00003</span><span class="string">f40:</span><span class="number">029</span><span class="string">ee3ff:</span><span class="number">00000000</span>:<span class="number">00000001</span>:<span class="number">00000000</span></span><br><span class="line"> <span class="string">virt_caps              :</span> hvm hvm_directio</span><br><span class="line"> <span class="string">total_memory           :</span> <span class="number">12285</span></span><br><span class="line"> <span class="string">free_memory            :</span> <span class="number">128</span></span><br><span class="line"> <span class="string">sharing_freed_memory   :</span> <span class="number">0</span></span><br><span class="line"> <span class="string">sharing_used_memory    :</span> <span class="number">0</span></span><br><span class="line"> <span class="string">free_cpus              :</span> <span class="number">0</span></span><br><span class="line"> <span class="string">xen_major              :</span> <span class="number">4</span></span><br><span class="line"> <span class="string">xen_minor              :</span> <span class="number">2</span></span><br><span class="line"> <span class="string">xen_extra              :</span> .<span class="number">1</span></span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
+<p>If the hypervisor is not working, you’ll get something like:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">libxl: <span class="keyword">error</span>: libxl.c:<span class="number">56</span>:libxl_ctx_init Is xenstore daemon <span class="property">running</span>?</span><br><span class="line">failed <span class="keyword">to</span> stat /var/<span class="command">run</span>/xenstored.pid: No such <span class="type">file</span> <span class="keyword">or</span> directory</span><br><span class="line">cannot init xl context</span><br></pre></td></tr></table></figure>
+<p>If you get something like the error message above, double check that all the needed servic are up and running and, if not, make sure they start automatically at boot. That is the case of xenconsoled.service and xenstored.service are enabled and running. You can check their status with #systemctl status xenstored. If it says something like “inactive (dead)”, do the following:</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># systemctl enable xenstored</span></span><br><span class="line"><span class="preprocessor"># systemctl start xenstored</span></span><br></pre></td></tr></table></figure>
+<p>(and the same for xenconsoled)</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Technology/">Technology</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Xen/">Xen</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<nav id="pagination" >
+    
+    <a href="/2015/02/21/我是如何写博客的/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2014/11/14/活在Linux中/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"孔令飞"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:konglf.github.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Technology/Emacs/">Emacs</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Keys/">Keys</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Lex/">Lex</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Python/">Python</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Shell/">Shell</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/">Technology</a><small>30</small></li>
+  
+    <li><a href="/categories/Technology/Xen/Virtualization/">Virtualization</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Xen/">Xen</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/">essay</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>中文名：孔令飞</li>
+<li>英文名：Alex</li>
+<li>现状：Lenovo从事存储性能调优</li>
+<li>QQ号：466701708</li>
+<li>想要交友的朋友请<a href="http://konglf.github.io/about">联系我</a>！</li>
+<li><a href="http://chenghongjie1.sinaapp.com/">I Love You!</a></li>
+</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=3768665395&verifier=bc944b64&dpc=1"></iframe>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Lingfei Kong
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
+
+
+<a href="https://github.com/alex8866" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>

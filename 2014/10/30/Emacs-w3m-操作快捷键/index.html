@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Emacs w3m 操作快捷键 | Lingfei&#39;s Blog</title>
+  <meta name="author" content="Lingfei Kong">
+  
+  <meta name="description" content="读书笔记，资料整理">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Emacs w3m 操作快捷键"/>
+  <meta property="og:site_name" content="Lingfei&#39;s Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="http://kongll.github.io/atom.xml" title="Lingfei&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffe3814b5f53cc394a493cbeb2368f2af' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">Lingfei&#39;s Blog</a></h1>
+  <h2><a href="/">我要扼住命运的咽喉，决不能让命运使我屈服</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/categories/Technology">技术</a></li>
+    
+      <li><a href="/categories/essay">随笔</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-10-30T06:32:15.000Z"><a href="/2014/10/30/Emacs-w3m-操作快捷键/">2014-10-30</a></time>
+      
+      
+  
+    <h1 class="title">Emacs w3m 操作快捷键</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="emacs_w3m_操作完整版">emacs w3m 操作完整版</h3><h4 id="用emacs-w3m理由">用emacs-w3m理由</h4><ol>
+<li><p>平时在emacs里面编辑文档的时候，经常要上网查询一些资料，如果再打开firefox或者谷歌浏览器，不仅费时费力，而且经常会出现一个问题，就是浏览器和emacs两者的窗口经常相互干扰：</p>
+<p>当我编辑文档的时候看不见浏览器里面的内容，而当我看浏览器的时候又无法编辑文档。</p>
+</li>
+<li><p>w3m是个文本浏览器，当我看到网页里面合适的内容，可以方便的复制粘贴（我可不提倡抄袭哦^_^），这一点放在firefox或者谷歌的话，就得用鼠标一阵左右键了</p>
+</li>
+<li><p>这个是最重要的，生活在emacs里面是我的追求，尽管不乏偏执，但是这仍旧是一种追求，所以w3m必然不能缺少</p>
+</li>
+</ol>
+<a id="more"></a>
+<h4 id="基本操作">基本操作</h4><p><strong><em>完整的emacs w3m快捷键使用</em></strong></p>
+<p>q: 挂起</p>
+<p>Q：退出</p>
+<p>C-x k n RET 关闭第n个buffer， 若什么都不输入则关闭当前buffer</p>
+<p>U:打开URL</p>
+<p>v：打开文件(Bookmarks Aaron.bookmark)，查看书签</p>
+<p>G: 在新的标签页中打开URL</p>
+<p>g：在当前标签页中打开URL</p>
+<p>S：用googl进行搜索(自定义的搜索引擎)</p>
+<p>s: 历史(当前标签页的)</p>
+<p>H: 主页</p>
+<p>R: 刷新</p>
+<p>B 返回</p>
+<p>N 前进(RET)</p>
+<p>RET: 打开衔接</p>
+<p>\ 查看源代码</p>
+<p>= 查看头信息</p>
+<p>u 复制链接地址到剪贴板</p>
+<p>c 复制本页地址到剪贴板</p>
+<p>M-i 保存当前位置图片</p>
+<p>T 显示图片</p>
+<p>M-[ 缩小当前图片</p>
+<p>M-] 放大当前图片</p>
+<p>I 用外部查看器显示当前图片</p>
+<h4 id="页面操作">页面操作</h4><p>C-n 向下一行</p>
+<p>C-p 向上一行</p>
+<p>C-f 向前</p>
+<p>C-b 向后</p>
+<p>C-v 向下滚屏</p>
+<p>M-v 向上滚屏</p>
+<p>> 向右滚屏</p>
+<p>&lt; 向左滚屏</p>
+<p>, 向左滚一格</p>
+<p>. 向右滚一格</p>
+<p>C-c C-w 删除当前页</p>
+<p>C-c M-w 删除其他页</p>
+<h4 id="书签操作">书签操作</h4><p>a 添加当前页到书签</p>
+<p>M-a 添加该URL到书签</p>
+<p>C-c C-t 复制当前页到新标签</p>
+<p>C-c C-p 上一个标签</p>
+<p>C-c C-n 下一个标签</p>
+<p>? E 编辑书签</p>
+<p>? C-k 删除书</p>
+<h4 id="焦点操作">焦点操作</h4><p>M-g 跳到第n行</p>
+<p>C-c C-@ 标记当前位置</p>
+<p>C-c C-v 跳到上次标记的位置</p>
+<p>TAB 下一个衔接</p>
+<p>M-TAB 上一个衔接</p>
+<h4 id="使用百度谷歌搜索">使用百度谷歌搜索</h4><p>在出现的搜索框回车，然后在buffer会出现TEXT，在它后边输入你想要搜索的东东，然后回车，它就会出现在搜索框，之后再点击搜索的图标即可。其它的类似的搜索都可以这样办，你可通过这种方式登录chinaunix</p>
+<h4 id="其他重要操作">其他重要操作</h4><p>M 用外部浏览器打开当前页面</p>
+<p>M-M 用外部浏览器打开当前URL</p>
+<p>C-c C-k 停止载入</p>
+<p>C-x C-w RET; ~/.w3m/pages/myfirstpage.org</p>
+<p>eg:在emacs w3m下键入a, 然后会有session加入你想要保存到的文件夹的名字即可。如果想访问该文件夹只需要键入v,然后进行相应操作即可</p>
+<h4 id="Good_News:">Good News:</h4><p>如果在浏览网页时很喜欢这个网页中的内容那么你可以这么做：</p>
+<p>C-x C-w RET; ~/.w3m/pages/myfirstpage.org</p>
+<p>实现链接编号<br>进入 w3m-lnum-mode, M-x w3m-lnum-mode; 按f显示链接编号</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Technology/">Technology</a>, <a href="/categories/Technology/Keys/">Keys</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/emacs/">emacs</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<nav id="pagination" >
+    
+    <a href="/2014/10/30/我的emacs配置文件/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2014/10/30/Emacs-keys/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"孔令飞"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:konglf.github.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Technology/Emacs/">Emacs</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Keys/">Keys</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Lex/">Lex</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Python/">Python</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Shell/">Shell</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/">Technology</a><small>30</small></li>
+  
+    <li><a href="/categories/Technology/Xen/Virtualization/">Virtualization</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Xen/">Xen</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/">essay</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>中文名：孔令飞</li>
+<li>英文名：Alex</li>
+<li>现状：Lenovo从事存储性能调优</li>
+<li>QQ号：466701708</li>
+<li>想要交友的朋友请<a href="http://konglf.github.io/about">联系我</a>！</li>
+<li><a href="http://chenghongjie1.sinaapp.com/">I Love You!</a></li>
+</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=3768665395&verifier=bc944b64&dpc=1"></iframe>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Lingfei Kong
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
+
+
+<a href="https://github.com/alex8866" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>
