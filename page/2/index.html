@@ -230,24 +230,24 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-02-24T14:19:13.000Z"><a href="/2015/02/24/Linux下的经典软件-史上最全/">2015-02-24</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/markdown-语法简记-demo/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/02/24/Linux下的经典软件-史上最全/">Linux下的经典软件(史上最全)</a></h1>
+    <h1 class="title"><a href="/2015/04/24/markdown-语法简记-demo/">markdown-语法简记-demo</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>Linux下的经典软件(史上最全)</p>
+        <p>mark-down-语法简记博文demo<br>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2015/02/24/Linux下的经典软件-史上最全/#more" class="more-link">阅读全文</a>
+            <a href="/2015/04/24/markdown-语法简记-demo/#more" class="more-link">阅读全文</a>
           </div>
         
         
@@ -279,24 +279,247 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-02-21T14:16:25.000Z"><a href="/2015/02/21/我是如何写博客的/">2015-02-21</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/kdump/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/02/21/我是如何写博客的/">我是如何写博客的</a></h1>
+    <h1 class="title"><a href="/2015/04/24/kdump/">kdump</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>每个人都有自己写博客的方式， 我来分享下我是怎么写博客的。<br>
+        <iframe src="https://www.slideshare.net/slideshow/embed_code/41359368" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/iozone/">2015-04-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/04/24/iozone/">iozone</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="How_to_install_iozone">How to install iozone</h1><ol>
+<li><p>Download iozone tarball from <a href="http://www.iozone.org/" target="_blank" rel="external">http://www.iozone.org/</a>.</p>
+</li>
+<li><p>Extract it:</p>
+</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvf iozone3XXX.tar</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><code># cd iozone3XXX/src/current/</code></p>
+</li>
+<li><p>Choose your platform(my platform is AMD64) and run <code># make AMD64</code></p>
+</li>
+</ol>
+<h1 id="Features_and_Functions">Features and Functions</h1><h2 id="Features">Features</h2><ul>
+<li>ANSII ‘C’ source.</li>
+<li>POSIX async I/O.</li>
+<li>Mmap() file I/O.</li>
+<li>Normal file I/O.</li>
+<li>Single stream measurement.</li>
+<li>Multiple stream measurement.</li>
+<li>POSIX pthreads.</li>
+<li>Multi-process measurement.</li>
+<li>Excel importable output for graph generation.</li>
+<li>I/O Latency data for plots.</li>
+<li>64-bit compatible source.</li>
+<li>Large file compatible.</li>
+<li>Stonewalling in throughput tests to eliminate straggler effects.</li>
+<li>Processor cache size configurable.</li>
+<li>Selectable measurements with fsync, O_SYNC.</li>
+<li>Options targeted for testing over NFS.</li>
+</ul>
+<h2 id="I/O_operations">I/O operations</h2><ul>
+<li><p><strong>Read</strong><br>This test measures the performance of reading an existing file.</p>
+</li>
+<li><p><strong>Write</strong><br>This test measures the performance of writing a new file. When a new file is written not only does the data need to be stored but also the overhead information for keeping track of where the data is located on the storage media. This overhead is called the “metadata” It consists of the directory information, the space allocation and any other data associated with a file that is not part of the data contained in the file. It is normal for the initial write performance to be lower than the performance of re-writing a file due to this overhead information.</p>
+</li>
+<li><p><strong>Re-Read</strong><br>This test measures the performance of reading a file that was recently read. It is normal for the performance to be higher as the operating system generally maintains a cache of the data for files that were recently read. This cache can be used to satisfy reads and improves the performance.</p>
+</li>
+<li><p><strong>Re-Write</strong><br>This test measures the performance of writing a file that already exists. When a file is written that already exists the work required is less as the metadata already exists. It is normal for the rewrite performance to be higher than the performance of writing a new file.</p>
+</li>
+<li><p><strong>Read backwards</strong><br>This test measures the performance of reading a file backwards. This may seem like a strange way to read a file but in fact there are applications that do this. MSC Nastran is an example of an application that reads its files backwards. With MSC Nastran, these files are very large (Gbytes to Tbytes in size). Although many operating systems have special features that enable them to read a file forward more rapidly, there are very few operating systems that detect and enhance the performance of reading a file backwards.</p>
+</li>
+<li><p><strong>Random Read</strong><br>This test measures the performance of reading a file with accesses being made to random locations within the file. The performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
+</li>
+<li><p><strong>Random Write</strong><br>This test measures the performance of writing a file with accesses being made to random locations within the file. Again the performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
+</li>
+<li><p><strong>Random Mix</strong><br>This test measures the performance of reading and writing a file with accesses being made to random locations within the file. Again the performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others. This test is only available in throughput mode. Each thread/process runs either the read or the write test. The distribution of read/write is done on a round robin basis. More than one thread/process is required for proper operation.</p>
+</li>
+<li><p><strong>Backwards Read</strong><br>This test measures the performance of reading a file backwards. This may seem like a strange way to read a file but in fact there are applications that do this. MSC Nastran is an example of an application that reads its files backwards. With MSC Nastran, these files are very large (Gbytes to Tbytes in size). Although many operating systems have special features that enable them to read a file forward more rapidly, there are very few operating systems that detect and enhance the performance of reading a file backwards.</p>
+</li>
+<li><p><strong>Record Rewrite</strong><br>This test measures the performance of writing and re-writing a particular spot within a file. This hot spot can have very interesting behaviors. If the size of the spot is small enough to fit in the CPU data cache then the performance is very high. If the size of the spot is bigger than the CPU data cache but still fits in the TLB then one gets a different level of performance. If the size of the spot is larger than the CPU data cache and larger than the TLB but still fits in the operating system cache then one gets another level of performance, and if the size of the spot is bigger than the operating system cache then one gets yet another level of performance.</p>
+</li>
+<li><p><strong>Read Strided</strong><br>This test measures the performance of reading a file with a strided access behavior. An example would be: Read at offset zero for a length of 4 Kbytes, then seek 200 Kbytes, and then read for a length of 4 Kbytes, then seek 200 Kbytes and so on. Here the pattern is to read 4 Kbytes and then Seek 200 Kbytes and repeat the pattern. This again is a typical application behavior for applications that have data structures contained within a file and is accessing a particular region of the data structure. Most operating systems do not detect this behavior or implement any techniques to enhance the performance under this type of access behavior.</p>
+<p>This access behavior can also sometimes produce interesting performance anomalies. An example would be if the application’s stride causes a particular disk, in a striped file system, to become the bottleneck.</p>
+</li>
+<li><p><strong>Fread</strong><br>This test measures the performance of reading a file using the library function fread(). This is a library routine that performs buffered &amp; blocked read operations. The buffer is within the user’s address space. If an application were to read in very small size transfers then the buffered &amp; blocked I/O functionality of fread() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made.</p>
+</li>
+<li><p><strong>Freread</strong><br>This test is the same as fread above except that in this test the file that is being read was read in the recent past. This should result in higher performance as the operating system is likely to have the file data in cache.</p>
+</li>
+<li><p><strong>Fwrite</strong><br>This test measures the performance of writing a file using the library function fwrite(). This is a library routine that performs buffered write operations. The buffer is within the user’s address space. If an application were to write in very small size transfers then the buffered &amp; blocked I/O functionality of fwrite() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made. This test is writing a new file so again the overhead of the metadata is included in the measurement.</p>
+</li>
+<li><p><strong>Frewrite</strong><br>This test measures the performance of writing a file using the library function fwrite().</p>
+<p>This is a library routine that performs buffered &amp; blocked write operations. The buffer is within the user’s address space. If an application were to write in very small size transfers then the buffered &amp; blocked I/O functionality of fwrite() can enhance the performance of the application by reducing the number of actual operating system calls and increasing the size of the transfers when operating system calls are made.</p>
+<p>This test is writing to an existing file so the performance should be higher as there are no metadata operations required.</p>
+</li>
+<li><p><strong>Random Read/Write</strong><br>This test measures the performance of reading/writing a file with accesses being made to random locations within the file. The performance of a system under this type of activity can be impacted by several factors such as: Size of operating system’s cache, number of disks, seek latencies, and others.</p>
+</li>
+<li><p><strong>Async I/O</strong><br>Another mechanism that is supported by many operating systems for performing I/O is POSIX async I/O. The application uses the POSIX standard async I/O interfaces to accomplish this. Example: aio_write(), aio_read(), aio_error(). This test measures the performance of the POSIX async I/O mechanism.</p>
+</li>
+<li><p><strong>Mmap</strong><br>Many operating systems support the use of mmap() to map a file into a user’s address space. Once this mapping is in place then stores to this location in memory will result in the data being stored going to a file. This is handy if an application wishes to treat files as chunks of memory. An example would be to have an array in memory that is also being maintained as a file in the files system.</p>
+<p>The semantics of mmap files is somewhat different than normal files. If a store to the memory location is done then no actual file I/O may occur immediately. The use of the msyc() with the flags MS_SYNC, and MS_ASYNC control the coherency of the memory and the file. A call to msync() with MS_SYNC will force the contents of memory to the file and wait for it to be on storage before returning to the application. A call to msync() with the flag MS_ASYNC tells the operating system to flush the memory out to storage using an asynchronous mechanism so that the application may return into execution without waiting for the data to be written to storage.</p>
+<p>This test measures the performance of using the mmap() mechanism for performing I/O.</p>
+</li>
+</ul>
+<h1 id="How_to_use_iozone">How to use iozone</h1><p>For Xen disk performance testing, i choose the following command:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M result_file -f test_file</span></span><br></pre></td></tr></table></figure></p>
+<p>For each option meaings, see <strong>The main parameters</strong> section.</p>
+<p><strong>Note:</strong><br>If you wish to get accurate results for the entire range of performance for a platform you need to make sure that the maximum file size that will be tested is bigger than the buffer cache. If you don’t know how big the buffer cache is, or if it is a dynamic buffer cache then just set the maximum file size to be greater than the total physical memory that is in the platform.</p>
+<p>In general you should be able to see three or four plateaus.</p>
+<ul>
+<li>File size fits in processor cache.</li>
+<li>File size fits in buffer cache</li>
+<li>File size is bigger than buffer cache.</li>
+</ul>
+<p>You may see another plateau if the platform has a primary and secondary processor caches. If you don’t see at least 3 plateaus then you probably have the maximum file size set too small. Iozone will default to a maximum file size of 512 Mbytes. This is generally sufficient but for some very large systems you may need to use the –g option to increase the maximum file size. See the file Run_rules document in the distribution for further information.</p>
+<p><strong>Additional notes on how to make the graphs</strong></p>
+<p>Iozone sends Excel compatible output to standard out. This may be redirected to a file and then processed with Excel. The normal output for Iozone as well as the Excel portion are in the same output stream. So to get the graphs one needs to scroll down to the Excel portion of the file and graph the data in that section.</p>
+<p> There are several sets of graph data. “Writer report” is one example. When importing the file be sure to tell Excel to import with “delimited” and then click next, then click on the “space delimited” button. To graph the data just highlight the region containing the file size and record size and then click on the graph wizard.</p>
+<p> The type of graph used is “Surface”. When the next dialog box pops up you need to select “Columns”.<br>After that the rest should be straight forward.</p>
+<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M -b result_file.xls -f test_file</span></span><br><span class="line">	Iozone: Performance Test of File I/O</span><br><span class="line">	        Version <span class="variable">$Revision</span>: <span class="number">3.414</span> $</span><br><span class="line">		Compiled <span class="keyword">for</span> <span class="number">64</span> bit mode.</span><br><span class="line">		Build: linux</span><br><span class="line"></span><br><span class="line">	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins</span><br><span class="line">	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss</span><br><span class="line">	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,</span><br><span class="line">	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,</span><br><span class="line">	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,</span><br><span class="line">	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,</span><br><span class="line">	             Fabrice Bacchella, Zhenghua Xue, Q<span class="keyword">in</span> Li, Darren Sawyer,</span><br><span class="line">	             Vangel Bojaxhi, Ben England.</span><br><span class="line"></span><br><span class="line">	Run began: Mon Apr <span class="number">20</span> <span class="number">07</span>:<span class="number">36</span>:<span class="number">07</span> <span class="number">2015</span></span><br><span class="line"></span><br><span class="line">	Auto Mode</span><br><span class="line">	Cross over of record size disabled.</span><br><span class="line">	Excel chart generation enabled</span><br><span class="line">	Using minimum file size of <span class="number">1024</span> kilobytes.</span><br><span class="line">	Using maximum file size of <span class="number">10240</span> kilobytes.</span><br><span class="line">	Record Size <span class="number">64</span> KB</span><br><span class="line"></span><br><span class="line">	Machine = Linux dhcp-<span class="number">66</span>-<span class="number">73</span>-<span class="number">122</span>.englab.nay.redhat.com <span class="number">3.10</span>.<span class="number">0</span>-<span class="number">229</span>.el7.x86_64 <span class="comment">#1 SMP Thu Jan 29 18:37:38 EST 201</span></span><br><span class="line">	Command line used: iozone -azR -i <span class="number">0</span> -i <span class="number">1</span> -i <span class="number">2</span> -n <span class="number">1</span>M -g <span class="number">10</span>M -r <span class="number">64</span>K -M -b result_file.xls <span class="operator">-f</span> <span class="built_in">test</span>_file</span><br><span class="line">	Output is <span class="keyword">in</span> Kbytes/sec</span><br><span class="line">	Time Resolution = <span class="number">0.000001</span> seconds.</span><br><span class="line">	Processor cache size <span class="built_in">set</span> to <span class="number">1024</span> Kbytes.</span><br><span class="line">	Processor cache line size <span class="built_in">set</span> to <span class="number">32</span> bytes.</span><br><span class="line">	File stride size <span class="built_in">set</span> to <span class="number">17</span> * record size.</span><br><span class="line">                                                            random  random    bkwd   record   stride</span><br><span class="line">              KB  reclen   write rewrite    <span class="built_in">read</span>    reread    <span class="built_in">read</span>   write    <span class="built_in">read</span>  rewrite     <span class="built_in">read</span>   fwrite frewrite   fread  freread</span><br><span class="line">            <span class="number">1024</span>      <span class="number">64</span>  <span class="number">564176</span> <span class="number">1943594</span>  <span class="number">5813392</span>  <span class="number">5813392</span> <span class="number">4589593</span> <span class="number">2358827</span></span><br><span class="line">            <span class="number">2048</span>      <span class="number">64</span>  <span class="number">594302</span> <span class="number">2081497</span>  <span class="number">5986827</span>  <span class="number">3136379</span> <span class="number">4295384</span> <span class="number">2090107</span></span><br><span class="line">            <span class="number">4096</span>      <span class="number">64</span>  <span class="number">591658</span> <span class="number">2084478</span>  <span class="number">5926533</span>  <span class="number">6195843</span> <span class="number">5634950</span> <span class="number">2345757</span></span><br><span class="line">            <span class="number">8192</span>      <span class="number">64</span>  <span class="number">592850</span> <span class="number">1848808</span>  <span class="number">4917099</span>  <span class="number">5776876</span> <span class="number">5326425</span> <span class="number">1677328</span></span><br><span class="line"></span><br><span class="line">iozone <span class="built_in">test</span> complete.</span><br><span class="line">Excel output is below:</span><br><span class="line"></span><br><span class="line"><span class="string">"Writer report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">564176</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">594302</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">591658</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">592850</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Re-writer report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">1943594</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">2081497</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">2084478</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">1848808</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Reader report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">5813392</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">5986827</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">5926533</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">4917099</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Re-Reader report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">5813392</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">3136379</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">6195843</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">5776876</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Random read report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">4589593</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">4295384</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">5634950</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">5326425</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Random write report"</span></span><br><span class="line">        <span class="string">"64"</span></span><br><span class="line"><span class="string">"1024"</span>   <span class="number">2358827</span></span><br><span class="line"><span class="string">"2048"</span>   <span class="number">2090107</span></span><br><span class="line"><span class="string">"4096"</span>   <span class="number">2345757</span></span><br><span class="line"><span class="string">"8192"</span>   <span class="number">1677328</span></span><br></pre></td></tr></table></figure>
+<p>Use office tool to open the result_file.xls, you will find the results contain three part: file read/write method, records sizes, file sizes and the Throughput(Kbytes/sec).</p>
+<p>The <strong>Throughput</strong> is the disk performance indicator, the larger the better. On a final note, you can generate graphs using the Generate_Graphs and gengnuplot.sh located under iozone3XXX/src/current/, based on the iozone output.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd iozone3XXX/src/current/</span></span><br><span class="line"><span class="comment"># iozone -azR -i 0 -i 1 -i 2 -n 1G -g 4G -r 64K -M -b result_file.xls -f test_file &gt; test_results.txt</span></span><br><span class="line"><span class="comment"># ./Generate_Graphs test_results.txt</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="The_main_parameters">The main parameters</h1><ul>
+<li><strong>-a</strong> - Used to select full automatic mode. Produces output that covers all tested file operations for record sizes of 4k to 16M for file sizes of 64k to 512M.</li>
+<li><strong>-R</strong> - Generate Excel report. Iozone will generate an Excel compatible report to standard out. This file may be imported with Microsoft Excel (space delimited) and used to create a graph of the filesystem performance. Note: The 3D graphs are column oriented. You will need to select this when graphing as the default in Excel is row oriented data.</li>
+<li><strong>-b Filename</strong> - Iozone will create a binary file format file in Excel compatible output of results.</li>
+<li><strong>-g #</strong> - Set maximum file size (in Kbytes) for auto mode (or #m or #g)</li>
+<li><strong>-n #</strong> - Set minimum file size (in Kbytes) for auto mode (or #m or #g)</li>
+<li><p><strong>-i #</strong> - Used to specify which tests to run. (0=write/rewrite, 1=read/re-read, 2=random-read/write 3=Read-backwards, 4=Re-write-record, 5=stride-read, 6=fwrite/re-fwrite, 7=fread/Re-fread, 8=random mix, 9=pwrite/Re-pwrite, 10=pread/Re-pread, 11=pwritev/Re-pwritev, 12=preadv/Re-preadv).</p>
+<p>One will always need to specify 0 so that any of the following tests will have a file to measure.</p>
+<p>-i # -i # -i # is also supported so that one may select more than one test.</p>
+</li>
+<li><strong>-s #</strong> - Used to specify the size, in Kbytes, of the file to test. One may also specify -s #k (size in Kbytes) or -s #m (size in Mbytes) or -s #g (size in Gbytes).</li>
+<li><strong>-z</strong> - Used in conjunction with -a to test all possible record sizes. Normally Iozone omits testing of small record sizes for very large files when used in full automatic mode. This option forces Iozone to include the small record sizes in the automatic tests also.</li>
+<li><strong>-B</strong> - Use mmap() files. This causes all of the temporary files being measured to be created and accessed with the mmap() interface. Some applications prefer to treat files as arrays of memory. These applications mmap() the file and then just access the array with loads and stores to perform file I/O.</li>
+<li><strong>-c</strong> - Include close() in the timing calculations. This is useful only if you suspect that close() is broken in the operating system currently under test. It can be useful for NFS Version 3 testing as well to help identify if the nfs3_commit is working well.</li>
+<li><strong>-D</strong> - Use msync(MS_ASYNC) on mmap files. This tells the operating system that all the data in the mmap space needs to be written to disk asynchronously.</li>
+<li><strong>-G</strong> - Use msync(MS_SYNC) on mmap files. This tells the operating system that all the data in the mmap space needs to be written to disk synchronously.</li>
+<li><strong>-o</strong> - Writes are synchronously written to disk. (O_SYNC). Iozone will open the files with the O_SYNC flag. This forces all writes to the file to go completely to disk before returning to the benchmark.</li>
+<li><strong>-H</strong> - Use POSIX async I/O with # async operations. Iozone will use POSIX async I/O with a bcopy from the async buffers back into the applications buffer. Some versions of MSC NASTRAN perform I/O this way. This technique is used by applications so that the async I/O may be performed in a library and requires no changes to the applications internal model.</li>
+<li><strong>-k #</strong> - Use POSIX async I/O (no bcopy) with # async operations. Iozone will use POSIX async I/O and will not perform any extra bcopys. The buffers used by Iozone will be handed to the async I/O system call directly.</li>
+<li><strong>-I</strong> - Use DIRECT I/O for all file operations. Tells the filesystem that all operations are to bypass the buffer cache and go directly to disk. This also will use VX_DIRECT on VxFS, and O_DIRECT on Linux, and directio() on Solaris.</li>
+<li><strong>-K</strong> - Generate some random accesses during the normal testing.</li>
+<li><strong>-l #</strong> - Set the lower limit on number of processes to run. When running throughput tests this option allows the user to specify the least number of processes or threads to start. This option should be used in conjunction with the -u option.</li>
+<li><strong>-L #</strong> - Set processor cache line size to value (in bytes). Tells Iozone the processor cache line size. This is used internally to help speed up the test.</li>
+<li><strong>-S #</strong> - Set processor cache size to value (in Kbytes). This tells Iozone the size of the processor cache. It is used internally for buffer alignment and for the purge functionality.</li>
+<li><strong>-M</strong> - Iozone will call uname() and will put the string in the output file.</li>
+<li><strong>-t #</strong> - Run Iozone in a throughput mode. This option allows the user to specify how many threads or processes to have active during the measurement.</li>
+<li><strong>-u #</strong> - Set the upper limit on number of processes to run. When running throughput tests this option allows the user to specify the greatest number of processes or threads to start. This option should be used in conjunction with the -l option.</li>
+<li><strong>-W</strong> - Lock files when reading or writing.</li>
+<li><strong>-y #</strong>  - Set minimum record size (in Kbytes) for auto mode. One may also specify -y #k (size in Kbytes) or -y #m (size in Mbytes) or -y #g (size in Gbytes). See –q for setting maximum record size.</li>
+<li><strong>-q #</strong> - Set maximum record size (in Kbytes) for auto mode. One may also specify -q #k (size in Kbytes) or -q #m (size in Mbytes) or -q #g (size in Gbytes). See –y for setting minimum record size.</li>
+<li><strong>-r #</strong> - Used to specify the record size, in Kbytes, to test. One may also specify -r #k (size in Kbytes) or -r #m (size in Mbytes) or -r #g (size in Gbytes).</li>
+<li><strong>-f filename</strong> - Used to specify the filename for the temporary file under test. This is useful when the unmount option is used. When testing with unmount between tests it is necessary for the temporary file under test to be in a directory that can be unmounted. It is not possible to unmount the current working directory as the process Iozone is running in this directory.</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="http://www.iozone.org/docs/IOzone_msword_98.pdf" target="_blank" rel="external">Iozone</a></li>
+<li><a href="http://en.wikipedia.org/wiki/IOzone" target="_blank" rel="external">IOzone - Wikipedia</a></li>
+<li><a href="http://www.cyberciti.biz/tips/linux-filesystem-benchmarking-with-iozone.html" target="_blank" rel="external">How To Measure Linux Filesystem I/O Performance With iozone</a></li>
+<li><a href="http://www.iozone.org/src/current/lab_graphs1.xls" target="_blank" rel="external">Linux Iozone graph example</a> - This is a sample *.xls file from iozone that shows the kind of excel output that can be generated from iozone.</li>
+<li><a href="http://www.thegeekstuff.com/2011/05/iozone-examples/" target="_blank" rel="external">10 iozone Examples for Disk I/O Performance Measurement on Linux</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/用Beamer做slides-模板/">2015-04-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/04/24/用Beamer做slides-模板/">用Beamer做slides(模板)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="介绍">介绍</h3><p>Lex菜鸟，之前做slides用过LibreOffice, PowerPoint, S5和reveal.js，S5和reveal.js都是结合org-mode来做的，非常方便，但做出来的slides只能通过浏览器来展示，而且定制性不是太好. LibreOffice, PowerPoint固然很强大，但是不合我口味，太easy, 好吧，我承认我是自虐狂。后来听说latex的beamer库也可以做slides而且效果还不错，故而google了2天，找各种模板，各种实验，那个烦啊…</p>
+<p>不过还好，两天之后终于找到自己比较满意的模板，这里跟大家分享下，另外再分享下其它的东东, 感谢 Yixf和X-Wei两位大神!</p>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2015/02/21/我是如何写博客的/#more" class="more-link">阅读全文</a>
+            <a href="/2015/04/24/用Beamer做slides-模板/#more" class="more-link">阅读全文</a>
           </div>
         
         
@@ -328,28 +551,145 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-11-28T09:33:54.000Z"><a href="/2014/11/28/Install-xen-on-Fedora20/">2014-11-28</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/fio/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/11/28/Install-xen-on-Fedora20/">Install xen on Fedora20</a></h1>
+    <h1 class="title"><a href="/2015/04/24/fio/">fio</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="Installing_the_Packages">Installing the Packages</h3><p>To install the Xen Project software, just run:</p>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># yum install xen</span></span><br></pre></td></tr></table></figure>
-<p>as root. yum will, as usual, take care of downloading and installing anything that is needed. As a part of that, it also create a new GRUB2 boot menu entry. Once the installation is complete, just reboot and select “Xen 4.x.x” from the GRUB2 menu.</p>
-<p>If on Fedora 18 and 19, you will likely see something like “Xen 4.2.x”. If on Fedora 16 or 17, it will have “Xen 4.1.x” in it. It is also possible that you only see something like “Fedora, with Xen hypervisor”, and that is also ok.</p>
+        <h1 id="How_to_install_fio">How to install fio</h1><ol>
+<li>Clone fio from git://git.kernel.dk/fio.git</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git clone git://git.kernel.dk/fio.git</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>Install it:</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd fio</span></span><br><span class="line"><span class="comment"># ./configure</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"><span class="comment"># make install</span></span><br></pre></td></tr></table></figure>
+<h1 id="Features_and_Functions">Features and Functions</h1><p>fio is a tool that will spawn a number of threads or processes doing a particular type of io action as specified by the user. fio takes a number of global parameters, each inherited by the thread unless otherwise parameters given to them overriding that setting is given. The typical use of fio is to write a job file matching the io load one wants to simulate.</p>
+<h1 id="How_fio_works">How fio works</h1><p>The first step in getting fio to simulate a desired io workload, is writing a job file describing that specific setup. A job file may contain any number of threads and/or files - the typical contents of the job file is a global section defining shared parameters, and one or more job sections describing the jobs involved. When run, fio parses this file and sets everything up as described. If we break down a job from top to bottom, it contains the following basic parameters:</p>
+<ul>
+<li><strong>IO type</strong> - Defines the io pattern issued to the file(s). We may only be reading sequentially from this file(s), or we may be writing randomly. Or even mixing reads and writes, sequentially or randomly.</li>
+<li><strong>Block size</strong> - In how large chunks are we issuing io? This may be a single value, or it may describe a range of block sizes.</li>
+<li><strong>IO size</strong> - How much data are we going to be reading/writing.</li>
+<li><strong>IO engine</strong> - How do we issue io? We could be memory mapping the file, we could be using regular read/write, we could be using splice, async io, syslet, or even SG (SCSI generic sg).</li>
+<li><strong>IO depth</strong> - If the io engine is async, how large a queuing depth do we want to maintain?</li>
+<li><strong>IO type</strong> - Should we be doing buffered io, or direct/raw io?</li>
+<li><strong>Num files</strong> - How many files are we spreading the workload over.</li>
+<li><strong>Num threads</strong> - How many threads or processes should we spread this workload over.</li>
+</ul>
+<p>The above are the basic parameters defined for a workload, in addition there’s a multitude of parameters that modify other aspects of how this job behaves.</p>
+<h1 id="Running_fio">Running fio</h1><p>See the README file for command line parameters, there are only a few of them.</p>
+<p>Running fio is normally the easiest part - you just give it the job file (or job files) as parameters:</p>
+<p><code>$ fio job_file</code></p>
+<p>and it will start doing what the job_file tells it to do. You can give more than one job file on the command line, fio will serialize the running of those files. Internally that is the same as using the ‘stonewall’ parameter described in the parameter section.</p>
+<p>If the job file contains only one job, you may as well just give the parameters on the command line. The command line parameters are identical to the job parameters, with a few extra that control global parameters (see README). For example, for the job file parameter iodepth=2, the mirror command line option would be —iodepth 2 or —iodepth=2. You can also use the command line for giving more than one job entry. For each —name option that fio sees, it will start a new job with that name. Command line entries following a —name entry will apply to that job, until there are no more entries or a new —name entry is seen. This is similar to the job file options, where each option applies to the current job until a new [] job entry is seen.</p>
+<p>fio does not need to run as root, except if the files or devices specified in the job section requires that. Some other options may also be restricted, such as memory locking, io scheduler switching, and decreasing the nice value.</p>
+<h1 id="Job_file">Job file</h1><p>As previously described, fio accepts one or more job files describing what it is supposed to do. The job file format is the classic ini file, where the names enclosed in [] brackets define the job name. You are free to use any ascii name you want, except ‘global’ which has special meaning. A global section sets defaults for the jobs described in that file. A job may override a global section parameter, and a job file may even have several global sections if so desired. A job is only affected by a global section residing above it. If the first character in a line is a ‘;’ or a ‘#’, the entire line is discarded as a comment.</p>
+<p>So let’s look at a really simple job file that defines two processes, each randomly reading from a 128MB file.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">; -- start job file --</span><br><span class="line">[global]</span><br><span class="line">rw=randread</span><br><span class="line">size=<span class="number">128</span>m</span><br><span class="line"></span><br><span class="line">[job1]</span><br><span class="line"></span><br><span class="line">[job2]</span><br><span class="line"></span><br><span class="line">; -- end job file --</span><br></pre></td></tr></table></figure>
+<p>As you can see, the job file sections themselves are empty as all the described parameters are shared. As no filename= option is given, fio makes up a filename for each of the jobs as it sees fit. On the command line, this job would look as follows:</p>
+<p><code>$ fio --name=global --rw=randread --size=128m --name=job1 --name=job2</code></p>
+<p>Let’s look at an example that has a number of processes writing randomly to files.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">; -- start job file --</span><br><span class="line">[random-writers]</span><br><span class="line">ioengine=libaio</span><br><span class="line">iodepth=<span class="number">4</span></span><br><span class="line">rw=randwrite</span><br><span class="line">bs=<span class="number">32</span>k</span><br><span class="line">direct=<span class="number">0</span></span><br><span class="line">size=<span class="number">64</span>m</span><br><span class="line">numjobs=<span class="number">4</span></span><br><span class="line">; -- end job file --</span><br></pre></td></tr></table></figure>
+<p>Here we have no global section, as we only have one job defined anyway. We want to use async io here, with a depth of 4 for each file. We also increased the buffer size used to 32KB and define numjobs to 4 to fork 4 identical jobs. The result is 4 processes each randomly writing to their own 64MB file. Instead of using the above job file, you could have given the parameters on the command line. For this case, you would specify:</p>
+<p><code>$ fio --name=random-writers --ioengine=libaio --iodepth=4 --rw=randwrite --bs=32k --direct=0 --size=64m --numjobs=4</code></p>
+<p>When fio is utilized as a basis of any reasonably large test suite, it might be desirable to share a set of standardized settings across multiple job files. Instead of copy/pasting such settings, any section may pull in an external .fio file with ‘include filename’ directive, as in the following example:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">; -- start job file including.fio --</span><br><span class="line">[global]</span><br><span class="line">filename=/tmp/<span class="built_in">test</span></span><br><span class="line">filesize=<span class="number">1</span>m</span><br><span class="line">include glob-include.fio</span><br><span class="line"></span><br><span class="line">[<span class="built_in">test</span>]</span><br><span class="line">rw=randread</span><br><span class="line">bs=<span class="number">4</span>k</span><br><span class="line">time_based=<span class="number">1</span></span><br><span class="line">runtime=<span class="number">10</span></span><br><span class="line">include <span class="built_in">test</span>-include.fio</span><br><span class="line">; -- end job file including.fio --</span><br><span class="line"></span><br><span class="line">; -- start job file glob-include.fio --</span><br><span class="line">thread=<span class="number">1</span></span><br><span class="line">group_reporting=<span class="number">1</span></span><br><span class="line">; -- end job file glob-include.fio --</span><br><span class="line"></span><br><span class="line">; -- start job file <span class="built_in">test</span>-include.fio --</span><br><span class="line">ioengine=libaio</span><br><span class="line">iodepth=<span class="number">4</span></span><br><span class="line">; -- end job file <span class="built_in">test</span>-include.fio -</span><br></pre></td></tr></table></figure>
+<p>Settings pulled into a section apply to that section only (except global section). Include directives may be nested in that any included file may contain further include directive(s). Include files may not contain [] sections.</p>
+<p><strong>There are many parameters for job file, see fio/HOWTO(5.0 Detailed list of parameters) for details</strong></p>
+<p><strong>Note:</strong><br>There are some template job files, see <strong>fio/examples</strong></p>
+<h1 id="Client/server">Client/server</h1><p>Normally fio is invoked as a stand-alone application on the machine where the IO workload should be generated. However, the frontend and backend of fio can be run separately. Ie the fio server can generate an IO workload on the “Device Under Test” while being controlled from another machine.</p>
+<p>Start the server on the machine which has access to the storage DUT:</p>
+<p><code>fio --server=args</code></p>
+<p>where args defines what fio listens to. The arguments are of the form ‘type,hostname or IP,port’. ‘type’ is either ‘ip’ (or ip4) for TCP/IP v4, ‘ip6’ for TCP/IP v6, or ‘sock’ for a local unix domain socket. ‘hostname’ is either a hostname or IP address, and ‘port’ is the port to listen to (only valid for TCP/IP, not a local socket). Some examples:</p>
+<p>1) <code>fio --server</code></p>
+<p>   Start a fio server, listening on all interfaces on the default port (8765).</p>
+<p>2) <code>fio --server=ip:hostname,4444</code></p>
+<p>   Start a fio server, listening on IP belonging to hostname and on port 4444.</p>
+<p>3) <code>fio --server=ip6:::1,4444</code></p>
+<p>   Start a fio server, listening on IPv6 localhost ::1 and on port 4444.</p>
+<p>4) <code>fio --server=,4444</code></p>
+<p>   Start a fio server, listening on all interfaces on port 4444.</p>
+<p>5) <code>fio --server=1.2.3.4</code></p>
+<p>   Start a fio server, listening on IP 1.2.3.4 on the default port.</p>
+<p>6) <code>fio --server=sock:/tmp/fio.sock</code></p>
+<p>   Start a fio server, listening on the local socket /tmp/fio.sock.</p>
+<p>Once a server is running, a “client” can connect to the fio server with:</p>
+<p><code>fio --local-args --client=&lt;server&gt; --remote-args &lt;job file(s)&gt;</code></p>
+<p>where —local-args are arguments for the client where it is running, ‘server’ is the connect string, and —remote-args and <job file(s)=""> are sent to the server. The ‘server’ string follows the same format as it does on the server side, to allow IP/hostname/socket and port strings.</job></p>
+<p>Fio can connect to multiple servers this way:</p>
+<p>fio —client=<server1> <job file(s)=""> —client=<server2> <job file(s)=""></job></server2></job></server1></p>
+<p>If the job file is located on the fio server, then you can tell the server to load a local file as well. This is done by using —remote-config:</p>
+<p><code>fio --client=server --remote-config /path/to/file.fio</code></p>
+<p>Then the fio server will open this local (to the server) job file instead of being passed one from the client.</p>
+<h1 id="Xen_fio_job_file">Xen fio job file</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">ioengine=libaio</span><br><span class="line">size=<span class="number">190</span>M</span><br><span class="line">direct=<span class="number">1</span></span><br><span class="line">runtime=<span class="number">7200</span></span><br><span class="line">time_based</span><br><span class="line">directory=/mnt</span><br><span class="line">group_reporting</span><br><span class="line">numjobs=<span class="number">16</span></span><br><span class="line">filename=xen_block.file</span><br><span class="line">write_bw_<span class="built_in">log</span>=xen</span><br><span class="line">write_lat_<span class="built_in">log</span>=xen</span><br><span class="line">write_iops_<span class="built_in">log</span>=xen</span><br><span class="line"></span><br><span class="line">[randread-<span class="number">4</span>k-iodepth_1]</span><br><span class="line">rw=<span class="built_in">read</span></span><br><span class="line">bs=<span class="number">4</span>k</span><br><span class="line">iodepth=<span class="number">1</span></span><br><span class="line">stonewall</span><br><span class="line"></span><br><span class="line">[randwrite-<span class="number">4</span>k-iodepth_1]</span><br><span class="line">rw=randread</span><br><span class="line">bs=<span class="number">4</span>k</span><br><span class="line">iodepth=<span class="number">1</span></span><br><span class="line">stonewall</span><br><span class="line"></span><br><span class="line">[randrw-<span class="number">4</span>k-iodepth_1]</span><br><span class="line">rw=randrw</span><br><span class="line">bs=<span class="number">4</span>k</span><br><span class="line">iodepth=<span class="number">1</span></span><br><span class="line">stonewall</span><br><span class="line"></span><br><span class="line">[randread-<span class="number">256</span>k-iodepth_64]</span><br><span class="line">rw=<span class="built_in">read</span></span><br><span class="line">bs=<span class="number">256</span>k</span><br><span class="line">iodepth=<span class="number">64</span></span><br><span class="line">stonewall</span><br><span class="line"></span><br><span class="line">[randwrite-<span class="number">256</span>k-iodepth_64]</span><br><span class="line">rw=randread</span><br><span class="line">bs=<span class="number">256</span>k</span><br><span class="line">iodepth=<span class="number">64</span></span><br><span class="line">stonewall</span><br><span class="line"></span><br><span class="line">[randrw-<span class="number">256</span>k-iodepth_64]</span><br><span class="line">rw=randrw</span><br><span class="line">bs=<span class="number">256</span>k</span><br><span class="line">iodepth=<span class="number">64</span></span><br><span class="line">stonewall</span><br></pre></td></tr></table></figure>
+<p>If you want to run this job, just issue:</p>
+<p><code># fio $xen_job_file</code></p>
+<h1 id="Results_analysis">Results analysis</h1><p>Issue <code># fio $xen_job_file --output=xen_fio_results.txt</code></p>
+<p><code># cat xen_fio_results.txt</code>The results will be something like:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">randread-<span class="number">4</span>k-iodepth_1: (g=<span class="number">0</span>): rw=<span class="built_in">read</span>, bs=<span class="number">4</span>K-<span class="number">4</span>K/<span class="number">4</span>K-<span class="number">4</span>K/<span class="number">4</span>K-<span class="number">4</span>K, ioengine=libaio, iodepth=<span class="number">1</span></span><br><span class="line">...</span><br><span class="line">randwrite-<span class="number">4</span>k-iodepth_1: (g=<span class="number">1</span>): rw=randread, bs=<span class="number">4</span>K-<span class="number">4</span>K/<span class="number">4</span>K-<span class="number">4</span>K/<span class="number">4</span>K-<span class="number">4</span>K, ioengine=libaio, iodepth=<span class="number">1</span></span><br><span class="line">...</span><br><span class="line">randrw-<span class="number">4</span>k-iodepth_1: (g=<span class="number">2</span>): rw=randrw, bs=<span class="number">4</span>K-<span class="number">4</span>K/<span class="number">4</span>K-<span class="number">4</span>K/<span class="number">4</span>K-<span class="number">4</span>K, ioengine=libaio, iodepth=<span class="number">1</span></span><br><span class="line">...</span><br><span class="line">randread-<span class="number">256</span>k-iodepth_64: (g=<span class="number">3</span>): rw=<span class="built_in">read</span>, bs=<span class="number">256</span>K-<span class="number">256</span>K/<span class="number">256</span>K-<span class="number">256</span>K/<span class="number">256</span>K-<span class="number">256</span>K, ioengine=libaio, iodepth=<span class="number">64</span></span><br><span class="line">...</span><br><span class="line">randwrite-<span class="number">256</span>k-iodepth_64: (g=<span class="number">4</span>): rw=randread, bs=<span class="number">256</span>K-<span class="number">256</span>K/<span class="number">256</span>K-<span class="number">256</span>K/<span class="number">256</span>K-<span class="number">256</span>K, ioengine=libaio, iodepth=<span class="number">64</span></span><br><span class="line">...</span><br><span class="line">randrw-<span class="number">256</span>k-iodepth_64: (g=<span class="number">5</span>): rw=randrw, bs=<span class="number">256</span>K-<span class="number">256</span>K/<span class="number">256</span>K-<span class="number">256</span>K/<span class="number">256</span>K-<span class="number">256</span>K, ioengine=libaio, iodepth=<span class="number">64</span></span><br><span class="line">...</span><br><span class="line">fio-<span class="number">2.1</span>.<span class="number">7</span></span><br><span class="line">Starting <span class="number">12</span> processes</span><br><span class="line"></span><br><span class="line">randread-<span class="number">4</span>k-iodepth_1: (groupid=<span class="number">0</span>, <span class="built_in">jobs</span>=<span class="number">2</span>): err= <span class="number">0</span>: pid=<span class="number">19833</span>: Tue Apr <span class="number">21</span> <span class="number">21</span>:<span class="number">37</span>:<span class="number">14</span> <span class="number">2015</span></span><br><span class="line">  <span class="built_in">read</span> : io=<span class="number">4768.1</span>MB, bw=<span class="number">67824</span>KB/s, iops=<span class="number">16955</span>, runt= <span class="number">72001</span>msec</span><br><span class="line">    slat (usec): min=<span class="number">6</span>, max=<span class="number">2097</span>, avg=<span class="number">13.71</span>, stdev= <span class="number">4.32</span></span><br><span class="line">    clat (usec): min=<span class="number">1</span>, max=<span class="number">5581</span>, avg=<span class="number">100.62</span>, stdev=<span class="number">18.40</span></span><br><span class="line">     lat (usec): min=<span class="number">44</span>, max=<span class="number">5593</span>, avg=<span class="number">114.64</span>, stdev=<span class="number">19.03</span></span><br><span class="line">    clat percentiles (usec):</span><br><span class="line">     |  <span class="number">1.00</span>th=[   <span class="number">66</span>],  <span class="number">5.00</span>th=[   <span class="number">88</span>], <span class="number">10.00</span>th=[   <span class="number">90</span>], <span class="number">20.00</span>th=[   <span class="number">93</span>],</span><br><span class="line">     | <span class="number">30.00</span>th=[   <span class="number">95</span>], <span class="number">40.00</span>th=[   <span class="number">97</span>], <span class="number">50.00</span>th=[   <span class="number">98</span>], <span class="number">60.00</span>th=[  <span class="number">100</span>],</span><br><span class="line">     | <span class="number">70.00</span>th=[  <span class="number">102</span>], <span class="number">80.00</span>th=[  <span class="number">106</span>], <span class="number">90.00</span>th=[  <span class="number">114</span>], <span class="number">95.00</span>th=[  <span class="number">126</span>],</span><br><span class="line">     | <span class="number">99.00</span>th=[  <span class="number">155</span>], <span class="number">99.50</span>th=[  <span class="number">167</span>], <span class="number">99.90</span>th=[  <span class="number">217</span>], <span class="number">99.95</span>th=[  <span class="number">253</span>],</span><br><span class="line">     | <span class="number">99.99</span>th=[  <span class="number">358</span>]</span><br><span class="line">    bw (KB  /s): min=<span class="number">30824</span>, max=<span class="number">37912</span>, per=<span class="number">49.97</span>%, avg=<span class="number">33893.51</span>, stdev=<span class="number">1242.74</span></span><br><span class="line">    lat (usec) : <span class="number">2</span>=<span class="number">0.02</span>%, <span class="number">4</span>=<span class="number">0.03</span>%, <span class="number">10</span>=<span class="number">0.01</span>%, <span class="number">50</span>=<span class="number">0.02</span>%, <span class="number">100</span>=<span class="number">58.24</span>%</span><br><span class="line">    lat (usec) : <span class="number">250</span>=<span class="number">41.64</span>%, <span class="number">500</span>=<span class="number">0.05</span>%, <span class="number">750</span>=<span class="number">0.01</span>%, <span class="number">1000</span>=<span class="number">0.01</span>%</span><br><span class="line">    lat (msec) : <span class="number">2</span>=<span class="number">0.01</span>%, <span class="number">4</span>=<span class="number">0.01</span>%, <span class="number">10</span>=<span class="number">0.01</span>%</span><br><span class="line">  cpu          : usr=<span class="number">8.43</span>%, sys=<span class="number">24.57</span>%, ctx=<span class="number">1220128</span>, majf=<span class="number">0</span>, minf=<span class="number">65</span></span><br><span class="line">  IO depths    : <span class="number">1</span>=<span class="number">100.0</span>%, <span class="number">2</span>=<span class="number">0.0</span>%, <span class="number">4</span>=<span class="number">0.0</span>%, <span class="number">8</span>=<span class="number">0.0</span>%, <span class="number">16</span>=<span class="number">0.0</span>%, <span class="number">32</span>=<span class="number">0.0</span>%, &gt;=<span class="number">64</span>=<span class="number">0.0</span>%</span><br><span class="line">     submit    : <span class="number">0</span>=<span class="number">0.0</span>%, <span class="number">4</span>=<span class="number">100.0</span>%, <span class="number">8</span>=<span class="number">0.0</span>%, <span class="number">16</span>=<span class="number">0.0</span>%, <span class="number">32</span>=<span class="number">0.0</span>%, <span class="number">64</span>=<span class="number">0.0</span>%, &gt;=<span class="number">64</span>=<span class="number">0.0</span>%</span><br><span class="line">     complete  : <span class="number">0</span>=<span class="number">0.0</span>%, <span class="number">4</span>=<span class="number">100.0</span>%, <span class="number">8</span>=<span class="number">0.0</span>%, <span class="number">16</span>=<span class="number">0.0</span>%, <span class="number">32</span>=<span class="number">0.0</span>%, <span class="number">64</span>=<span class="number">0.0</span>%, &gt;=<span class="number">64</span>=<span class="number">0.0</span>%</span><br><span class="line">     issued    : total=r=<span class="number">1220840</span>/w=<span class="number">0</span>/d=<span class="number">0</span>, short=r=<span class="number">0</span>/w=<span class="number">0</span>/d=<span class="number">0</span></span><br><span class="line">     latency   : target=<span class="number">0</span>, window=<span class="number">0</span>, percentile=<span class="number">100.00</span>%, depth=<span class="number">1</span></span><br><span class="line">     ......</span><br><span class="line">     ......</span><br><span class="line">     ......</span><br><span class="line">randrw-<span class="number">256</span>k-iodepth_64: (groupid=<span class="number">5</span>, <span class="built_in">jobs</span>=<span class="number">2</span>): err= <span class="number">0</span>: pid=<span class="number">19850</span>: Tue Apr <span class="number">21</span> <span class="number">21</span>:<span class="number">37</span>:<span class="number">14</span> <span class="number">2015</span></span><br><span class="line">  <span class="built_in">read</span> : io=<span class="number">30666</span>MB, bw=<span class="number">436078</span>KB/s, iops=<span class="number">1703</span>, runt= <span class="number">72010</span>msec</span><br><span class="line">    slat (usec): min=<span class="number">29</span>, max=<span class="number">1577.6</span>K, avg=<span class="number">596.93</span>, stdev=<span class="number">13016.56</span></span><br><span class="line">    clat (msec): min=<span class="number">3</span>, max=<span class="number">1612</span>, avg=<span class="number">34.20</span>, stdev=<span class="number">96.81</span></span><br><span class="line">     lat (msec): min=<span class="number">3</span>, max=<span class="number">1612</span>, avg=<span class="number">34.80</span>, stdev=<span class="number">97.77</span></span><br><span class="line">    clat percentiles (msec):</span><br><span class="line">     |  <span class="number">1.00</span>th=[   <span class="number">11</span>],  <span class="number">5.00</span>th=[   <span class="number">15</span>], <span class="number">10.00</span>th=[   <span class="number">16</span>], <span class="number">20.00</span>th=[   <span class="number">18</span>],</span><br><span class="line">     | <span class="number">30.00</span>th=[   <span class="number">20</span>], <span class="number">40.00</span>th=[   <span class="number">21</span>], <span class="number">50.00</span>th=[   <span class="number">23</span>], <span class="number">60.00</span>th=[   <span class="number">25</span>],</span><br><span class="line">     | <span class="number">70.00</span>th=[   <span class="number">28</span>], <span class="number">80.00</span>th=[   <span class="number">31</span>], <span class="number">90.00</span>th=[   <span class="number">37</span>], <span class="number">95.00</span>th=[   <span class="number">41</span>],</span><br><span class="line">     | <span class="number">99.00</span>th=[  <span class="number">474</span>], <span class="number">99.50</span>th=[  <span class="number">824</span>], <span class="number">99.90</span>th=[ <span class="number">1467</span>], <span class="number">99.95</span>th=[ <span class="number">1598</span>],</span><br><span class="line">     | <span class="number">99.99</span>th=[ <span class="number">1614</span>]</span><br><span class="line">    bw (KB  /s): min=  <span class="number">378</span>, max=<span class="number">191247</span>, per=<span class="number">12.54</span>%, avg=<span class="number">54676.03</span>, stdev=<span class="number">47675.86</span></span><br><span class="line">  write: io=<span class="number">26461</span>MB, bw=<span class="number">376286</span>KB/s, iops=<span class="number">1469</span>, runt= <span class="number">72010</span>msec</span><br><span class="line">    slat (usec): min=<span class="number">39</span>, max=<span class="number">1577.6</span>K, avg=<span class="number">615.76</span>, stdev=<span class="number">11338.38</span></span><br><span class="line">    clat (msec): min=<span class="number">3</span>, max=<span class="number">1625</span>, avg=<span class="number">43.17</span>, stdev=<span class="number">107.59</span></span><br><span class="line">     lat (msec): min=<span class="number">3</span>, max=<span class="number">1626</span>, avg=<span class="number">43.78</span>, stdev=<span class="number">108.31</span></span><br><span class="line">    clat percentiles (msec):</span><br><span class="line">     |  <span class="number">1.00</span>th=[   <span class="number">12</span>],  <span class="number">5.00</span>th=[   <span class="number">18</span>], <span class="number">10.00</span>th=[   <span class="number">20</span>], <span class="number">20.00</span>th=[   <span class="number">23</span>],</span><br><span class="line">     | <span class="number">30.00</span>th=[   <span class="number">25</span>], <span class="number">40.00</span>th=[   <span class="number">28</span>], <span class="number">50.00</span>th=[   <span class="number">30</span>], <span class="number">60.00</span>th=[   <span class="number">33</span>],</span><br><span class="line">     | <span class="number">70.00</span>th=[   <span class="number">36</span>], <span class="number">80.00</span>th=[   <span class="number">40</span>], <span class="number">90.00</span>th=[   <span class="number">46</span>], <span class="number">95.00</span>th=[   <span class="number">51</span>],</span><br><span class="line">     | <span class="number">99.00</span>th=[  <span class="number">578</span>], <span class="number">99.50</span>th=[  <span class="number">938</span>], <span class="number">99.90</span>th=[ <span class="number">1483</span>], <span class="number">99.95</span>th=[ <span class="number">1598</span>],</span><br><span class="line">     | <span class="number">99.99</span>th=[ <span class="number">1614</span>]</span><br><span class="line">    bw (KB  /s): min= <span class="number">2509</span>, max=<span class="number">159744</span>, per=<span class="number">13.09</span>%, avg=<span class="number">49253.29</span>, stdev=<span class="number">39566.46</span></span><br><span class="line">    lat (msec) : <span class="number">4</span>=<span class="number">0.01</span>%, <span class="number">10</span>=<span class="number">0.58</span>%, <span class="number">20</span>=<span class="number">23.55</span>%, <span class="number">50</span>=<span class="number">72.10</span>%, <span class="number">100</span>=<span class="number">2.23</span>%</span><br><span class="line">    lat (msec) : <span class="number">250</span>=<span class="number">0.06</span>%, <span class="number">500</span>=<span class="number">0.42</span>%, <span class="number">750</span>=<span class="number">0.41</span>%, <span class="number">1000</span>=<span class="number">0.27</span>%, <span class="number">2000</span>=<span class="number">0.38</span>%</span><br><span class="line">  cpu          : usr=<span class="number">3.89</span>%, sys=<span class="number">31.56</span>%, ctx=<span class="number">99711</span>, majf=<span class="number">0</span>, minf=<span class="number">52</span></span><br><span class="line">  IO depths    : <span class="number">1</span>=<span class="number">0.1</span>%, <span class="number">2</span>=<span class="number">0.3</span>%, <span class="number">4</span>=<span class="number">0.5</span>%, <span class="number">8</span>=<span class="number">1.1</span>%, <span class="number">16</span>=<span class="number">2.1</span>%, <span class="number">32</span>=<span class="number">4.2</span>%, &gt;=<span class="number">64</span>=<span class="number">91.7</span>%</span><br><span class="line">     submit    : <span class="number">0</span>=<span class="number">0.0</span>%, <span class="number">4</span>=<span class="number">100.0</span>%, <span class="number">8</span>=<span class="number">0.0</span>%, <span class="number">16</span>=<span class="number">0.0</span>%, <span class="number">32</span>=<span class="number">0.0</span>%, <span class="number">64</span>=<span class="number">0.0</span>%, &gt;=<span class="number">64</span>=<span class="number">0.0</span>%</span><br><span class="line">     complete  : <span class="number">0</span>=<span class="number">0.0</span>%, <span class="number">4</span>=<span class="number">99.9</span>%, <span class="number">8</span>=<span class="number">0.0</span>%, <span class="number">16</span>=<span class="number">0.0</span>%, <span class="number">32</span>=<span class="number">0.0</span>%, <span class="number">64</span>=<span class="number">0.1</span>%, &gt;=<span class="number">64</span>=<span class="number">0.0</span>%</span><br><span class="line">     issued    : total=r=<span class="number">122664</span>/w=<span class="number">105845</span>/d=<span class="number">0</span>, short=r=<span class="number">0</span>/w=<span class="number">0</span>/d=<span class="number">0</span></span><br><span class="line">     latency   : target=<span class="number">0</span>, window=<span class="number">0</span>, percentile=<span class="number">100.00</span>%, depth=<span class="number">64</span></span><br><span class="line"></span><br><span class="line">Run status group <span class="number">0</span> (all <span class="built_in">jobs</span>):</span><br><span class="line">   READ: io=<span class="number">4768.1</span>MB, aggrb=<span class="number">67823</span>KB/s, minb=<span class="number">67823</span>KB/s, maxb=<span class="number">67823</span>KB/s, mint=<span class="number">72001</span>msec, maxt=<span class="number">72001</span>msec</span><br><span class="line"></span><br><span class="line">Run status group <span class="number">1</span> (all <span class="built_in">jobs</span>):</span><br><span class="line">   READ: io=<span class="number">4720.6</span>MB, aggrb=<span class="number">67135</span>KB/s, minb=<span class="number">67135</span>KB/s, maxb=<span class="number">67135</span>KB/s, mint=<span class="number">72001</span>msec, maxt=<span class="number">72001</span>msec</span><br><span class="line"></span><br><span class="line">Run status group <span class="number">2</span> (all <span class="built_in">jobs</span>):</span><br><span class="line">   READ: io=<span class="number">355724</span>KB, aggrb=<span class="number">4924</span>KB/s, minb=<span class="number">4924</span>KB/s, maxb=<span class="number">4924</span>KB/s, mint=<span class="number">72237</span>msec, maxt=<span class="number">72237</span>msec</span><br><span class="line">  WRITE: io=<span class="number">355916</span>KB, aggrb=<span class="number">4927</span>KB/s, minb=<span class="number">4927</span>KB/s, maxb=<span class="number">4927</span>KB/s, mint=<span class="number">72237</span>msec, maxt=<span class="number">72237</span>msec</span><br><span class="line"></span><br><span class="line">Run status group <span class="number">3</span> (all <span class="built_in">jobs</span>):</span><br><span class="line">   READ: io=<span class="number">104547</span>MB, aggrb=<span class="number">1452.3</span>MB/s, minb=<span class="number">1452.3</span>MB/s, maxb=<span class="number">1452.3</span>MB/s, mint=<span class="number">72001</span>msec, maxt=<span class="number">72001</span>msec</span><br><span class="line"></span><br><span class="line">Run status group <span class="number">4</span> (all <span class="built_in">jobs</span>):</span><br><span class="line">   READ: io=<span class="number">107474</span>MB, aggrb=<span class="number">1492.7</span>MB/s, minb=<span class="number">1492.7</span>MB/s, maxb=<span class="number">1492.7</span>MB/s, mint=<span class="number">72001</span>msec, maxt=<span class="number">72001</span>msec</span><br><span class="line"></span><br><span class="line">Run status group <span class="number">5</span> (all <span class="built_in">jobs</span>):</span><br><span class="line">   READ: io=<span class="number">30666</span>MB, aggrb=<span class="number">436078</span>KB/s, minb=<span class="number">436078</span>KB/s, maxb=<span class="number">436078</span>KB/s, mint=<span class="number">72010</span>msec, maxt=<span class="number">72010</span>msec</span><br><span class="line">  WRITE: io=<span class="number">26461</span>MB, aggrb=<span class="number">376285</span>KB/s, minb=<span class="number">376285</span>KB/s, maxb=<span class="number">376285</span>KB/s, mint=<span class="number">72010</span>msec, maxt=<span class="number">72010</span>msec</span><br><span class="line"></span><br><span class="line">Disk stats (<span class="built_in">read</span>/write):</span><br><span class="line">  xvdb: ios=<span class="number">8341258</span>/<span class="number">722656</span>, merge=<span class="number">0</span>/<span class="number">29</span>, ticks=<span class="number">11020547</span>/<span class="number">7441881</span>, <span class="keyword">in</span>_queue=<span class="number">18466369</span>, util=<span class="number">76.14</span>%</span><br></pre></td></tr></table></figure>
+<p>The client number is printed, along with the group id and error of that thread. Below is the io statistics, here for writes. In the order listed, they denote:</p>
+<ul>
+<li><strong>io=</strong> - Number of megabytes io performed</li>
+<li><strong>bw=</strong> - Average bandwidth rate</li>
+<li><strong>iops=</strong> - Average IOs performed per second</li>
+<li><strong>runt=</strong> - The runtime of that thread</li>
+<li><strong>slat=</strong> - Submission latency (avg being the average, stdev being the standard deviation). This is the time it took to submit the io. For sync io, the slat is really the completion latency, since queue/complete is one operation there. This value can be in milliseconds or microseconds, fio will choose the most appropriate base and print that. In the example above, milliseconds is the best scale. Note: in —minimal mode latencies are always expressed in microseconds.</li>
+<li><strong>clat=</strong> - Completion latency. Same names as slat, this denotes the time from submission to completion of the io pieces. For sync io, clat will usually be equal (or very close) to 0, as the time from submit to complete is basically just CPU time (io has already been done, see slat explanation).</li>
+<li><strong>cpu=</strong> - CPU usage. User and system time, along with the number of context switches this thread went through, usage of system and user time, and finally the number of major and minor page faults.</li>
+</ul>
+<p>After each client has been listed, the group statistics are printed. They will look like this:</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Run status group <span class="number">5</span> (all jobs):</span><br><span class="line">   READ: <span class="variable">io=</span><span class="number">30666</span>MB, <span class="variable">aggrb=</span><span class="number">436078</span>KB/s, <span class="variable">minb=</span><span class="number">436078</span>KB/s, <span class="variable">maxb=</span><span class="number">436078</span>KB/s, <span class="variable">mint=</span><span class="number">72010</span>msec, <span class="variable">maxt=</span><span class="number">72010</span>msec</span><br><span class="line">  WRITE: <span class="variable">io=</span><span class="number">26461</span>MB, <span class="variable">aggrb=</span><span class="number">376285</span>KB/s, <span class="variable">minb=</span><span class="number">376285</span>KB/s, <span class="variable">maxb=</span><span class="number">376285</span>KB/s, <span class="variable">mint=</span><span class="number">72010</span>msec, <span class="variable">maxt=</span><span class="number">72010</span>msec</span><br></pre></td></tr></table></figure>
+<p>For each data direction, it prints:</p>
+<ul>
+<li><strong>io=</strong> - Number of megabytes io performed.</li>
+<li><strong>aggrb=</strong> - Aggregate bandwidth of threads in this group.</li>
+<li><strong>minb=</strong> - The minimum average bandwidth a thread saw.</li>
+<li><strong>maxb=</strong> - The maximum average bandwidth a thread saw.</li>
+<li><strong>mint=</strong> - The smallest runtime of the threads in that group.</li>
+<li><strong>maxt=</strong> - The longest runtime of the threads in that group.</li>
+</ul>
+<p>And finally, the disk statistics are printed. They will look like this:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Disk stats (<span class="built_in">read</span>/write):</span><br><span class="line">  sda: ios=<span class="number">16398</span>/<span class="number">16511</span>, merge=<span class="number">30</span>/<span class="number">162</span>, ticks=<span class="number">6853</span>/<span class="number">819634</span>, <span class="keyword">in</span>_queue=<span class="number">826487</span>, util=<span class="number">100.00</span>%</span><br></pre></td></tr></table></figure></p>
+<p>Each value is printed for both reads and writes, with reads first. The numbers denote:</p>
+<ul>
+<li><strong>ios=</strong> - Number of ios performed by all groups.</li>
+<li><strong>merge=</strong> - Number of merges io the io scheduler.</li>
+<li><strong>ticks=</strong> - Number of ticks we kept the disk busy.</li>
+<li><strong>io_queue=</strong> - Total time spent in the disk queue.</li>
+<li><strong>util=</strong> - The disk utilization. A value of 100% means we kept the disk busy constantly, 50% would be a disk idling half of the time.</li>
+</ul>
+<p>It is also possible to get fio to dump the current output while it is running, without terminating the job. To do that, send fio the USR1 signal. You can also get regularly timed dumps by using the —status-interval parameter, or by creating a file in /tmp named fio-dump-status. If fio sees this file, it will unlink it and dump the current output status.</p>
+<p>The performance indicators i use for xen are <strong>bw</strong>, <strong>iops</strong> and <strong>slat/clat/lat</strong>. <strong>bw</strong>, <strong>iops</strong> the larger the better. <strong>slat/clat/lat</strong> the smaller the better.</p>
+<p>For xen performance testing, i also add write_bw_log=xen, write_lat_log=xen, write_iops_log=xen in the fio job file to generate xen_bw.log, xen_iops.log, xen_clat.log, xen_slat.log, xen_lat.log. You can use fio/tools/fio_generate_plots to generate svg format picture:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./fio_generate_plots xen</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong> fio_generate_plots only take one argument, which is the prefix(xen) of xen_bw.log, xen_clat.log, xen_iops.log, xen_lat.log, xen_slat.log.</p>
+<p>For more details, see fio/HOWTO(6.0 Interpreting the output) section.</p>
+<h1 id="Terse_output">Terse output</h1><p>For scripted usage where you typically want to generate tables or graphs of the results, fio can output the results in a semicolon separated format. The format is one long line of values, such as:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2;<span class="tag">card0</span>;0;0;7139336;121836;60004;1;10109;27<span class="class">.932460</span>;116<span class="class">.933948</span>;220;126861;3495<span class="class">.446807</span>;1085<span class="class">.368601</span>;226;126864;3523<span class="class">.635629</span>;1089<span class="class">.012448</span>;24063;99944;50<span class="class">.275485</span>%;59818<span class="class">.274627</span>;5540<span class="class">.657370</span>;7155060;122104;60004;1;8338;29<span class="class">.086342</span>;117<span class="class">.839068</span>;388;128077;5032<span class="class">.488518</span>;1234<span class="class">.785715</span>;391;128085;5061<span class="class">.839412</span>;1236<span class="class">.909129</span>;23436;100928;50<span class="class">.287926</span>%;59964<span class="class">.832030</span>;5644<span class="class">.844189</span>;14<span class="class">.595833</span>%;19<span class="class">.394167</span>%;123706;0;7313;0<span class="class">.1</span>%;0<span class="class">.1</span>%;0<span class="class">.1</span>%;0<span class="class">.1</span>%;0<span class="class">.1</span>%;0<span class="class">.1</span>%;100<span class="class">.0</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.01</span>%;0<span class="class">.02</span>%;0<span class="class">.05</span>%;0<span class="class">.16</span>%;6<span class="class">.04</span>%;40<span class="class">.40</span>%;52<span class="class">.68</span>%;0<span class="class">.64</span>%;0<span class="class">.01</span>%;0<span class="class">.00</span>%;0<span class="class">.01</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%;0<span class="class">.00</span>%</span><br><span class="line"><span class="tag">A</span> <span class="tag">description</span> <span class="tag">of</span> <span class="tag">this</span> <span class="tag">job</span> <span class="tag">goes</span> <span class="tag">here</span>.</span><br></pre></td></tr></table></figure></p>
+<p>To enable terse output, use the —minimal command line option. The first value is the version of the terse output format. If the output has to be changed for some reason, this number will be incremented by 1 to signify that change.</p>
+<p>For more details, see fio/HOWTO(7.0 Terse output) section.</p>
+<h1 id="The_main_parameters_for_fio_command_line">The main parameters for fio command line</h1><ul>
+<li><strong>—showcmd</strong> - Turn a job file into command line options</li>
+<li><strong>—output</strong> - Write output to file</li>
+<li><strong>—bandwidth-log</strong> - Generate per-job bandwidth logs</li>
+<li><strong>—minimal</strong> - Minimal (terse) output</li>
+<li><strong>—output-format=type</strong> - Output format (terse,json,normal)</li>
+<li><strong>—enghelp=engine</strong> - Print ioengine help, or list available ioengines</li>
+<li><strong>—enghelp=engine,cmd</strong> - Print help for an ioengine cmd</li>
+<li><strong>—server=args</strong> - Start backend server. See Client/Server section.</li>
+<li><strong>—client=host</strong> - Connect to specified backend.</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="www.bluestop.org/qtxt">fio HOWTO</a></li>
+<li>For more details, please read fio/README and fio/HOWTO</li>
+</ul>
+
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2014/11/28/Install-xen-on-Fedora20/#more" class="more-link">阅读全文</a>
-          </div>
         
         
       
@@ -380,11 +720,202 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-11-14T08:53:44.000Z"><a href="/2014/11/14/活在Linux中/">2014-11-14</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/dd/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/11/14/活在Linux中/">活在Linux中</a></h1>
+    <h1 class="title"><a href="/2015/04/24/dd/">dd</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="How_to_install_dd">How to install dd</h1><p>No need to install, almost all of the linux distributions have this tool, it is included in coreutils package on RHEL and Fedora.</p>
+<h1 id="Features_and_Functions">Features and Functions</h1><ul>
+<li>The most simply tool used to test disk performance.</li>
+<li>Can set non-buffered I/O or buffered I/O to test disk read/write performance.</li>
+<li>Can set block size for I/O units.</li>
+</ul>
+<h1 id="How_to_use_dd">How to use dd</h1><ol>
+<li>Create a testfile under the disk which you want to test the performance with a proper size<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=/dev/zero of=testfile bs=1M count=20000</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>Sequential read</strong></p>
+<ol>
+<li><p>Test the sequential read performance with bs=1M and buffered IO</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=testfile of=/dev/null bs=1M conv=fdatasync</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Test the sequential read performance with bs=1M and direct IO</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=testfile of=/dev/null bs=1M iflag=direct</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>Sequential write</strong></p>
+<ol>
+<li><p>Test the sequential write performance with bs=1M and buffered IO</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=/dev/zero of=testfile bs=1M count=20000 conv=fdatasync</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Test the sequential write performance with bs=1M and direct IO</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=/dev/zero of=testfile bs=1M count=20000 oflag=direct</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>Note:</strong><br>When test buffered I/O, you must specify ‘oflag=sync’ or ‘conv=fdatasync’ option to write data from memory to disk.<br>For the write performance testing, we can also use ‘oflag=sync’, but this is not recommended. Because <strong>sync</strong> schedules the writes, but may return before the actual writing is done. But <strong>fdatasync</strong> will wait untill the data actual write to the disk.</p>
+<h1 id="Results_analysis">Results analysis</h1><p>Issue the dd command, command will give some output include throughput.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=testfile of=/dev/null bs=1M iflag=direct</span></span><br><span class="line"><span class="number">200</span>+<span class="number">0</span> records <span class="keyword">in</span></span><br><span class="line"><span class="number">200</span>+<span class="number">0</span> records out</span><br><span class="line"><span class="number">209715200</span> bytes (<span class="number">210</span> MB) copied, <span class="number">0.416249</span> s, <span class="number">504</span> MB/s</span><br></pre></td></tr></table></figure>
+<p><strong>209715200 bytes (210 MB) copied, 0.416249 s, 504 MB/s</strong> we see the Throughput is 504MB/s, the bigger the better.</p>
+<h1 id="The_main_parameters_of_dd">The main parameters of <code>dd</code></h1><h2 id="Command_line_options">Command line options</h2><ul>
+<li><strong>if=FILE</strong> - read from FILE instead of stdin</li>
+<li><strong>of=FILE</strong> - write to FILE instead of stdout</li>
+<li><strong>iflag=FLAGS</strong> - FLAGS: direct, sync, dsync</li>
+<li><strong>oflag=FLAGS</strong> - FLAGS: direct, sync, dsync</li>
+<li><strong>bs=BYTES</strong> - read and write up to BYTES bytes at a time(K/M/G)</li>
+<li><strong>count=N</strong> - copy only N input blocks</li>
+</ul>
+<h2 id="FLAGS">FLAGS</h2><ul>
+<li><strong>sync</strong> - schedules the writes, but may return before the actual writing is done. It will also write the file metadata.</li>
+<li><strong>dsync</strong> - schedules the writes, but may return before the actual writing is done. It only write the file data.</li>
+<li><strong>fsync</strong> - schedules the writes, will wait untill the data actual write to the disk. It also write the file metadata.</li>
+<li><strong>fdatasync</strong> - schedules the writes, will wait untill the data actual write to the disk. It only write the file data.</li>
+<li><strong>direct</strong> - For non-buffered I/O.</li>
+</ul>
+<h1 id="Shortcomings">Shortcomings</h1><ul>
+<li>Can only test sequential read and sequential write performance.</li>
+<li>Can only used to test disk performance.</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li>man dd</li>
+<li><a href="http://www.databaseskill.com/530512/" target="_blank" rel="external">sync, fsync, and the fdatasync function of the difference between</a></li>
+<li><a href="https://romanrm.net/dd-benchmark" target="_blank" rel="external">How to use ‘dd’ to benchmark your disk or CPU?</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/dbench/">2015-04-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/04/24/dbench/">dbench</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="How_to_install_dbench">How to install dbench</h1><ol>
+<li><p>Clone dbench from its git repo</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git clone git://git.samba.org/sahlberg/dbench.git dbench</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Compiling</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd dbench</span></span><br><span class="line"><span class="comment"># ./autogen.sh</span></span><br><span class="line"><span class="comment"># ./configure</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"><span class="comment"># make install</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>And that should be it. You should now have dbench installed on your system.</p>
+<h1 id="Features_and_Functions">Features and Functions</h1><ul>
+<li>Reading SMBTORTURE BENCH-NBENCH loadfiles and emulating this workload as posix calls to a local filesystem</li>
+<li>NFS style loadfiles which allows DBENCH to mimic the i/o pattern of a real application doing real i/o to a real server.</li>
+<li>iSCSI support and iSCSI style loadfiles.</li>
+</ul>
+<p>DBENCH is a tool to generate I/O workloads to either a filesystem or to a networked CIFS or NFS server. It can even talk to an iSCSI target. DBENCH can be used to stress a filesystem or a server to see which workload it becomes saturated and can also be used for preditcion analysis to determine “How many concurrent clients/applications performing this workload can my server handle before response starts to lag?”</p>
+<p>DBENCH provides a similar benchmarking and client emulation that is implemented in SMBTORTURE using the BENCH-NBENCH test for CIFS, but DBENCH can play these loadfiles onto a local filesystem instead of to a CIFS server. Using a different type of loadfiles DBENCH can also generate and measure latency for NFS.</p>
+<h1 id="Load_files">Load files</h1><p> At the heart of DBENCH is the concept of a “loadfile”. A loadfile is a sequence of operations to be performed once statement at a time. This could be operations such as “Open file XYZ”, “Read 5 bytes from offset ABC”, “Close the file”, etc etc.</p>
+<p>By carefully crafting a loadfile it is possible to describe an I/O pattern that almost exactly matches what a particular application performs. While cumbersome to produce, such a loadfile it does allow you to describe exactly how/what an application performs and “replay” this sequence of operations any time you want.</p>
+<p>Each line in the DBENCH loadfile contain a timestamp for the operation. This is used by DBENCH to try to keep the same rate of operations as the original application. This is very useful since this allows to perform accurate scalability predictions based on the exact application we are interested in. and not an artificial benchmark which may or may not be relevant to our particular applications workload pattern.</p>
+<p>At <a href="https://dbench.samba.org/web/index.html" target="_blank" rel="external">https://dbench.samba.org/web/index.html</a> you can find three loadfile template to use:</p>
+<ul>
+<li>pNFS-Loadfiles - used to stress the NFS server.</li>
+<li>SMB-Loadfiles - used to stress the SMB server.</li>
+<li>iSCSI-Loadfiles - used to stress the iSCSI server.</li>
+</ul>
+<h1 id="How_to_use_dbench">How to use dbench</h1><p>The following command should be OK for most of the testing situations(run dbench for 10 hours):<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dbench -c /usr/share/dbench/client.txt -D ./ -t 36000 10</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong><br>This command stress the local filesystem, if you want to stress a NFS/SMB/iSCSI server, please learn more about dbench.</p>
+<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dbench -c /usr/share/dbench/client.txt -D ./ -t 10 100</span></span><br><span class="line">dbench version <span class="number">4.00</span> - Copyright Andrew Tridgell <span class="number">1999</span>-<span class="number">2004</span></span><br><span class="line"></span><br><span class="line">Running <span class="keyword">for</span> <span class="number">10</span> seconds with load <span class="string">'/usr/share/dbench/client.txt'</span> and minimum warmup <span class="number">2</span> secs</span><br><span class="line"><span class="number">98</span> of <span class="number">100</span> processes prepared <span class="keyword">for</span> launch   <span class="number">0</span> sec</span><br><span class="line"><span class="number">100</span> of <span class="number">100</span> processes prepared <span class="keyword">for</span> launch   <span class="number">0</span> sec</span><br><span class="line">releasing clients</span><br><span class="line"> <span class="number">100</span>       <span class="number">459</span>  <span class="number">1293.98</span> MB/sec  warmup   <span class="number">1</span> sec  latency <span class="number">527.022</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">495</span>    <span class="number">38.88</span> MB/sec  execute   <span class="number">1</span> sec  latency <span class="number">1261.032</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">509</span>    <span class="number">36.37</span> MB/sec  execute   <span class="number">2</span> sec  latency <span class="number">750.145</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">521</span>    <span class="number">33.32</span> MB/sec  execute   <span class="number">3</span> sec  latency <span class="number">496.452</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">545</span>    <span class="number">35.34</span> MB/sec  execute   <span class="number">4</span> sec  latency <span class="number">604.592</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">660</span>    <span class="number">43.13</span> MB/sec  execute   <span class="number">5</span> sec  latency <span class="number">402.810</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">744</span>    <span class="number">43.04</span> MB/sec  execute   <span class="number">6</span> sec  latency <span class="number">407.184</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">764</span>    <span class="number">40.13</span> MB/sec  execute   <span class="number">7</span> sec  latency <span class="number">1061.093</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">797</span>    <span class="number">38.65</span> MB/sec  execute   <span class="number">8</span> sec  latency <span class="number">2061.173</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">820</span>    <span class="number">36.10</span> MB/sec  execute   <span class="number">9</span> sec  latency <span class="number">2152.252</span> ms</span><br><span class="line"> <span class="number">100</span>  cleanup  <span class="number">10</span> sec</span><br><span class="line">  <span class="number">26</span>  cleanup  <span class="number">11</span> sec</span><br><span class="line">  <span class="number">20</span>  cleanup  <span class="number">12</span> sec</span><br><span class="line">  <span class="number">18</span>  cleanup  <span class="number">13</span> sec</span><br><span class="line">  <span class="number">11</span>  cleanup  <span class="number">14</span> sec</span><br><span class="line">   <span class="number">0</span>  cleanup  <span class="number">15</span> sec</span><br><span class="line"></span><br><span class="line"> Operation                Count    AvgLat    MaxLat</span><br><span class="line"> --------------------------------------------------</span><br><span class="line"> Flush                      <span class="number">710</span>   <span class="number">219.169</span>  <span class="number">2152.244</span></span><br><span class="line"> Close                     <span class="number">5848</span>     <span class="number">0.003</span>     <span class="number">2.262</span></span><br><span class="line"> LockX                        <span class="number">4</span>     <span class="number">0.004</span>     <span class="number">0.009</span></span><br><span class="line"> Rename                     <span class="number">284</span>     <span class="number">0.048</span>     <span class="number">3.412</span></span><br><span class="line"> ReadX                     <span class="number">7792</span>     <span class="number">0.106</span>   <span class="number">178.973</span></span><br><span class="line"> WriteX                    <span class="number">7966</span>   <span class="number">106.556</span>   <span class="number">783.949</span></span><br><span class="line"> Unlink                     <span class="number">671</span>     <span class="number">1.879</span>   <span class="number">129.409</span></span><br><span class="line"> UnlockX                      <span class="number">4</span>     <span class="number">0.002</span>     <span class="number">0.003</span></span><br><span class="line"> FIND_FIRST                <span class="number">1991</span>     <span class="number">0.026</span>     <span class="number">4.002</span></span><br><span class="line"> SET_FILE_INFORMATION       <span class="number">869</span>     <span class="number">8.582</span>   <span class="number">481.309</span></span><br><span class="line"> QUERY_FILE_INFORMATION    <span class="number">2099</span>     <span class="number">0.002</span>     <span class="number">0.089</span></span><br><span class="line"> QUERY_PATH_INFORMATION    <span class="number">5677</span>     <span class="number">0.021</span>    <span class="number">69.872</span></span><br><span class="line"> QUERY_FS_INFORMATION       <span class="number">835</span>     <span class="number">0.003</span>     <span class="number">0.020</span></span><br><span class="line"> NTCreateX                 <span class="number">6822</span>     <span class="number">1.191</span>   <span class="number">200.957</span></span><br><span class="line"></span><br><span class="line">Throughput <span class="number">36.0963</span> MB/sec  <span class="number">100</span> clients  <span class="number">100</span> procs  max_latency=<span class="number">2152.252</span> ms</span><br></pre></td></tr></table></figure>
+<p>It gives out four numbers like this (this is from a 100 client run on fedora22 host):<br><code>`sh
+Throughput 36.0963 MB/sec  100 clients  100 procs  max_latency=2152.252 ms</code></p>
+<p>The first is the true throughput as seen by dbench, the larger the batter. The last is the I/O latency, the smaller the better.</p>
+<p><strong>Note:</strong><br>One question some people may ask is whether the above represents a realistic load on a fileserver. It doesn’t. Nearly 90% of the read/write IO operations in netbench are writes whereas in a “normal” office load reads dominate. Also, the load is <strong>much</strong> higher than a normal office PC would put on a server. There aren’t many office PCs that write over a hundred megabytes of data to a server in a few minutes, unless maybe they are copying a CD.</p>
+<p>That doesn’t mean the benchmark is useless, it just means you shouldn’t use this for purchasing decisions unless you really understand the results and how they relate to your environment.</p>
+<h1 id="The_main_parameters">The main parameters</h1><ul>
+<li><strong>-c</strong> - Use this as the full path name of the client.txt file (the default is /usr/share/dbench/client.txt).</li>
+<li><strong>-s</strong> - Use synchronous file IO on all file operations(O_SYNC).</li>
+<li><strong>-t TIME</strong> - set the runtime of the benchmark in seconds (default 600).</li>
+<li><strong>-D DIR</strong> - set the base directory to run the filesystem operations in.</li>
+<li><strong>-S</strong> -  Use synchronous IO for all directory operations (unlink, rmdir, mkdir and rename).</li>
+<li><strong>-F</strong> - fsync on write</li>
+<li><strong>-B BACKEND</strong> - dbench backend (fileio, sockio, nfs, scsi, iscsi, smb)</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="https://dbench.samba.org/doc/dbench.1.html" target="_blank" rel="external">Dbench man page</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/活在Linux中/">2015-04-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/04/24/活在Linux中/">活在Linux中</a></h1>
   
 
     </header>
@@ -425,33 +956,18 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-11-14T00:35:18.000Z"><a href="/2014/11/14/My-TODO-List/">2014-11-14</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/SR-IOV-Presentation/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/11/14/My-TODO-List/">My TODO List</a></h1>
+    <h1 class="title"><a href="/2015/04/24/SR-IOV-Presentation/">SR-IOV Presentation</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>我的TODO List, 时间2014-11-14 to 2015-05-01</p>
-<ol>
-<li><p>Learn OpenStack (Include RH OSP &amp; OpenStack on Feadora/Upstream), Finish RH OPS Certification</p>
-</li>
-<li><p>Learn KVM and prepare a presentation in S1</p>
-</li>
-<li><p>Learn AWS</p>
-</li>
-<li><p>Learn RHEV-H &amp; RHEV-M, try to Finish RHEV Certification. Try to run/get familiar with RHEV-H test cases</p>
-</li>
-<li><p>Try to get familiar with libvirt project (IEEE test plan)</p>
-</li>
-<li><p>Try to get familiar with Hyper-V project (IEEE test plan)</p>
-</li>
-<li><p>Of course RedHat way to test a product!</p>
-</li>
-</ol>
+        <p>Here is my presentation about SR-IOV technology with Xen hypervisor</p>
+<iframe src="https://www.slideshare.net/slideshow/embed_code/41329665" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
       
     </div>
@@ -487,209 +1003,17 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-11-13T08:04:13.000Z"><a href="/2014/11/13/My-Presentation-For-Emacs/">2014-11-13</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/Python学习笔记/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/11/13/My-Presentation-For-Emacs/">My Presentation For Emacs</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <iframe src="https://www.slideshare.net/slideshow/embed_code/41495565" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-11-11T06:48:20.000Z"><a href="/2014/11/11/用Beamer做slides-模板/">2014-11-11</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/11/11/用Beamer做slides-模板/">用Beamer做slides(模板)</a></h1>
+    <h1 class="title"><a href="/2015/04/24/Python学习笔记/">Python学习笔记</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="介绍">介绍</h3><p>Lex菜鸟，之前做slides用过LibreOffice, PowerPoint, S5和reveal.js，S5和reveal.js都是结合org-mode来做的，非常方便，但做出来的slides只能通过浏览器来展示，而且定制性不是太好. LibreOffice, PowerPoint固然很强大，但是不合我口味，太easy, 好吧，我承认我是自虐狂。后来听说latex的beamer库也可以做slides而且效果还不错，故而google了2天，找各种模板，各种实验，那个烦啊…</p>
-<p>不过还好，两天之后终于找到自己比较满意的模板，这里跟大家分享下，另外再分享下其它的东东, 感谢 Yixf和X-Wei两位大神!</p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/11/11/用Beamer做slides-模板/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-11-11T01:07:20.000Z"><a href="/2014/11/11/PDFLaTex-XeLatex-PDFTex-XeTex等区别/">2014-11-11</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/11/11/PDFLaTex-XeLatex-PDFTex-XeTex等区别/">与TeX相关的一些名词</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="前言">前言</h3><p>在接触TeX两年之后，依然对于TeX的一些术语之间的关系表示不解。比如LaTeX、pdfLaTeX、XeLaTeX、TeX Live、CTeX等等。这些术语究竟代表什么？它们之间是怎样的关系？</p>
-<h3 id="TeX">TeX</h3><p>首先是一种宏语言，同时其也是一种排版引擎。基本的TeX系统只有300多个元命令 (primitive) ，十分精悍，但是很难读懂。</p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/11/11/PDFLaTex-XeLatex-PDFTex-XeTex等区别/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-11-10T16:36:21.000Z"><a href="/2014/11/11/IT经典图书-附免费下载地址/">2014-11-11</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/11/11/IT经典图书-附免费下载地址/">IT经典图书(附免费下载地址)</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <iframe src="https://www.slideshare.net/slideshow/embed_code/41360053" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-11-10T16:27:54.000Z"><a href="/2014/11/11/shell实现的windows回收站功能的脚本/">2014-11-11</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/11/11/shell实现的windows回收站功能的脚本/">shell实现的windows回收站功能的脚本</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <iframe src="https://www.slideshare.net/slideshow/embed_code/41359663" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        <iframe src="https://www.slideshare.net/slideshow/embed_code/41359484" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
       
     </div>

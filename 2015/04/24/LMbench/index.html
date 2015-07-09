@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>LMbench | Lingfei&#39;s Blog</title>
+  <meta name="author" content="Lingfei Kong">
+  
+  <meta name="description" content="读书笔记，资料整理">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="LMbench"/>
+  <meta property="og:site_name" content="Lingfei&#39;s Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="http://kongll.github.io/atom.xml" title="Lingfei&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffe3814b5f53cc394a493cbeb2368f2af' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">Lingfei&#39;s Blog</a></h1>
+  <h2><a href="/">我要扼住命运的咽喉，决不能让命运使我屈服</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/categories/Technology">技术</a></li>
+    
+      <li><a href="/categories/essay">随笔</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/LMbench/">2015-04-24</a></time>
+      
+      
+  
+    <h1 class="title">LMbench</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="How_to_install_LMbench">How to install LMbench</h1><ol>
+<li><p>Download LMbench from <a href="http://www.bitmover.com/lmbench/lmbench3.tar.gz" target="_blank" rel="external">http://www.bitmover.com/lmbench/lmbench3.tar.gz</a></p>
+</li>
+<li><p>Install LMbench</p>
+</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvzf lmbench3.tar.gz</span></span><br><span class="line"><span class="comment"># cd lmbench3</span></span><br><span class="line"><span class="comment"># make</span></span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong> You may get the following error:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gmake[<span class="number">2</span>]: *** No rule to make target `../SCCS/s.ChangeSet<span class="string">', needed by `bk.ver'</span>.  Stop.</span><br><span class="line">gmake[<span class="number">2</span>]: Leaving directory `/root/lmbench3/src<span class="string">'</span><br><span class="line">make[1]: *** [lmbench] Error 2</span><br><span class="line">make[1]: Leaving directory `/root/lmbench3/src'</span></span><br><span class="line">make: *** [build] Error <span class="number">2</span></span><br><span class="line">Just ignore the errors, and there is also a method to avoid the errors:</span><br><span class="line"><span class="comment"># mkdir SCCS</span></span><br><span class="line"><span class="comment"># touch SCCS/s.ChangeSet</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="What_is_LMbench?">What is LMbench?</h1><ul>
+<li>Suite of simple, portable benchmarks</li>
+<li>Compares different systems performance</li>
+<li>Results available for most major vendors (SUN, HP, IBM, DEC, SGI, PCs including 200 Mhz P6’s)</li>
+<li>Free software, covered by the GNU General Public License.</li>
+<li>Bandwidth benchmarks<ul>
+<li>Cached file read</li>
+<li>Memory copy (bcopy)</li>
+<li>Memory read</li>
+<li>Memory write</li>
+<li>Pipe</li>
+<li>TCP</li>
+</ul>
+</li>
+<li>Latency benchmarks<ul>
+<li>Context switching.</li>
+<li>Networking: connection establishment, pipe, TCP, UDP, and RPC hot potato</li>
+<li>File system creates and deletes.</li>
+<li>Process creation.</li>
+<li>Signal handling</li>
+<li>System call overhead</li>
+<li>Memory read latency</li>
+</ul>
+</li>
+<li>Miscellanious<ul>
+<li>Processor clock rate calculation</li>
+</ul>
+</li>
+</ul>
+<h1 id="Why_do_I_want_yet_another_benchmark?">Why do I want yet another benchmark?</h1><p>Things that other people seem to like about LMbench include the following:</p>
+<ul>
+<li><strong>Portable test of operating system primitives</strong><br>The benchmarks are all in C, fairly portable (although they do prefer to be compiled with GCC). This is useful for generating a set of apples to apples systems comparisons.</li>
+<li>Keeping up with the Jones<br>LMbench is very useful for motivating action. When confronted with numbers that prove that BloatOS is 4 times slower than all of the competition, resources tend to get allocated to fix the problems.</li>
+<li>Database of results<br>The database of results includes runs from most all of the major computer workstation manufactors.</li>
+<li>Memory latency results<br>The memory latency test shows the latency of all of the system (data) caches, i.e., level 1, 2, and 3, if present, as well as main memory and TLB miss latency. In addition the sizes of the caches can be read off of a properly plotted set of results. The hardware folks like this. This benchmark has found bugs in operating system page coloring schemes.</li>
+<li>Context switching results<br>Everybody seems to love context switching numbers. This particular benchmark is quite careful not to just quote the ``in cache’’ numbers. It varies both the number and size of the procesess and plots the results in such a way that it is easy to see when you don’t fit in the cache. You can also see the real costs of a cold cache context switch.</li>
+<li>Regression testing<br>Sun &amp; SGI have used these benchmarks to find and fix performance problems.<br>Intel used them during P6 development.<br>Linus uses them to do performance tuning of Linux.</li>
+<li>New benchmarks<br>The source is small, readable, and easy to extend. It is routinely massaged into different form to measure something else. For example, the networking metrics include libraries to handle connection establishment, server shutdowns, etc.</li>
+</ul>
+<h1 id="How_do_I_run_LMbench?">How do I run LMbench?</h1><p>You will need:</p>
+<ol>
+<li>the benchmark sources, see the section before this.</li>
+<li>a computer with at probably 16MB (or more) memory.</li>
+<li>disk space for the sources and binaries: about 2MB.</li>
+<li>disk space for working files during the benchmark: about 16MB.</li>
+</ol>
+<p>After you finished install LMbench:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd lmbench3</span></span><br><span class="line"><span class="comment"># make results</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong> <code>make results</code> will let you do some choose, for xen memory performance testing, you should take care the following items(Other options you can just press the enter key to use the default value):</p>
+<ul>
+<li><p><strong>‘MB [default 693]’</strong> - You should choose a proper value for ‘MB [default 693]’</p>
+</li>
+<li><p><strong>‘Processor mhz [default 2748 MHz, 0.3639 nanosec clock]’</strong> - The default value for ‘Processor mhz’ maybe wrong, you need to input the correct value according to your cpu frequency.</p>
+</li>
+<li><p><strong>‘Mail results [default yes]’</strong> - We do not need to email the results, so just set <strong>no</strong></p>
+</li>
+</ul>
+<p>More details see <strong>Configure your test</strong> section.</p>
+<p>The benchmark takes about a half hour (or more on slow machines) to run. When the test finished, run <code>make see</code> to check the results.</p>
+<p>The benchmark binaries will be in <strong>bin/your_os_name.</strong></p>
+<p>The results will be in <strong>results/your_os_name/your_host_name.</strong></p>
+<p>Go to the <strong>results</strong> and look at the Makefile for more information.</p>
+<h1 id="Results_analysis">Results analysis</h1><p>Run <code>make see</code>, you will find the following lines:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line">*Local* Communication bandwidths <span class="keyword">in</span> MB/s - bigger is better</span><br><span class="line">-----------------------------------------------------------------------------</span><br><span class="line">Host                OS  Pipe AF    TCP  File   Mmap  Bcopy  Bcopy  Mem   Mem</span><br><span class="line">                             UNIX      reread reread (libc) (hand) <span class="built_in">read</span> write</span><br><span class="line">--------- ------------- ---- ---- ---- ------ ------ ------ ------ ---- -----</span><br><span class="line">dhcp-<span class="number">66</span>-<span class="number">7</span> Linux <span class="number">3.10</span>.<span class="number">0</span>- <span class="number">2191</span> <span class="number">2348</span> <span class="number">1572</span> <span class="number">4079.6</span> <span class="number">5207.5</span> <span class="number">4187.6</span> <span class="number">3172.6</span> <span class="number">3510</span> <span class="number">5083</span>.</span><br><span class="line">dhcp-<span class="number">66</span>-<span class="number">7</span> Linux <span class="number">3.10</span>.<span class="number">0</span>- <span class="number">2188</span> <span class="number">2365</span> <span class="number">1645</span> <span class="number">3753.9</span> <span class="number">5164.9</span> <span class="number">4172.5</span> <span class="number">3167.3</span> <span class="number">3421</span> <span class="number">5492</span>.</span><br><span class="line">dhcp-<span class="number">66</span>-<span class="number">7</span> Linux <span class="number">3.10</span>.<span class="number">0</span>- <span class="number">2182</span> <span class="number">2344</span> <span class="number">1555</span> <span class="number">2862.8</span> <span class="number">5900.7</span> <span class="number">3846.8</span> <span class="number">3140.0</span> <span class="number">3403</span> <span class="number">4958</span>.</span><br><span class="line"></span><br><span class="line">Memory latencies <span class="keyword">in</span> nanoseconds - smaller is better</span><br><span class="line">    (WARNING - may not be correct, check graphs)</span><br><span class="line">------------------------------------------------------------------------------</span><br><span class="line">Host                 OS   Mhz   L1 $   L2 $    Main mem    Rand mem    Guesses</span><br><span class="line">--------- -------------   ---   ----   ----    --------    --------    -------</span><br><span class="line">dhcp-<span class="number">66</span>-<span class="number">7</span> Linux <span class="number">3.10</span>.<span class="number">0</span>-  <span class="number">2393</span> <span class="number">1.5980</span> <span class="number">4.1780</span>   <span class="number">40.6</span>       <span class="number">108.2</span></span><br><span class="line">dhcp-<span class="number">66</span>-<span class="number">7</span> Linux <span class="number">3.10</span>.<span class="number">0</span>-  <span class="number">1579</span> <span class="number">1.5970</span> <span class="number">4.1910</span>   <span class="number">33.9</span>       <span class="number">109.4</span></span><br><span class="line">dhcp-<span class="number">66</span>-<span class="number">7</span> Linux <span class="number">3.10</span>.<span class="number">0</span>-  <span class="number">1710</span> <span class="number">1.5950</span> <span class="number">4.1590</span>   <span class="number">37.2</span>       <span class="number">125.7</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure></p>
+<p>It include <strong>Memory copy (bcopy)</strong>, <strong>Memory read</strong>, <strong>Memory write</strong> bandwidth(MB/s), the bigger the better.<br>Also it include <strong>Memory read latency</strong>, the smaller the better.</p>
+<p>The results is also saved in <strong>results/your_os_name/your_host_name</strong>, you can check it and do some analysis based on it.</p>
+<h1 id="Configure_your_test">Configure your test</h1><p>When you run <code>make results</code>, LMbench will let you do some choose to configure your test. Here are each items mean and some suggest.</p>
+<ul>
+<li><strong>MULTIPLE COPIES [default 1]</strong></li>
+</ul>
+<p>If you are running on a SMP machine, LMbench will allow to run multiple copies of lmbench in parallel, choose the default value(<strong>1</strong>) should be OK.</p>
+<ul>
+<li><strong>Job placement selection:</strong></li>
+</ul>
+<p>You must choose a This item allow to choose LMbench how to schedule the test. If you don’t know what the seven option mean, just choose <strong>1)</strong>.</p>
+<ul>
+<li><strong>MB [default 695]</strong></li>
+</ul>
+<p>Several benchmarks operate on a range of memory.  This memory should be sized such that it is at least <strong>4 times</strong> as big as the external cache[s] on your system.   It should be no more than <strong>80%</strong> of your physical memory.</p>
+<ul>
+<li><strong>SUBSET (ALL|HARWARE|OS|DEVELOPMENT) [default all]</strong></li>
+</ul>
+<p>LMbench measures a wide variety of system performance, and the full suite of benchmarks can take a long time on some platforms. Consequently, LMbench offer the capability to run only predefined subsets of benchmarks, one for operating system specific benchmarks and one for hardware specific benchmarks. LMbench also offer the option of running only selected benchmarks which is useful during operating system development. If you don’t know which to choose, just choose the default value(<strong>ALL</strong>).</p>
+<ul>
+<li><strong>FASTMEM [default no]</strong></li>
+</ul>
+<p>This benchmark measures, by default, memory latency for a number of different strides. That can take a long time and is most useful if you are trying to figure out your cache line size or if your cache line size is greater than 128 bytes. For xen performance testing, i suggest to choose the default value(<strong>no</strong>).</p>
+<ul>
+<li><strong>SLOWFS [default no]</strong></li>
+</ul>
+<p>This benchmark measures, by default, file system latency.  That can take a long time on systems with old style file systems (i.e., UFS, FFS, etc.).  Linux’ ext2fs and Sun’s tmpfs are fast enough that this test is not painful. For xen performance testing, i suggest to choose the default value(<strong>no</strong>).</p>
+<ul>
+<li><strong>DISKS [default none]</strong></li>
+</ul>
+<p>This option is used to determine whether to test disk performance. If you want to skip the disk tests, hit return below. If you want to include disk tests, then specify the path to the disk device, such as /dev/sda.  For xen testing, we only use LMbench to test guest’s memory performance, no disk testing include, so choose the default value(<strong>none</strong>).</p>
+<ul>
+<li><strong>REMOTE [default none]</strong></li>
+</ul>
+<p>This option is used to determine whether to test network performance. If you want to skip the network tests, hit return below. If you want to include network tests, then specify the ip address of other host. For xen testing, we only use LMbench to test guest’s memory performance, no network testing include, so choose the default value(<strong>none</strong>).</p>
+<ul>
+<li><strong>Processor mhz [default 1579 MHz, 0.6333 nanosec clock]</strong></li>
+</ul>
+<p>The default value for ‘Processor mhz’ maybe wrong, you need to input the correct value according to your cpu frequency.</p>
+<ul>
+<li><strong>FSDIR [default /usr/tmp]</strong></li>
+</ul>
+<p>The directory to store a test file as well as create and delete a large number of small files. For xen testing, just choose the default value(<strong>/usr/tmp/</strong>).</p>
+<ul>
+<li><strong>Status output file [default /dev/tty]</strong></li>
+</ul>
+<p>LMbench outputs status information as it runs various benchmarks. For xen testing, just choose the default value(<strong>/dev/tty</strong>).</p>
+<ul>
+<li><strong>Mail results [default yes]</strong></li>
+</ul>
+<p>There is a database of benchmark results that is shipped with new releases of lmbench.  Your results can be included in the database if you wish. For xen testing, there is no need to send the results, so set the value to <strong>no</strong>.</p>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="http://lmbench.sourceforge.net/man/index.html" target="_blank" rel="external">lmbench1.0 manual pages</a></li>
+<li><a href="http://lmbench.sourceforge.net/" target="_blank" rel="external">LMbench - Tools for Performance Analysis </a></li>
+<li><a href="http://lmbench.sourceforge.net/lmbench-usenix.pdf" target="_blank" rel="external">January ‘96 Usenix paper</a></li>
+<li><a href="http://lmbench.sourceforge.net/mhz-usenix.pdf" target="_blank" rel="external">June ‘98 Usenix paper on Mhz</a></li>
+<li><a href="http://processors.wiki.ti.com/index.php/Lmbench" target="_blank" rel="external">Lmbench</a></li>
+<li><a href="http://aa-v.com/2015/03/29/lmbench-%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" target="_blank" rel="external">lmbench</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Technology/">Technology</a>
+  </div>
+
+        
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<nav id="pagination" >
+    
+    <a href="/2015/04/24/Linux下的经典软件-史上最全/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/04/24/Install-xen-on-Fedora20/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"孔令飞"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:konglf.github.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Technology/Emacs/">Emacs</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Keys/">Keys</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Lex/">Lex</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/Linux/">Linux</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Python/">Python</a><small>2</small></li>
+  
+    <li><a href="/categories/Technology/Shell/">Shell</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/">Technology</a><small>30</small></li>
+  
+    <li><a href="/categories/Technology/Xen/Virtualization/">Virtualization</a><small>1</small></li>
+  
+    <li><a href="/categories/Technology/Xen/">Xen</a><small>1</small></li>
+  
+    <li><a href="/categories/essay/">essay</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>中文名：孔令飞</li>
+<li>英文名：Alex</li>
+<li>现状：Lenovo从事存储性能调优</li>
+<li>QQ号：466701708</li>
+<li>想要交友的朋友请<a href="http://konglf.github.io/about">联系我</a>！</li>
+<li><a href="http://chenghongjie1.sinaapp.com/">I Love You!</a></li>
+</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=3768665395&verifier=bc944b64&dpc=1"></iframe>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Lingfei Kong
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
+
+
+<a href="https://github.com/alex8866" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>
