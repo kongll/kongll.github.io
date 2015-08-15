@@ -230,62 +230,6 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-06-16T00:35:18.000Z"><a href="/2015/06/16/Performance-and-Stress-testing/">2015-06-16</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/06/16/Performance-and-Stress-testing/">Performance Testing</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="What_is_performance_testing?">What is performance testing?</h1><ul>
-<li>It is  a type of non-functional testing.</li>
-<li>Performance testing is testing that is performed, to determine how fast some aspect of a system performs under a particular workload. Performance testing measures the quality attributes of the system, such as scalability, reliability and resource usage.</li>
-<li>The goal of performance testing is not to find bugs but to eliminate performance bottlenecks.</li>
-<li>It can serve different purposes like it can demonstrate that the system meets performance criteria.</li>
-<li>It can compare two systems to find which performs better. Or it can measure what part of the system or workload causes the system to perform badly.</li>
-<li>This process can involve quantitative tests done in a lab, such as measuring the response time or the number of MIPS (millions of instructions per second) at which a system functions.</li>
-</ul>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/06/16/Performance-and-Stress-testing/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2015-06-15T00:35:18.000Z"><a href="/2015/06/15/SR-IOV-Presentation/">2015-06-15</a></time>
       
       
@@ -591,6 +535,96 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/dbench/">2015-04-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/04/24/dbench/">dbench</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="How_to_install_dbench">How to install dbench</h1><ol>
+<li><p>Clone dbench from its git repo</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git clone git://git.samba.org/sahlberg/dbench.git dbench</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Compiling</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd dbench</span></span><br><span class="line"><span class="comment"># ./autogen.sh</span></span><br><span class="line"><span class="comment"># ./configure</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"><span class="comment"># make install</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>And that should be it. You should now have dbench installed on your system.</p>
+<h1 id="Features_and_Functions">Features and Functions</h1><ul>
+<li>Reading SMBTORTURE BENCH-NBENCH loadfiles and emulating this workload as posix calls to a local filesystem</li>
+<li>NFS style loadfiles which allows DBENCH to mimic the i/o pattern of a real application doing real i/o to a real server.</li>
+<li>iSCSI support and iSCSI style loadfiles.</li>
+</ul>
+<p>DBENCH is a tool to generate I/O workloads to either a filesystem or to a networked CIFS or NFS server. It can even talk to an iSCSI target. DBENCH can be used to stress a filesystem or a server to see which workload it becomes saturated and can also be used for preditcion analysis to determine “How many concurrent clients/applications performing this workload can my server handle before response starts to lag?”</p>
+<p>DBENCH provides a similar benchmarking and client emulation that is implemented in SMBTORTURE using the BENCH-NBENCH test for CIFS, but DBENCH can play these loadfiles onto a local filesystem instead of to a CIFS server. Using a different type of loadfiles DBENCH can also generate and measure latency for NFS.</p>
+<h1 id="Load_files">Load files</h1><p> At the heart of DBENCH is the concept of a “loadfile”. A loadfile is a sequence of operations to be performed once statement at a time. This could be operations such as “Open file XYZ”, “Read 5 bytes from offset ABC”, “Close the file”, etc etc.</p>
+<p>By carefully crafting a loadfile it is possible to describe an I/O pattern that almost exactly matches what a particular application performs. While cumbersome to produce, such a loadfile it does allow you to describe exactly how/what an application performs and “replay” this sequence of operations any time you want.</p>
+<p>Each line in the DBENCH loadfile contain a timestamp for the operation. This is used by DBENCH to try to keep the same rate of operations as the original application. This is very useful since this allows to perform accurate scalability predictions based on the exact application we are interested in. and not an artificial benchmark which may or may not be relevant to our particular applications workload pattern.</p>
+<p>At <a href="https://dbench.samba.org/web/index.html" target="_blank" rel="external">https://dbench.samba.org/web/index.html</a> you can find three loadfile template to use:</p>
+<ul>
+<li>pNFS-Loadfiles - used to stress the NFS server.</li>
+<li>SMB-Loadfiles - used to stress the SMB server.</li>
+<li>iSCSI-Loadfiles - used to stress the iSCSI server.</li>
+</ul>
+<h1 id="How_to_use_dbench">How to use dbench</h1><p>The following command should be OK for most of the testing situations(run dbench for 10 hours):<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dbench -c /usr/share/dbench/client.txt -D ./ -t 36000 10</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong><br>This command stress the local filesystem, if you want to stress a NFS/SMB/iSCSI server, please learn more about dbench.</p>
+<h1 id="Results_analysis">Results analysis</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dbench -c /usr/share/dbench/client.txt -D ./ -t 10 100</span></span><br><span class="line">dbench version <span class="number">4.00</span> - Copyright Andrew Tridgell <span class="number">1999</span>-<span class="number">2004</span></span><br><span class="line"></span><br><span class="line">Running <span class="keyword">for</span> <span class="number">10</span> seconds with load <span class="string">'/usr/share/dbench/client.txt'</span> and minimum warmup <span class="number">2</span> secs</span><br><span class="line"><span class="number">98</span> of <span class="number">100</span> processes prepared <span class="keyword">for</span> launch   <span class="number">0</span> sec</span><br><span class="line"><span class="number">100</span> of <span class="number">100</span> processes prepared <span class="keyword">for</span> launch   <span class="number">0</span> sec</span><br><span class="line">releasing clients</span><br><span class="line"> <span class="number">100</span>       <span class="number">459</span>  <span class="number">1293.98</span> MB/sec  warmup   <span class="number">1</span> sec  latency <span class="number">527.022</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">495</span>    <span class="number">38.88</span> MB/sec  execute   <span class="number">1</span> sec  latency <span class="number">1261.032</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">509</span>    <span class="number">36.37</span> MB/sec  execute   <span class="number">2</span> sec  latency <span class="number">750.145</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">521</span>    <span class="number">33.32</span> MB/sec  execute   <span class="number">3</span> sec  latency <span class="number">496.452</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">545</span>    <span class="number">35.34</span> MB/sec  execute   <span class="number">4</span> sec  latency <span class="number">604.592</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">660</span>    <span class="number">43.13</span> MB/sec  execute   <span class="number">5</span> sec  latency <span class="number">402.810</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">744</span>    <span class="number">43.04</span> MB/sec  execute   <span class="number">6</span> sec  latency <span class="number">407.184</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">764</span>    <span class="number">40.13</span> MB/sec  execute   <span class="number">7</span> sec  latency <span class="number">1061.093</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">797</span>    <span class="number">38.65</span> MB/sec  execute   <span class="number">8</span> sec  latency <span class="number">2061.173</span> ms</span><br><span class="line"> <span class="number">100</span>       <span class="number">820</span>    <span class="number">36.10</span> MB/sec  execute   <span class="number">9</span> sec  latency <span class="number">2152.252</span> ms</span><br><span class="line"> <span class="number">100</span>  cleanup  <span class="number">10</span> sec</span><br><span class="line">  <span class="number">26</span>  cleanup  <span class="number">11</span> sec</span><br><span class="line">  <span class="number">20</span>  cleanup  <span class="number">12</span> sec</span><br><span class="line">  <span class="number">18</span>  cleanup  <span class="number">13</span> sec</span><br><span class="line">  <span class="number">11</span>  cleanup  <span class="number">14</span> sec</span><br><span class="line">   <span class="number">0</span>  cleanup  <span class="number">15</span> sec</span><br><span class="line"></span><br><span class="line"> Operation                Count    AvgLat    MaxLat</span><br><span class="line"> --------------------------------------------------</span><br><span class="line"> Flush                      <span class="number">710</span>   <span class="number">219.169</span>  <span class="number">2152.244</span></span><br><span class="line"> Close                     <span class="number">5848</span>     <span class="number">0.003</span>     <span class="number">2.262</span></span><br><span class="line"> LockX                        <span class="number">4</span>     <span class="number">0.004</span>     <span class="number">0.009</span></span><br><span class="line"> Rename                     <span class="number">284</span>     <span class="number">0.048</span>     <span class="number">3.412</span></span><br><span class="line"> ReadX                     <span class="number">7792</span>     <span class="number">0.106</span>   <span class="number">178.973</span></span><br><span class="line"> WriteX                    <span class="number">7966</span>   <span class="number">106.556</span>   <span class="number">783.949</span></span><br><span class="line"> Unlink                     <span class="number">671</span>     <span class="number">1.879</span>   <span class="number">129.409</span></span><br><span class="line"> UnlockX                      <span class="number">4</span>     <span class="number">0.002</span>     <span class="number">0.003</span></span><br><span class="line"> FIND_FIRST                <span class="number">1991</span>     <span class="number">0.026</span>     <span class="number">4.002</span></span><br><span class="line"> SET_FILE_INFORMATION       <span class="number">869</span>     <span class="number">8.582</span>   <span class="number">481.309</span></span><br><span class="line"> QUERY_FILE_INFORMATION    <span class="number">2099</span>     <span class="number">0.002</span>     <span class="number">0.089</span></span><br><span class="line"> QUERY_PATH_INFORMATION    <span class="number">5677</span>     <span class="number">0.021</span>    <span class="number">69.872</span></span><br><span class="line"> QUERY_FS_INFORMATION       <span class="number">835</span>     <span class="number">0.003</span>     <span class="number">0.020</span></span><br><span class="line"> NTCreateX                 <span class="number">6822</span>     <span class="number">1.191</span>   <span class="number">200.957</span></span><br><span class="line"></span><br><span class="line">Throughput <span class="number">36.0963</span> MB/sec  <span class="number">100</span> clients  <span class="number">100</span> procs  max_latency=<span class="number">2152.252</span> ms</span><br></pre></td></tr></table></figure>
+<p>It gives out four numbers like this (this is from a 100 client run on fedora22 host):<br><code>`sh
+Throughput 36.0963 MB/sec  100 clients  100 procs  max_latency=2152.252 ms</code></p>
+<p>The first is the true throughput as seen by dbench, the larger the batter. The last is the I/O latency, the smaller the better.</p>
+<p><strong>Note:</strong><br>One question some people may ask is whether the above represents a realistic load on a fileserver. It doesn’t. Nearly 90% of the read/write IO operations in netbench are writes whereas in a “normal” office load reads dominate. Also, the load is <strong>much</strong> higher than a normal office PC would put on a server. There aren’t many office PCs that write over a hundred megabytes of data to a server in a few minutes, unless maybe they are copying a CD.</p>
+<p>That doesn’t mean the benchmark is useless, it just means you shouldn’t use this for purchasing decisions unless you really understand the results and how they relate to your environment.</p>
+<h1 id="The_main_parameters">The main parameters</h1><ul>
+<li><strong>-c</strong> - Use this as the full path name of the client.txt file (the default is /usr/share/dbench/client.txt).</li>
+<li><strong>-s</strong> - Use synchronous file IO on all file operations(O_SYNC).</li>
+<li><strong>-t TIME</strong> - set the runtime of the benchmark in seconds (default 600).</li>
+<li><strong>-D DIR</strong> - set the base directory to run the filesystem operations in.</li>
+<li><strong>-S</strong> -  Use synchronous IO for all directory operations (unlink, rmdir, mkdir and rename).</li>
+<li><strong>-F</strong> - fsync on write</li>
+<li><strong>-B BACKEND</strong> - dbench backend (fileio, sockio, nfs, scsi, iscsi, smb)</li>
+</ul>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="https://dbench.samba.org/doc/dbench.1.html" target="_blank" rel="external">Dbench man page</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/活在Linux中/">2015-04-24</a></time>
       
       
@@ -636,31 +670,24 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/bonnie/">2015-04-24</a></time>
+        <time datetime="2015-04-24T00:35:18.000Z"><a href="/2015/04/24/我是如何写博客的/">2015-04-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/24/bonnie/">bonnie++</a></h1>
+    <h1 class="title"><a href="/2015/04/24/我是如何写博客的/">我是如何写博客的</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="How_to_install_bonnie++">How to install bonnie++</h1><ol>
-<li><p>Download bonnie++ tarball from <a href="http://www.coker.com.au/bonnie++/">http://www.coker.com.au/bonnie++/</a></p>
-</li>
-<li><p>Extract and install it:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvzf bonnie++-<span class="doctag">XXX.</span>tgz</span></span><br><span class="line"><span class="comment"># cd bonnie++-<span class="doctag">XXX</span></span></span><br><span class="line"><span class="comment"># make</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="Features_and_Functions">Features and Functions</h1>
+        <p>每个人都有自己写博客的方式， 我来分享下我是怎么写博客的。<br>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2015/04/24/bonnie/#more" class="more-link">阅读全文</a>
+            <a href="/2015/04/24/我是如何写博客的/#more" class="more-link">阅读全文</a>
           </div>
         
         
@@ -788,7 +815,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
   
     <li><a href="/categories/Technology/Xen/">Xen</a><small>1</small></li>
   
-    <li><a href="/categories/essay/">essay</a><small>4</small></li>
+    <li><a href="/categories/essay/">essay</a><small>3</small></li>
   
   </ul>
 </div>
